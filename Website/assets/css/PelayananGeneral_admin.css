@@ -1,0 +1,1271 @@
+.pelayanan_admin_section {
+  /* background-color: aqua; */
+  margin-left: 260px;
+  padding-top: 20px;
+  padding-left: 20px;
+  /* border-left: 1px solid var(--primary-color); */
+}
+.pelayanan_dashboard_wrapper {
+  display: grid;
+  grid-template-columns: 70% 40%;
+  gap: 20px;
+}
+/* .Padmin_pelayananchart_chart {
+  width: 600px;
+  height: 400px;
+} */
+.Padmin_title h1 {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  font-family: var(--questrial-font);
+  margin-bottom: 10px;
+}
+.Padmin_title h1 span {
+  color: var(--primary-color);
+  font-weight: 800;
+}
+.Padmin_pelayananchart_title h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  font-family: var(--questrial-font);
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.Padmin_pelayananmasuk_title h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  font-family: var(--questrial-font);
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.Padmin_pelayananmasuk_table {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+.Padmin_pelayananmasuk_table {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+.Padmin_pelayananmasuk_table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--questrial-font);
+}
+.Padmin_pelayananmasuk_table table thead {
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+}
+.Padmin_pelayananmasuk_table table thead th {
+  padding: 10px 5px;
+  font-family: var(--questrial-font);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-align: center;
+}
+.Padmin_pelayananmasuk_table table tbody {
+  background-color: var(--table-color);
+}
+.Padmin_pelayananmasuk_table table tbody tr td {
+  padding: 15px 5px;
+  font-family: var(--questrial-font);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-align: center;
+}
+.Padmin_pelayananmasuk_table table tbody tr td a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.Padmin_pelayananmasuk_table table tbody tr td a:hover {
+  color: var(--red-color);
+  transition: 0.3s ease;
+}
+.PAdmin_right .Padmin_notifikasi_title {
+  /* background-color: var(--secondary-color); */
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 5px;
+}
+.PAdmin_right .Padmin_notifikasi_title h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  font-family: var(--questrial-font);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-align: left;
+}
+.PAdmin_right .Padmin_notifikasi_title h2 span {
+  color: var(--primary-color);
+  font-weight: 800;
+}
+.Padmin_notifikasi_darurat,
+.Padmin_notifikasi_medical,
+.Padmin_notifikasi_vaksin {
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  background-color: var(--table-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 15px;
+}
+.Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_text p,
+.Padmin_notifikasi_medical .Padmin_notifikasi_medical_text p,
+.Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_text p {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  font-family: var(--questrial-font);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left !important;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+.Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_icon i {
+  font-size: 20px;
+  color: var(--red-color);
+}
+.Padmin_notifikasi_medical .Padmin_notifikasi_medical_icon i,
+.Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_icon i {
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.PAdmin_right {
+  width: 65%;
+}
+.Padmin_notifikasi_detail {
+  background-color: var(--red-color);
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+  /* border: 1px solid var(--primary-color); */
+}
+.Padmin_notifikasi_detail:hover {
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+  text-align: center;
+  transition: 0.3s ease;
+  /* border: 1px solid var(--primary-color); */
+}
+.Padmin_notifikasi_detail:hover a {
+  color: var(--cream-color);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.Padmin_notifikasi_detail a {
+  text-decoration: none;
+  color: var(--cream-color);
+  font-size: 12px;
+}
+#Padmin_notifikasi_detail a {
+  text-decoration: none;
+  font-size: 12px;
+}
+#Padmin_notifikasi_detail {
+  background-color: var(--primary-color);
+}
+#Padmin_notifikasi_detail:hover {
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+  text-align: center;
+  transition: 0.3s ease;
+}
+.Padmin_notifikasi_obatvaksin {
+  background-color: var(--white-color);
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid var(--primary-color); */
+}
+.Padmin_notifikasi_obatvaksin .Padmin_notifikasi_title {
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px !important;
+}
+.Padmin_notifikasi_obatvaksin .Padmin_notifikasi_title h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--cream-color);
+  font-family: var(--questrial-font);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-align: left;
+}
+.Padmin_notifikasi_obatvaksin .Padmin_notifikasi_title h2 span {
+  color: var(--primary-color);
+  font-weight: 800;
+  margin-left: 5px;
+}
+.Padmin_stok_obatvaksin a {
+  text-decoration: none;
+  color: var(--cream-color);
+  font-size: 12px;
+  background-color: var(--primary-color);
+}
+.Padmin_stok_obatvaksin {
+  background-color: var(--white-color);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.Padmin_stok_obatvaksin:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  transition: 0.3s ease;
+}
+.Padmin_stok_obatvaksin:hover a {
+  color: var(--cream-color);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.Padmin_stok_obatvaksin a {
+  background-color: transparent;
+  color: var(--secondary-color);
+  font-weight: 800;
+}
+.edit-all-button {
+  width: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.edit-all-button .edit-menu-button,
+.edit-all-button .back-menu-button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.edit-all-button .edit-menu-button a,
+.edit-all-button .back-menu-button a {
+  text-decoration: none;
+  color: var(--cream-color);
+  font-size: 12px;
+  background-color: var(--primary-color);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+.edit-all-button .back-menu-button a {
+  background-color: var(--red-color);
+}
+.edit-all-button .edit-menu-button a:hover {
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+  transition: 0.3s ease;
+}
+.edit-all-button .back-menu-button a:hover {
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+  transition: 0.3s ease;
+}
+#admin_captcha img {
+  width: 100px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+  .edit-all-button {
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px !important;
+  }
+  .edit-all-button .edit-menu-button,
+  .edit-all-button .back-menu-button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0px !important;
+  }
+  .edit-all-button .edit-menu-button a,
+  .edit-all-button .back-menu-button a {
+    text-decoration: none;
+    color: var(--cream-color);
+    font-size: 10px !important;
+    background-color: var(--primary-color);
+    padding: 10px;
+    margin: 5px !important;
+    border-radius: 5px;
+    width: 100%;
+  }
+  .edit-all-button .back-menu-button a {
+    background-color: var(--secondary-color);
+  }
+  .edit-all-button .edit-menu-button a:hover {
+    background-color: var(--secondary-color);
+    color: var(--cream-color);
+    transition: 0.3s ease;
+  }
+  .edit-all-button .back-menu-button a:hover {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    transition: 0.3s ease;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_text p,
+  .Padmin_notifikasi_medical .Padmin_notifikasi_medical_text p,
+  .Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_text p {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left !important;
+    letter-spacing: 0px;
+    line-height: 1.5;
+  }
+  .Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_icon i {
+    font-size: 16px;
+    color: var(--red-color);
+  }
+  .Padmin_notifikasi_medical .Padmin_notifikasi_medical_icon i,
+  .Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_icon i {
+    font-size: 16px;
+    color: var(--primary-color);
+  }
+  .Padmin_notifikasi_detail a {
+    text-decoration: none;
+    color: var(--cream-color);
+    font-size: 10px;
+  }
+  #Padmin_notifikasi_detail a {
+    text-decoration: none;
+    font-size: 10px;
+  }
+  .PAdmin_right .Padmin_notifikasi_title h2 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+  .PAdmin_right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* background-color: aqua; */
+    margin-left: 40px;
+  }
+  #myChart {
+    width: 100% !important;
+  }
+  .Padmin_notifikasi_obatvaksin .Padmin_notifikasi_title h2 {
+    color: var(--cream-color);
+    font-size: 12px;
+  }
+  .Padmin_notifikasi_obatvaksin .Padmin_notifikasi_title h2 span {
+    font-size: 12px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .Padmin_stok_obatvaksin a {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .pelayanan_admin_section {
+    margin-left: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
+    /* border-left: 1px solid var(--primary-color); */
+  }
+}
+
+@media only screen and (max-width: 765px) {
+  .Padmin_title h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 10px;
+  }
+  #myChart {
+    width: 100% !important;
+  }
+  .Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_text p,
+  .Padmin_notifikasi_medical .Padmin_notifikasi_medical_text p,
+  .Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_text p {
+    font-size: 8px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left !important;
+    letter-spacing: 0px;
+    line-height: 1.5;
+  }
+  .Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_icon i {
+    font-size: 12px;
+    color: var(--red-color);
+  }
+  .Padmin_notifikasi_medical .Padmin_notifikasi_medical_icon i,
+  .Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_icon i {
+    font-size: 12px;
+    color: var(--primary-color);
+  }
+  .Padmin_notifikasi_detail a {
+    text-decoration: none;
+    color: var(--cream-color);
+    font-size: 8px;
+  }
+  #Padmin_notifikasi_detail a {
+    text-decoration: none;
+    font-size: 8px;
+  }
+  .PAdmin_right .Padmin_notifikasi_title h2 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+  .PAdmin_right {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* background-color: aqua; */
+    margin-left: 5px;
+  }
+  .Padmin_title h1 span {
+    color: var(--primary-color);
+    font-weight: 800;
+  }
+  .Padmin_pelayananchart_title h2 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_title h2 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_title h2 span {
+    font-size: 14px !important;
+  }
+  .Padmin_pelayananmasuk_table table thead th {
+    padding: 10px 5px;
+    font-family: var(--questrial-font);
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .Padmin_pelayananmasuk_table table tbody {
+    background-color: var(--table-color);
+  }
+  .Padmin_pelayananmasuk_table table tbody tr td {
+    padding: 15px 5px;
+    font-family: var(--questrial-font);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .pelayanan_admin_section {
+    margin-left: 25px;
+    padding-top: 20px;
+    padding-left: 20px;
+    /* border-left: 1px solid var(--primary-color); */
+  }
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 20px;
+  }
+  .Padmin_pelayananmasuk_table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--questrial-font);
+    overflow-x: auto;
+  }
+  .Padmin_notifikasi_obatvaksin .Padmin_notifikasi_title h2 {
+    color: var(--cream-color);
+  }
+}
+@media only screen and (max-width: 650px) {
+  .PAdmin_left,
+  .PAdmin_right {
+    width: 100%;
+  }
+  .Padmin_title h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 10px;
+  }
+  #myChart {
+    width: 90% !important;
+  }
+  .Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_text p,
+  .Padmin_notifikasi_medical .Padmin_notifikasi_medical_text p,
+  .Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_text p {
+    font-size: 8px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: left !important;
+    letter-spacing: 0px;
+    line-height: 1.5;
+  }
+  .Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_icon i {
+    font-size: 10px;
+    color: var(--red-color);
+  }
+  .Padmin_notifikasi_medical .Padmin_notifikasi_medical_icon i,
+  .Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_icon i {
+    font-size: 10px;
+    color: var(--primary-color);
+  }
+  .Padmin_notifikasi_detail a {
+    text-decoration: none;
+    color: var(--cream-color);
+    font-size: 8px;
+  }
+  #Padmin_notifikasi_detail a {
+    text-decoration: none;
+    font-size: 8px;
+  }
+  .PAdmin_right .Padmin_notifikasi_title h2 {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+  .PAdmin_right {
+    width: 75%;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    /* background-color: aqua; */
+    margin-left: 5px;
+  }
+  .Padmin_title h1 span {
+    color: var(--primary-color);
+    font-weight: 800;
+  }
+  .Padmin_pelayananchart_title h2 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_title h2 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_title h2 span {
+    font-size: 12px !important;
+  }
+  .Padmin_pelayananmasuk_table table thead th {
+    padding: 10px 2px;
+    font-family: var(--questrial-font);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .Padmin_pelayananmasuk_table table tbody {
+    background-color: var(--table-color);
+  }
+  .Padmin_pelayananmasuk_table table tbody tr {
+    max-width: 15ch !important;
+  }
+  .Padmin_pelayananmasuk_table table tbody tr td {
+    padding: 10px 2px;
+    font-family: var(--questrial-font);
+    font-size: 8px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .pelayanan_admin_section {
+    margin-left: 25px;
+    padding-top: 20px;
+    padding-left: 20px;
+    /* border-left: 1px solid var(--primary-color); */
+  }
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .Padmin_pelayananmasuk_table {
+    overflow-x: auto;
+    width: 100%;
+  }
+  .Padmin_pelayananchart_wrap {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .Padmin_pelayananmasuk {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .Padmin_pelayananmasuk_table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--questrial-font);
+    overflow-x: auto;
+  }
+  /* .Padmin_pelayananchart_chart {
+    margin-bottom: -200px;
+  } */
+  .Padmin_notifikasi_responsive {
+    display: flex !important;
+    flex-direction: row !important;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .Padmin_notifikasi_content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .notifikasi_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--table-color);
+    margin-right: 5px;
+    width: 90%;
+  }
+  .notifikasi_content_icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left !important;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .Padmin_notifikasi_title h2 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left !important;
+  }
+  .Padmin_notifikasi_title h2 span {
+    color: var(--primary-color);
+    font-weight: 800;
+  }
+  .notifikasi_content_icon i {
+    font-size: 14px;
+    color: var(--primary-color);
+    margin-right: 5px;
+  }
+  .notifikasi_content_pesan p {
+    font-size: 8px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: left !important;
+    letter-spacing: 0px;
+    line-height: 1.5;
+  }
+  #notifikasi_content_icon_darurat i {
+    font-size: 14px;
+    color: var(--red-color) !important;
+  }
+  .notifikasi_content_detail {
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  #notifikasi_content_detail_darurat {
+    background-color: var(--red-color);
+  }
+  .notifikasi_content_detail a {
+    text-decoration: none;
+    color: var(--cream-color);
+    font-size: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .notifikasi_content_detail:hover {
+    background-color: var(--secondary-color);
+  }
+  .Padmin_notifikasi_obatvaksin_responsive {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
+  .Padmin_notifikasi_obatvaksin {
+    width: 250px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .Padmin_notifikasi_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .PAdmin_left,
+  .PAdmin_right {
+    width: 100%;
+  }
+  .Padmin_title h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 10px;
+  }
+  #myChart {
+    width: 100% !important;
+    /* height: 40% !important; */
+  }
+  .Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_text p,
+  .Padmin_notifikasi_medical .Padmin_notifikasi_medical_text p,
+  .Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_text p {
+    font-size: 8px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: left !important;
+    letter-spacing: 0px;
+    line-height: 1.5;
+  }
+  .Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_icon i {
+    font-size: 10px;
+    color: var(--red-color);
+  }
+  .Padmin_notifikasi_medical .Padmin_notifikasi_medical_icon i,
+  .Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_icon i {
+    font-size: 10px;
+    color: var(--primary-color);
+  }
+  .Padmin_notifikasi_detail a {
+    text-decoration: none;
+    color: var(--cream-color);
+    font-size: 8px;
+  }
+  #Padmin_notifikasi_detail a {
+    text-decoration: none;
+    font-size: 8px;
+  }
+  .PAdmin_right .Padmin_notifikasi_title h2 {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+  .PAdmin_right {
+    width: 75%;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    /* background-color: aqua; */
+    margin-left: 5px;
+  }
+  .Padmin_title h1 span {
+    color: var(--primary-color);
+    font-weight: 800;
+  }
+  .Padmin_pelayananchart_title h2 {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_title h2 {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_title h2 span {
+    font-size: 10px !important;
+  }
+  .Padmin_pelayananmasuk_table table thead th {
+    padding: 10px 2px;
+    font-family: var(--questrial-font);
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .Padmin_pelayananmasuk_table table tbody {
+    background-color: var(--table-color);
+  }
+  .Padmin_pelayananmasuk_table table tbody tr {
+    max-width: 15ch !important;
+  }
+  .Padmin_pelayananmasuk_table table tbody tr td {
+    padding: 10px 2px;
+    font-family: var(--questrial-font);
+    font-size: 8px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .pelayanan_admin_section {
+    margin-left: 25px;
+    padding-top: 20px;
+    padding-left: 20px;
+    /* border-left: 1px solid var(--primary-color); */
+  }
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .Padmin_pelayananmasuk_table {
+    overflow-x: auto;
+    width: 100%;
+  }
+  .Padmin_pelayananmasuk_table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--questrial-font);
+    overflow-x: auto;
+  }
+  /* .Padmin_pelayananchart_chart {
+    margin-bottom: -200px;
+  } */
+  .Padmin_notifikasi_responsive {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  .Padmin_notifikasi_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+  }
+  .notifikasi_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--table-color);
+    margin-right: 5px;
+    width: 100%;
+  }
+  .notifikasi_content_icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left !important;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .Padmin_notifikasi_title h2 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left !important;
+  }
+  .Padmin_notifikasi_title h2 span {
+    color: var(--primary-color);
+    font-weight: 800;
+  }
+  .notifikasi_content_icon i {
+    font-size: 14px;
+    color: var(--primary-color);
+    margin-right: 5px;
+  }
+  .notifikasi_content_pesan p {
+    font-size: 8px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: left !important;
+    letter-spacing: 0px;
+    line-height: 1.5;
+  }
+  #notifikasi_content_icon_darurat i {
+    font-size: 14px;
+    color: var(--red-color) !important;
+  }
+  .notifikasi_content_detail {
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  #notifikasi_content_detail_darurat {
+    background-color: var(--red-color);
+  }
+  .notifikasi_content_detail a {
+    text-decoration: none;
+    color: var(--cream-color);
+    font-size: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .notifikasi_content_detail:hover {
+    background-color: var(--secondary-color);
+  }
+  .Padmin_notifikasi_obatvaksin_responsive {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
+  .Padmin_notifikasi_obatvaksin {
+    width: 40%;
+  }
+  .Padmin_notifikasi_obatvaksin .Padmin_notifikasi_title h2 {
+    font-size: 10px !important;
+  }
+  .Padmin_notifikasi_obatvaksin .Padmin_notifikasi_title h2 span {
+    font-size: 10px !important;
+  }
+}
+@media only screen and (max-width: 470px) {
+  .Padmin_pelayananchart_wrap {
+    display: none !important;
+  }
+  .Padmin_pelayananmasuk {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .Padmin_notifikasi_responsive {
+    display: flex !important;
+    flex-direction: row !important;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .Padmin_notifikasi_obatvaksin_responsive {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+  .Padmin_notifikasi_obatvaksin {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .PAdmin_left,
+  .PAdmin_right {
+    width: 100%;
+  }
+  .Padmin_title h1 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 10px;
+  }
+  #myChart {
+    width: 100% !important;
+  }
+  .Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_text p,
+  .Padmin_notifikasi_medical .Padmin_notifikasi_medical_text p,
+  .Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_text p {
+    font-size: 8px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: left !important;
+    letter-spacing: 0px;
+    line-height: 1.5;
+  }
+  .Padmin_notifikasi_darurat .Padmin_notifikasi_darurat_icon i {
+    font-size: 10px;
+    color: var(--red-color);
+  }
+  .Padmin_notifikasi_medical .Padmin_notifikasi_medical_icon i,
+  .Padmin_notifikasi_vaksin .Padmin_notifikasi_vaksin_icon i {
+    font-size: 10px;
+    color: var(--primary-color);
+  }
+  .Padmin_notifikasi_detail a {
+    text-decoration: none;
+    color: var(--cream-color);
+    font-size: 8px;
+  }
+  #Padmin_notifikasi_detail a {
+    text-decoration: none;
+    font-size: 8px;
+  }
+  .PAdmin_right .Padmin_notifikasi_title h2 {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-align: left;
+  }
+  .PAdmin_right {
+    width: 75%;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    /* background-color: aqua; */
+    margin-left: 5px;
+  }
+  .Padmin_title h1 span {
+    color: var(--primary-color);
+    font-weight: 800;
+  }
+  .Padmin_pelayananchart_title h2 {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_title h2 {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_title h2 span {
+    font-size: 8px !important;
+  }
+  .Padmin_pelayananmasuk_table table thead th {
+    padding: 10px 2px;
+    font-family: var(--questrial-font);
+    font-size: 8px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .Padmin_pelayananmasuk_table table tbody {
+    background-color: var(--table-color);
+  }
+  .Padmin_pelayananmasuk_table table tbody tr {
+    max-width: 15ch !important;
+  }
+  .Padmin_pelayananmasuk_table table tbody tr td {
+    padding: 10px 2px;
+    font-family: var(--questrial-font);
+    font-size: 6px;
+    font-weight: 500;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .pelayanan_admin_section {
+    margin-left: 25px;
+    padding-top: 20px;
+    padding-left: 20px;
+    /* border-left: 1px solid var(--primary-color); */
+  }
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .Padmin_pelayananmasuk_table {
+    overflow-x: auto;
+    width: 100%;
+  }
+  .Padmin_pelayananmasuk_table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--questrial-font);
+    overflow-x: auto;
+  }
+  /* .Padmin_pelayananchart_chart {
+    margin-bottom: -280px;
+  } */
+  .Padmin_notifikasi_responsive {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  .Padmin_notifikasi_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  .notifikasi_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--table-color);
+    margin-right: 5px;
+    width: 100%;
+  }
+  .notifikasi_content_icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left !important;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .Padmin_notifikasi_title h2 {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left !important;
+  }
+  .Padmin_notifikasi_title h2 span {
+    color: var(--primary-color);
+    font-weight: 800;
+  }
+  .notifikasi_content_icon i {
+    font-size: 10px;
+    color: var(--primary-color);
+    margin-right: 5px;
+  }
+  .notifikasi_content_pesan p {
+    font-size: 6px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: left !important;
+    letter-spacing: 0px;
+    line-height: 1.5;
+  }
+  #notifikasi_content_icon_darurat i {
+    font-size: 10px;
+    color: var(--red-color) !important;
+  }
+  .notifikasi_content_detail {
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  #notifikasi_content_detail_darurat {
+    background-color: var(--red-color);
+  }
+  .notifikasi_content_detail a {
+    text-decoration: none;
+    color: var(--cream-color);
+    font-size: 6px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .notifikasi_content_detail:hover {
+    background-color: var(--secondary-color);
+  }
+  .Padmin_notifikasi_obatvaksin .Padmin_notifikasi_title h2 {
+    font-size: 8px !important;
+  }
+  .Padmin_notifikasi_obatvaksin .Padmin_notifikasi_title h2 span {
+    font-size: 8px !important;
+  }
+  .Padmin_stok_obatvaksin a {
+    font-size: 8px !important;
+  }
+}

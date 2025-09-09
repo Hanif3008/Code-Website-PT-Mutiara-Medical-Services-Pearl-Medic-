@@ -1,0 +1,358 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Detail <span>Pelayanan</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <div class="Padmin_pelayananmasuk_pic">
+            <img src="/img/<%= PelayananMedical.photo_perusahaan %>" alt="" />
+          </div>
+          <div class="Padmin_pelayananmasuk_data">
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nama Perusahaan</h3>
+              <p><i class="fa-solid fa-building"></i><%= PelayananMedical.nama_perusahaan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jenis Pelayanan</h3>
+              <p><i class="fa-solid fa-notes-medical"></i><%= PelayananMedical.jenis_pelayanan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nomor Pesanan</h3>
+              <p><i class="fa-solid fa-notes-medical"></i><%= PelayananMedical.nomorpesanan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nama Proyek</h3>
+              <p><i class="fa-solid fa-user-shield"></i><%= PelayananMedical.nama_proyek %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Kontak Proyek</h3>
+              <p><i class="fa-solid fa-square-phone"></i><%= PelayananMedical.nomortelepon_proyek %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Lokasi Pelayanan</h3>
+              <p><i class="fa-solid fa-location-dot"></i><%= PelayananMedical.lokasipelayanan_medical %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jumlah Pasien</h3>
+              <p><i class="fa-solid fa-bed"></i><%= PelayananMedical.jumlahpasien_medical %> Orang</p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Tanggal Pemesanan</h3>
+              <p class="date"><i class="fa-solid fa-calendar-days"></i><%= PelayananMedical.tanggalpemesanan_medical %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Tanggal Permintaan</h3>
+              <p class="date"><i class="fa-solid fa-calendar-days"></i><%= PelayananMedical.tanggalpermintaan_medical %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Tanggal Pelayanan</h3>
+              <p class="date">
+                <i class="fa-solid fa-calendar-days"></i>
+                <% if (PelayananMedical.tanggalpelayanan_medical == "") { %> None <% } else { %> <%= PelayananMedical.tanggalpelayanan_medical %> <% } %>
+              </p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jam Permintaan</h3>
+              <p class="clock"><i class="fa-solid fa-clock"></i><%= PelayananMedical.jampermintaan_medical %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jam Pelayanan</h3>
+              <p class="clock">
+                <i class="fa-solid fa-clock"></i>
+                <% if (PelayananMedical.jampelayanan_medical == "") { %> None <% } else { %> <%= PelayananMedical.jampelayanan_medical %> <% } %>
+              </p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Status Pelayanan</h3>
+              <% if (PelayananMedical.status == 3) { %>
+              <p id="reds">Belum Dilayani</p>
+              <% } else if (PelayananMedical.status == 2) { %>
+              <p id="yellow">Dalam Proses</p>
+              <% } else if (PelayananMedical.status == 1) { %>
+              <p id="green">Sudah Dilayani</p>
+              <% } %>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Data Rekam Medis</h3>
+              <a href="/rmMedical_admin/<%= PelayananMedical.id_medical %>">Lihat Selengkapnya</a>
+            </div>
+            <% if (PelayananMedical.status == 3) { %>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Batalkan Pesanan</h3>
+              <button onclick="confirmDelete('<%= PelayananMedical.id_medical %>')" id="red">Batalkan</button>
+            </div>
+            <% } %>
+          </div>
+          <div class="Padmin_pelayananmasuk_catatan">
+            <h2>Catatan Tambahan</h2>
+            <p><%= PelayananMedical.catatan_medical %></p>
+          </div>
+          <div class="Padmin_pelayanan_dokter_bertugas">
+            <div class="Padmin_pelayanan_dokter_bertugas_title">
+              <h2>Dokter Penanggung Jawab</h2>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama Dokter</th>
+                  <th>Spesialis</th>
+                  <th>No Telp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if (PelayananMedical.namalengkap_stafkesehatan) { %>
+                    <tr>
+                        <td>1</td>
+                        <td><%= PelayananMedical.namalengkap_stafkesehatan %></td>
+                        <td><%= PelayananMedical.spesialisasi_stafkesehatan %></td>
+                        <td><%= PelayananMedical.nomortelepon_stafkesehatan %></td>
+                    </tr>
+                <% } else { %>
+                    <tr>
+                        <td>1</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                <% } %>
+            </tbody>
+            </table>
+          </div>
+          <% if (PelayananMedical.status == 2) { %>
+            <form class="Padmin_ubahstatus_vaksinasi"  method="post" action="/changeStatusMedical/<%= PelayananMedical.id_medical %>'">
+              <h2>Status Pesanan</h2>
+              <select name="status_medical" id="status_medical">
+                <option value="0" disabled>-- Pilih Status Pesanan --</option>
+                <option value="2" <%= PelayananMedical.status === 2 ? 'selected' : "" %>>Dalam Proses</option>
+                <option value="1" <%= PelayananMedical.status === 1 ? 'selected' : "" %>>Sudah Dilayani</option>
+              </select>
+              <button type="submit">Ubah Status Pesanan</button>
+            </form>
+            <% } %>
+            <% if (PelayananMedical.status == 3) { %>
+              <div class="konfirmasi_detailpesanan" id="konfirmasi_detailpesanan">
+                  <button type="button">Balas Pesanan</button>
+              </div>
+              <div class="Padmin_pelayananmasuk_input" id="none">
+                  <div class="konfirmasi_pelayanan_title">
+                      <h2>Konfirmasi Pelayanan</h2>
+                  </div>
+                  <form id="update-pelayananvaksin" method="post" action="/LPelayananMedicalDetail_admin/<%= PelayananMedical.id_medical %>/update">
+                      <div class="konfirmasi_pelayananmenu">
+                          <label for="tanggal_pelayanan">Tanggal Pelayanan</label>
+                          <input type="date" name="tanggal_pelayanan" id="tanggal_pelayanan" value="<%= PelayananMedical.tanggalpermintaan_medical %>" />
+                      </div>
+                      <div class="konfirmasi_pelayananmenu">
+                          <label for="jam_pelayanan">Jam Pelayanan</label>
+                          <select name="jam_pelayanan" id="jam_pelayanan">
+                              <option value="" disabled>-- Pilih Jam --</option>
+                              <option value="07:00 - Selesai" <%= PelayananMedical.jampermintaan_medical === '07:00 - Selesai' ? 'selected' : '' %>>07:00 - Selesai</option>
+                              <option value="10:00 - Selesai" <%= PelayananMedical.jampermintaan_medical === '10:00 - Selesai' ? 'selected' : '' %>>10:00 - Selesai</option>
+                              <option value="13:00 - Selesai" <%= PelayananMedical.jampermintaan_medical === '13:00 - Selesai' ? 'selected' : '' %>>13:00 - Selesai</option>
+                          </select>
+                      </div>    
+                      <div class="konfirmasi_pelayananmenu">
+                          <h2>Silahkan Pilih Dokter Penanggung Jawab</h2>
+                          <table>
+                              <thead>
+                                  <tr>
+                                      <th>No</th>
+                                      <th>Nama Dokter</th>
+                                      <th>Spesialis</th>
+                                      <th>Pilih</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <% DataDokter.forEach((dokter, index) => { %>
+                                  <tr>
+                                      <td><%= index + 1 %></td>
+                                      <td><%= dokter.namalengkap_stafkesehatan %></td>
+                                      <td><%= dokter.spesialisasi_stafkesehatan %></td>
+                                      <td><input type="radio" name="input_dokter" value="<%= dokter.id_stafkesehatan %>" required/></td>
+                                  </tr>
+                                  <% }) %>
+                              </tbody>
+                          </table>
+                      </div>
+                      <input type="hidden" name="status" id="status" value="2">
+                      <div class="konfirmasi_pelayananmenu_button">
+                          <button type="submit">Konfirmasi</button>
+                      </div>
+                  </form>
+              </div>
+              <% } %>
+        </div>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const konfirmpesanan = document.getElementById("konfirmasi_detailpesanan");
+  const Padmin_pelayananmasuk_input = document.querySelector(".Padmin_pelayananmasuk_input");
+
+  // if konfirmpesanan clicked remove id none
+  konfirmpesanan.addEventListener("click", () => {
+    Padmin_pelayananmasuk_input.id = "";
+  });
+</script>
+<style>
+  .title {
+    margin-bottom: 10px;
+  }
+  .jumlah_Vaksin {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    width: 250px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .stok-vaksin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .stok-tersedia .stok-tersedia-jumlah p {
+    padding: 10px;
+    background-color: var(--green-color);
+    text-align: center;
+    border-radius: 5px;
+    width: 250px;
+    font-size: 14px;
+    color: var(--white-color);
+  }
+  .Padmin_pelayananmasuk_datamenu button {
+    padding: 10px;
+    transition: all ease-in-out 0.3s;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  function confirmDelete(id) {
+    if (confirm("Apakah Anda yakin ingin membatalkan pesanan?")) {
+      // Kirim permintaan penghapusan ke server
+      fetch(`/deleteVaccine/${id}`, {
+        method: "POST",
+      })
+        .then((response) => {
+          if (response.ok) {
+            // Redirect atau tindakan lain setelah penghapusan berhasil
+            window.location.href = "/LMedical_admin";
+          } else {
+            throw new Error("Gagal menghapus pesanan");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Gagal menghapus pesanan");
+        });
+    }
+  }
+</script>
+<style>
+  .Padmin_ubahstatus_vaksinasi {
+    padding: 20px;
+  }
+  .Padmin_ubahstatus_vaksinasi h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .Padmin_ubahstatus_vaksinasi select {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    outline: none;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .Padmin_ubahstatus_vaksinasi button {
+    width: 95%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all ease-in-out 0.3s;
+    margin-top: 50px;
+  }
+  .Padmin_ubahstatus_vaksinasi button:hover {
+    background-color: var(--red-color);
+  }
+</style>
+<script>
+  function confirmDelete(id) {
+      if (confirm("Apakah Anda yakin ingin membatalkan pesanan?")) {
+          // Kirim permintaan penghapusan ke server
+          fetch(`/deleteMedical/${id}`, {
+              method: 'POST'
+          })
+          .then(response => response.json()) // Parse JSON response
+          .then(data => {
+              if (data.message === 'Medical service deleted successfully') {
+                  // Redirect atau tindakan lain setelah penghapusan berhasil
+                  window.location.href = '/LMedical_admin';
+              } else {
+                  throw new Error(data.message || 'Gagal menghapus pesanan');
+              }
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              alert(error.message);
+          });
+      }
+  }
+</script>

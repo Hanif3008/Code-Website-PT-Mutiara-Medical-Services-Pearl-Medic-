@@ -1,0 +1,124 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Profil <span>Dokter</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <div class="Padmin_pelayananmasuk_pic">
+            <img src="/img/<%= DokterData.photo_stafkesehatan %>" alt="" />
+          </div>
+          <div class="Padmin_pelayananmasuk_data">
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nama Lengkap</h3>
+              <p><i class="fa-solid fa-user-nurse"></i><%= DokterData.namalengkap_stafkesehatan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Username</h3>
+              <p><i class="fa-solid fa-user"></i><%= DokterData.username_stafkesehatan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Spesialisasi</h3>
+              <p><i class="fa-solid fa-user-doctor"></i><%= DokterData.spesialisasi_stafkesehatan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nomor Induk</h3>
+              <p><i class="fa-solid fa-hospital"></i><%= DokterData.noinduk_stafkesehatan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Email</h3>
+              <p><i class="fa-solid fa-envelope"></i><%= DokterData.email_stafkesehatan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nomor Telepon</h3>
+              <p><i class="fa-solid fa-square-phone"></i><%= DokterData.nomortelepon_stafkesehatan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Status</h3>
+              <p id="<%= DokterData.status === 1 ? 'greens' : 'red' %>" class="status-pelayanan"><%= DokterData.status === 1 ? 'Bertugas' : 'Tidak Bertugas' %></p>
+            </div>
+          </div>
+          <br />
+          <br />
+          <br />
+          <div class="edit-all-button">
+            <div class="edit-menu-button">
+              <a href="/EditPDokter_admin/<%= DokterData.id_stafkesehatan %>">Edit Profil</a>
+            </div>
+            <div class="back-menu-button">
+              <a href="#" id="deleteButton">Hapus Akun</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("deleteButton").addEventListener("click", function () {
+    event.preventDefault();
+    if (confirm("Apakah anda yakin ingin menghapus akun ini?")) {
+      const id_stafkesehatan = "<%= DokterData.id_stafkesehatan %>";
+
+      fetch(`/DetailPDokter_admin/${id_stafkesehatan}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            alert(data.message);
+            window.location.href = "/LDokter_admin";
+          } else {
+            alert("Gagal Menghapus Data");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
+  });
+</script>

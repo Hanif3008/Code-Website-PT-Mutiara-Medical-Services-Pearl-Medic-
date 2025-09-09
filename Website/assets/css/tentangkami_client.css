@@ -1,0 +1,1676 @@
+.tentang-kami-section {
+  background: url("/img/PearlMedic_bgfix.jpeg");
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+}
+.tentang-kami-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.tentang-kami-section-top {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  justify-content: center;
+  align-items: center;
+}
+.tentang-kami-section-pic {
+  display: flex;
+  grid-template-columns: space-between;
+}
+.tentang-kami-section-titles {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.tentang-kami-section-pic-right {
+  display: flex;
+  flex-direction: column;
+}
+.tentang-kami-title h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cream-color);
+  font-style: var(--questrial-font);
+}
+.tentang-kami-title h1 span {
+  color: var(--cream-color);
+  margin-left: 10px;
+}
+.tentang-kami-subtitle h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--primary-color);
+  font-style: var(--questrial-font);
+}
+.tentang-kami-little-desc p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--cream-color);
+  font-style: var(--questrial-font);
+  margin-top: 20px;
+  text-align: justify;
+}
+.tentang-kami-section-pic-right img {
+  width: 300px;
+  height: 180px;
+  border: 3px solid var(--primary-color);
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.tentang-kami-section-pic-left img {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 320px;
+  height: 350px;
+  border: 3px solid var(--primary-color);
+  margin-right: 20px;
+}
+.tentang-kami-section-pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1175px) {
+  .tentang-kami-section-pic-right img {
+    width: 250px;
+    height: 180px;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .tentang-kami-section-pic-left img {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 250px;
+    height: 300px;
+    border: 3px solid var(--primary-color);
+    margin-right: 20px;
+  }
+  .tentang-kami-section-top {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang-kami-subtitle h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-little-desc p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+    margin-top: 20px;
+    text-align: justify;
+  }
+  .tentang-kami-title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+  }
+}
+@media only screen and (max-width: 900px) {
+  .tentang-kami-section-pic-right img {
+    width: 200px;
+    height: 130px;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .tentang-kami-section-pic-left img {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 200px;
+    height: 250px;
+    border: 3px solid var(--primary-color);
+    margin-right: 20px;
+  }
+  .tentang-kami-section-top {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang-kami-subtitle h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-little-desc p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+    margin-top: 20px;
+    text-align: justify;
+  }
+  .tentang-kami-title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+  }
+}
+@media only screen and (max-width: 800px) {
+  .tentang-kami-section-pic-right img {
+    width: 200px;
+    height: 130px;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .tentang-kami-section-pic-left img {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 200px;
+    height: 250px;
+    border: 3px solid var(--primary-color);
+    margin-right: 20px;
+  }
+  .tentang-kami-section-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang-kami-subtitle h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-little-desc p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+    margin-top: 20px;
+    text-align: justify;
+  }
+  .tentang-kami-title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-section-titles {
+    display: none;
+  }
+  .tentang-kami-responsive {
+    display: flex !important;
+    flex-direction: column;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center !important;
+  }
+  .tentang-kami-responsive .tentang-kami-title h1 {
+    font-size: 36px !important;
+  }
+  .tentang-kami-responsive .tentang-kami-subtitle h3 {
+    font-size: 28px !important;
+    font-weight: 800;
+  }
+  .tentang-kami-responsive .tentang-kami-little-desc {
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang-kami-responsive .tentang-kami-little-desc p {
+    font-size: 14px !important;
+    width: 60%;
+    text-align: center !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .tentang-kami-section-pic-right img {
+    width: 170px;
+    height: 100px;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .tentang-kami-section-pic-left img {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 150px;
+    height: 200px;
+    border: 3px solid var(--primary-color);
+    margin-right: 20px;
+  }
+  .tentang-kami-section-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang-kami-subtitle h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-little-desc p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+    margin-top: 20px;
+    text-align: justify;
+  }
+  .tentang-kami-title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-section-titles {
+    display: none;
+  }
+  .tentang-kami-responsive {
+    display: flex !important;
+    flex-direction: column;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center !important;
+  }
+  .tentang-kami-responsive .tentang-kami-title h1 {
+    font-size: 30px !important;
+  }
+  .tentang-kami-responsive .tentang-kami-subtitle h3 {
+    font-size: 22px !important;
+    font-weight: 800;
+  }
+  .tentang-kami-responsive .tentang-kami-little-desc {
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang-kami-responsive .tentang-kami-little-desc p {
+    font-size: 12px !important;
+    width: 80%;
+    text-align: center !important;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .tentang-kami-section-pic-right img {
+    width: 150px;
+    height: 100px;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .tentang-kami-section-pic-left img {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 120px;
+    height: 180px;
+    border: 3px solid var(--primary-color);
+    margin-right: 20px;
+  }
+  .tentang-kami-section-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang-kami-subtitle h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-little-desc p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+    margin-top: 20px;
+    text-align: justify;
+  }
+  .tentang-kami-title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-section-titles {
+    display: none;
+  }
+  .tentang-kami-responsive {
+    display: flex !important;
+    flex-direction: column;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center !important;
+  }
+  .tentang-kami-responsive .tentang-kami-title h1 {
+    font-size: 26px !important;
+  }
+  .tentang-kami-responsive .tentang-kami-subtitle h3 {
+    font-size: 16px !important;
+    font-weight: 800;
+  }
+  .tentang-kami-responsive .tentang-kami-little-desc {
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang-kami-responsive .tentang-kami-little-desc p {
+    font-size: 10px !important;
+    width: 80%;
+    text-align: center !important;
+  }
+}
+
+/* visi dan misi */
+.tentang-kami-main-sejarah-img img {
+  width: 100%;
+  height: 350px;
+  /* border-radius: 10px; */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.tentang-kami-main-sejarah {
+  padding: 50px;
+  padding-left: 80px;
+  padding-right: 130px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 30px;
+}
+.tentang-kami-main-sejarah-title {
+  margin-bottom: 20px;
+}
+.tentang-kami-main-sejarah-title h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-style: var(--questrial-font);
+}
+.tentang-kami-main-sejarah-title h2 span {
+  color: var(--secondary-color);
+}
+.tentang-kami-main-sejarah-title h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--secondary-color);
+  font-style: var(--questrial-font);
+}
+.tentang-kami-main-sejarah-desc p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  font-style: var(--questrial-font);
+  text-align: justify;
+}
+.tentang-kami-main-value-culture {
+  margin-top: 10px;
+}
+.tentang-kami-main-value-culture .core-value h3,
+.tentang-kami-main-value-culture .corporate_culture h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-style: var(--questrial-font);
+}
+.tentang-kami-main-value-culture .core-value p,
+.tentang-kami-main-value-culture .corporate_culture p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  font-style: var(--questrial-font);
+  text-align: justify;
+}
+.tentang-kami-main-value-culture .core-value p span,
+.tentang-kami-main-value-culture .corporate_culture p span {
+  font-weight: 800;
+  color: var(--secondary-color);
+}
+@media only screen and (max-width: 900px) {
+  .tentang-kami-main-sejarah-img img {
+    width: 100%;
+    height: 350px;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .tentang-kami-main-sejarah {
+    padding: 50px;
+    padding-left: 30px;
+    padding-right: 50px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 30px;
+  }
+  .tentang-kami-main-sejarah-title h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-main-sejarah-title h2 span {
+    color: var(--secondary-color);
+  }
+  .tentang-kami-main-sejarah-title h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-main-sejarah-desc p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    text-align: justify;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .tentang-kami-main-sejarah {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 50px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .tentang-kami-main-sejarah-img {
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .tentang-kami-main-sejarah-img img {
+    width: 60%;
+    margin-top: -50px !important;
+    height: 300px;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .tentang-kami-main-sejarah-img img {
+    width: 80%;
+    margin-top: -50px !important;
+    height: 300px;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .tentang-kami-main-sejarah {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .tentang-kami-main-sejarah-title h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-main-sejarah-title h2 span {
+    color: var(--secondary-color);
+  }
+  .tentang-kami-main-sejarah-title h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-main-sejarah-desc p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    text-align: justify;
+  }
+  .tentang-kami-main-value-culture {
+    margin-top: 10px;
+  }
+  .tentang-kami-main-value-culture .core-value h3,
+  .tentang-kami-main-value-culture .corporate_culture h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+  }
+  .tentang-kami-main-value-culture .core-value p,
+  .tentang-kami-main-value-culture .corporate_culture p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    text-align: justify;
+  }
+}
+/* VISI DAN MISI */
+.tentang-kami-visi-misi-wrapper {
+  padding: 50px;
+  padding-left: 80px;
+  padding-right: 130px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.visi-img img {
+  width: 50%;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.misi-img img {
+  width: 50%;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.tentang-kami-visi-misi-titles h2 {
+  display: flex;
+  flex-direction: column;
+  font-size: 50px;
+  font-weight: 800;
+  font-family: var(--questrial-font);
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-color);
+}
+.tentang-kami-visi-misi-titles h2 span {
+  color: var(--primary-color);
+  font-size: 50px;
+  font-weight: 800;
+  font-family: var(--questrial-font);
+}
+.tentang-kami-visi-misi-titles h2 .and {
+  color: var(--secondary-color);
+}
+.visi-wrap,
+.misi-wrap {
+  display: flex;
+  position: relative;
+  margin-bottom: 30px;
+}
+.visi-title {
+  background-color: var(--primary-color);
+  position: absolute;
+  width: 70%;
+  bottom: 0;
+  padding: 20px;
+  text-align: right;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.visi-title h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-style: var(--questrial-font);
+  margin-bottom: 10px;
+}
+.visi-title p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--cream-color);
+  font-style: var(--questrial-font);
+}
+.misi-title {
+  background-color: var(--secondary-color);
+  position: absolute;
+  width: 70%;
+  bottom: 0;
+  padding: 20px;
+  text-align: right;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.misi-title h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-style: var(--questrial-font);
+}
+.misi-title p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--cream-color);
+  font-style: var(--questrial-font);
+}
+.visi-img,
+.misi-img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+/* VISI DAN MISI */
+@media only screen and (max-width: 1000px) {
+  .tentang-kami-visi-misi-wrapper {
+    padding: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 50px;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+  .tentang-kami-visi-misi-titles h2 {
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-color);
+  }
+  .tentang-kami-visi-misi-titles h2 span {
+    color: var(--primary-color);
+    font-size: 40px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+  }
+  .visi-title h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    margin-bottom: 10px;
+  }
+  .misi-title h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+  }
+  .visi-title p,
+  .misi-title p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+  }
+  .visi-img img {
+    width: 40%;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .misi-img img {
+    width: 40%;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .misi-title {
+    background-color: var(--secondary-color);
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    right: 10%;
+    padding: 20px;
+    text-align: right;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  .visi-title {
+    background-color: var(--primary-color);
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    right: 10%;
+    padding: 20px;
+    text-align: right;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+}
+@media only screen and (max-width: 660px) {
+  .tentang-kami-visi-misi-wrapper {
+    padding: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 10px;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .tentang-kami-visi-misi-titles h2 {
+    display: flex;
+    flex-direction: row;
+    font-size: 40px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-color);
+  }
+  .tentang-kami-visi-misi-titles h2 span {
+    color: var(--primary-color);
+    font-size: 40px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .visi-title h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    margin-bottom: 10px;
+  }
+  .misi-title h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+  }
+  .visi-title p,
+  .misi-title p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+  }
+  .visi-img img {
+    width: 40%;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .misi-img img {
+    width: 40%;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .misi-title {
+    background-color: var(--secondary-color);
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    right: 10%;
+    padding: 20px;
+    text-align: right;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  .visi-title {
+    background-color: var(--primary-color);
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    right: 10%;
+    padding: 20px;
+    text-align: right;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .tentang-kami-visi-misi-wrapper {
+    padding: 50px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-top: -50px !important;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .tentang-kami-visi-misi-titles h2 {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+  }
+  .tentang-kami-visi-misi-titles h2 span {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .visi-title h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    margin-bottom: 10px;
+  }
+  .misi-title h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+  }
+  .visi-title p,
+  .misi-title p {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+  }
+  .visi-img img {
+    width: 60%;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .misi-img img {
+    width: 60%;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .misi-title {
+    background-color: var(--secondary-color);
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    right: 10%;
+    padding: 20px;
+    text-align: right;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  .visi-title {
+    background-color: var(--primary-color);
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    right: 10%;
+    padding: 20px;
+    text-align: right;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+}
+/* MANAGEMENT DIRECTOR */
+.management_wrapper {
+  padding: 50px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.management_titles {
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+.management_titles h2 {
+  font-size: 40px;
+  font-weight: 800;
+  font-family: var(--questrial-font);
+  color: var(--secondary-color);
+}
+.management_titles h2 span {
+  color: var(--primary-color);
+  font-size: 40px;
+  font-weight: 800;
+  font-family: var(--questrial-font);
+}
+.management_boards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.management_pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.management_pic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.management_name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.management_name h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-style: var(--questrial-font);
+  margin-top: 10px;
+  max-width: 22ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.management_name p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  font-style: var(--questrial-font);
+  margin-top: 10px;
+}
+.management_board:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 750px) {
+  .management_wrapper {
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .management_titles h2 {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    color: var(--secondary-color);
+  }
+  .management_titles h2 span {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+  }
+  .management_boards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    justify-content: center;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  .management_pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .management_pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .management_name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: aqua; */
+    width: 100%;
+  }
+  .management_name h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+    max-width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .management_name p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+    max-width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .management_wrapper {
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .management_titles h2 {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    color: var(--secondary-color);
+  }
+  .management_titles h2 span {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+  }
+  .management_boards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  .management_pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .management_pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .management_name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: aqua; */
+    width: 100%;
+  }
+  .management_name h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+    max-width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .management_name p {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+    max-width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .management_wrapper {
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .management_titles h2 {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    color: var(--secondary-color);
+  }
+  .management_titles h2 span {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+  }
+  .management_boards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  .management_pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .management_pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .management_name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: aqua; */
+    width: 100%;
+  }
+  .management_name h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+    max-width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .management_name p {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+    max-width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .management_wrapper {
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .management_titles h2 {
+    font-size: 24px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    color: var(--secondary-color);
+  }
+  .management_titles h2 span {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+  }
+  .management_boards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  .management_pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .management_pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  .management_name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: aqua; */
+    width: 100%;
+  }
+  .management_name h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+    max-width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .management_name p {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+    max-width: 20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+/* MANAGEMENT DIRECTOR */
+
+/* KEUNGGULAN */
+.tentang-kami-keunggulan-wrapper {
+  padding: 50px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.tentang_kami_unggulan_titles,
+.tentang_kami_unggulan_titles2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center !important;
+  width: 100%;
+  /* background-color: aqua; */
+}
+.tentang_kami_unggulan_titles h3,
+.tentang_kami_unggulan_titles2 h3 {
+  font-size: 30px;
+  font-weight: 800;
+  font-family: var(--questrial-font);
+  color: var(--secondary-color);
+  width: 100%;
+  margin-bottom: 20px;
+}
+.tentang_kami_unggulan_titles h3 span,
+.tentang_kami_unggulan_titles2 h3 span {
+  color: var(--primary-color);
+  font-size: 30px;
+  font-weight: 800;
+  font-family: var(--questrial-font);
+}
+.tentang_kami_unggulan_titles p,
+.tentang_kami_unggulan_titles2 p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  font-style: var(--questrial-font);
+  width: 100%;
+}
+.tentang_kami_unggulan_all {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* background-color: aqua; */
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.tentang_kami_unggulan_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--primary-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 150px;
+}
+.tentang_kami_unggulan_menu i {
+  font-size: 30px;
+  color: var(--secondary-color);
+}
+.tentang_kami_unggulan_menu h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-style: var(--questrial-font);
+  margin-top: 10px;
+}
+.tentang_kami_unggulan_menu p {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--cream-color);
+  font-style: var(--questrial-font);
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .tentang-kami-keunggulan-wrapper {
+    padding: 30px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang_kami_unggulan_titles2 {
+    display: flex !important;
+    margin-bottom: 30px;
+    margin-right: 20px !important;
+  }
+  .tentang_kami_unggulan_all {
+    /* background-color: aqua; */
+    margin-right: 50px !important;
+  }
+  .tentang_kami_unggulan_titles {
+    display: none;
+  }
+  .tentang-kami-keunggulan-wrapper {
+    padding: 50px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .tentang_kami_unggulan_all {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: aqua; */
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .tentang-kami-keunggulan-wrapper {
+    padding: 30px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang_kami_unggulan_titles2 {
+    display: flex !important;
+    margin-bottom: 30px;
+    margin-right: 20px !important;
+  }
+  .tentang_kami_unggulan_all {
+    /* background-color: aqua; */
+    margin-right: 50px !important;
+  }
+  .tentang_kami_unggulan_titles {
+    display: none;
+  }
+  .tentang-kami-keunggulan-wrapper {
+    padding: 50px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .tentang_kami_unggulan_all {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: aqua; */
+    padding-left: 0px;
+    width: 90%;
+  }
+  .tentang-kami-keunggulan-wrapper {
+    padding: 30px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang_kami_unggulan_titles2 {
+    display: flex !important;
+    margin-bottom: 15px;
+    margin-right: 20px !important;
+  }
+  .tentang_kami_unggulan_all {
+    /* background-color: aqua; */
+    margin-right: 50px !important;
+  }
+  .tentang_kami_unggulan_titles {
+    display: none;
+  }
+  .tentang_kami_unggulan_titles h3,
+  .tentang_kami_unggulan_titles2 h3 {
+    font-size: 24px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    color: var(--secondary-color);
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .tentang_kami_unggulan_titles h3 span,
+  .tentang_kami_unggulan_titles2 h3 span {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+  }
+  .tentang_kami_unggulan_titles p,
+  .tentang_kami_unggulan_titles2 p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    width: 100%;
+  }
+  .tentang-kami-keunggulan-wrapper {
+    padding: 50px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang_kami_unggulan_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 150px;
+  }
+  .tentang_kami_unggulan_menu i {
+    font-size: 26px;
+    color: var(--secondary-color);
+  }
+  .tentang_kami_unggulan_menu h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+  }
+  .tentang_kami_unggulan_menu p {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .tentang_kami_unggulan_all {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* background-color: aqua; */
+    padding-left: 0px;
+    width: 90%;
+  }
+  .tentang-kami-keunggulan-wrapper {
+    padding: 30px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang_kami_unggulan_titles2 {
+    display: flex !important;
+    margin-bottom: 15px;
+    margin-right: 20px !important;
+  }
+  .tentang_kami_unggulan_all {
+    /* background-color: aqua; */
+    margin-right: 50px !important;
+  }
+  .tentang_kami_unggulan_titles {
+    display: none;
+  }
+  .tentang_kami_unggulan_titles h3,
+  .tentang_kami_unggulan_titles2 h3 {
+    font-size: 20px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    color: var(--secondary-color);
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .tentang_kami_unggulan_titles h3 span,
+  .tentang_kami_unggulan_titles2 h3 span {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+  }
+  .tentang_kami_unggulan_titles p,
+  .tentang_kami_unggulan_titles2 p {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    width: 100%;
+  }
+  .tentang-kami-keunggulan-wrapper {
+    padding: 50px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  .tentang_kami_unggulan_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--primary-color);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 120px;
+  }
+  .tentang_kami_unggulan_menu i {
+    font-size: 22px;
+    color: var(--secondary-color);
+  }
+  .tentang_kami_unggulan_menu h3 {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+  }
+  .tentang_kami_unggulan_menu p {
+    font-size: 8px;
+    font-weight: 400;
+    color: var(--cream-color);
+    font-style: var(--questrial-font);
+    margin-top: 10px;
+  }
+}
+/* KEUNGGULAN */
+
+/* LIST OF CLIENTS */
+/* LIST OF CLIENTS */

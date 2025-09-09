@@ -1,0 +1,250 @@
+<div class="LayananMedical_section">
+  <div class="LayananMedical_wrapper">
+    <div class="LayananMedical_title">
+      <h2>Medical Check Up<i class="fa-solid fa-stethoscope"></i></h2>
+      <div class="LayananMedical_desc">
+        <p>Pelayanan Medical Check Up adalah pelayanan pemeriksaan kesehatan karyawan yang bisa dilakukan secara rutin. Pemeriksaan ini mencakup pemeriksaan tekanan darah, gula darah, kolesterol, dan lain - lain.</p>
+      </div>
+    </div>
+    <div class="LayananMedical_form">
+      <div class="LayananMedical_form_logo">
+        <i class="fa-solid fa-user-doctor"></i>
+      </div>
+      <div class="LayananMedical_form_title">
+        <h2>Silahkan isi form di bawah ini</h2>
+      </div>
+      <form id="medicalForm" action="/tempkonfirmMedical_client" method="post"> <!-- Added action attribute for form submission -->
+        <div class="LayananMedical_form_menu" id="proyek_medical">
+          <select name="selectedProject" id="selectedProject" style="background-color: transparent;">
+            <option value="0" disabled selected>--- Pilih Proyek Anda ---</option>
+            <% projects.forEach(project => { %>
+                <option value="<%= project.id_proyek %>" data-jumlah="<%= project.jumlah_proyek %>" data-lokasi="<%= project.lokasi_proyek %>" data-nama= "<%= project.nama_proyek %>"><%= project.nama_proyek %></option>
+            <% }) %>
+          </select>
+          <i class="fa-solid fa-sort-down"></i>
+        </div>
+        <input type="hidden" name="nama_proyek" id="nama_proyek">
+        <div class="LayananMedical_form_menu">
+          <div class="LayananMedical_submenu_check">
+            <label for="checkboxJumlahLokasi">
+                <input type="checkbox" id="checkboxJumlahLokasi">
+                <p class="check-desc">Tampilkan jumlah pasien dan lokasi pelaksanaan sesuai dengan data proyek</p>
+            </label> <!-- Added closing tag for label -->
+          </div>
+        </div> 
+        <br>
+        <div class="LayananMedical_form_menu_wraps">
+            <i class="fa-solid fa-users"></i>
+            <input type="number" id="jumlah_proyek" name="jumlah_proyek" placeholder="Jumlah Pasien / Karyawan. . ." value="">
+        </div>
+        <div class="LayananMedical_form_menu_wrapss" id="LayananMedical_wrapss">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <input type="text" id="lokasi_pelaksanaan" name="lokasi_pelaksanaan" placeholder="Lokasi Pelaksanaan . . ." value="">
+        </div>   
+      
+        <div class="LayananMedical_form_menu">
+          <div class="LayananMedical_submenu_check" id="rs-options">
+            <label for="rs-option"> <!-- Added for attribute to associate label with input -->
+                <input type="checkbox" id="rs-option" name="rs-option">
+                <p class="check-desc">Rekomendasi rumah sakit mitra sebagai lokasi pelayanan</p>
+            </label> <!-- Added closing tag for label -->
+          </div>
+        </div> 
+        <div class="LayananMedical_form_menu" id="rs-all-option">
+          <select class="proyek_medical" id="rumah-sakit-mitra" name="rumah-sakit-mitra">
+            <option value="" disabled selected>--- Pilih Rumah Sakit Mitra ---</option>
+            <% hospitals.forEach(hospital => { %>
+                <option value="<%= hospital.id_rs %>" data-alamat="<%= hospital.nama_rs %>" data-nama="<%= hospital.nama_rs %>"><%= hospital.nama_rs %></option>
+            <% }) %>
+          </select>
+        </div>
+        <br>
+        <h3 class="layanan-title" id="tanggal_pemeriksaan">Permintaan Tanggal Pemeriksaan</h3>
+        <div class="LayananMedical_form_menu_wrap">
+            <div class="calendar-days">
+                <i class="fa-regular fa-calendar-days"></i>
+                <input class="date-layanan" type="date" id="tanggal_pemeriksaan_input" name="tanggal_pemeriksaan_input" placeholder="Tanggal Pelaksanaan" value="">
+            </div>
+        </div>
+        <h3 class="layanan-title" id="tanggal_pemeriksaan">Permintaan Jam Pemeriksaan</h3>
+        <div class="LayananMedical_form_menu" id="proyek_medical">
+          <select class="proyek_medical" name="proyek_medicals" id="proyek_medicals">
+            <option value="" disabled selected>--- Pilih Jam Pemeriksaan ---</option>
+            <option value="07:00 - Selesai">07:00 - Selesai</option>
+            <option value="10:00 - Selesai">10:00 - Selesai</option>
+            <option value="13:00 - Selesai">13:00 - Selesai</option>
+          </select>
+          <i class="fa-solid fa-sort-down"></i>
+        </div>
+        <h3 class="layanan-title">Catatan Tambahan</h3>
+        <div class="LayananMedical_form_menu_wrap">
+            <textarea name="catatan" id="catatan" cols="30" rows="10" placeholder="Catatan atau Deskripsi Tambahan . . . (Opsional)"></textarea>
+        </div>
+        <div class="LayananMedical_button">
+            <button type="button" id="darurat" onclick="validateForm()">Pesan Layanan</button>
+        </div>
+        <div class="validasi" id="validasi">
+            <p id="validasi_text">Pastikan data yang anda masukkan benar dan valid</p>
+        </div>
+    </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  .validasi {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px dashed var(--red-color);
+    padding: 5px;
+    text-align: center;
+  }
+  .validasi p {
+    color: var(--red-color);
+    font-size: 12px;
+    text-align: center;
+  }
+  #rs-all-option select {
+    -webkit-appearance: menulist !important;
+    -moz-appearance: menulist !important;
+    appearance: menulist !important;
+    background-color: var(--cream-color);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    cursor: pointer;
+  }
+  #rs-all-option {
+    display: none;
+  }
+  #kembali-rs {
+    display : none;
+  }
+
+.LayananMedical_button {
+  margin-bottom: 5px; /* Added margin bottom */
+}
+</style>
+
+
+<script>
+  // Mendapatkan elemen-elemen
+const checkboxJumlahLokasi = document.getElementById('checkboxJumlahLokasi');
+const jumlah_proyek = document.getElementById('jumlah_proyek');
+const lokasi_pelaksanaan = document.getElementById('lokasi_pelaksanaan');
+const selectedProject = document.getElementById('selectedProject');
+
+// Event listener untuk checkbox
+checkboxJumlahLokasi.addEventListener('change', function() {
+    const selectedOption = selectedProject.options[selectedProject.selectedIndex];
+    if (checkboxJumlahLokasi.checked && selectedOption.value !== "0") {
+        jumlah_proyek.value = selectedOption.getAttribute('data-jumlah');
+        lokasi_pelaksanaan.value = selectedOption.getAttribute('data-lokasi');
+    } else {
+        jumlah_proyek.value = '';
+        lokasi_pelaksanaan.value = '';
+    }
+});
+
+// jika rekomendasi rumah sakit di centang maka rumah sakit mitra dan kembali memilih lokasi sendiri akan muncul
+const rekomrs = document.getElementById('rs-option');
+const rsAllOption = document.getElementById('rs-all-option');
+const rumahSakitMitra = document.getElementById('rumah-sakit-mitra');
+
+rekomrs.addEventListener('change', function() {
+    if (rekomrs.checked) {
+        rsAllOption.style.display = 'block';
+    } else {
+        rsAllOption.style.display = 'none';
+        // Reset lokasi pelaksanaan jika checkbox tidak dicentang
+        lokasi_pelaksanaan.value = '';
+    }
+});
+
+// Event listener untuk select option rumah sakit mitra
+rumahSakitMitra.addEventListener('change', function() {
+    const selectedOption = rumahSakitMitra.options[rumahSakitMitra.selectedIndex];
+    if (selectedOption.value !== "") {
+        lokasi_pelaksanaan.value = selectedOption.getAttribute('data-alamat');
+    } else {
+        lokasi_pelaksanaan.value = '';
+    }
+});
+
+// Event listener untuk select option proyek untuk mengisi nama proyek
+selectedProject.addEventListener('change', function() {
+    const selectedOption = selectedProject.options[selectedProject.selectedIndex];
+    if (selectedOption.value !== "0") {
+        document.getElementById('nama_proyek').value = selectedOption.getAttribute('data-nama');
+    } else {
+        document.getElementById('nama_proyek').value = '';
+    }
+});
+
+function validateForm() {
+  const selectedProjectValue = selectedProject.value;
+  const jumlahProyekValue = jumlah_proyek.value;
+  const lokasiPelaksanaanValue = lokasi_pelaksanaan.value;
+  const tanggalPemeriksaan = document.getElementById('tanggal_pemeriksaan_input').value;
+  const jamPemeriksaan = document.getElementById('proyek_medicals').value;
+  const catatan = document.getElementById('catatan');
+  const validasiText = document.getElementById('validasi_text');
+  const validasiDiv = document.getElementById('validasi');
+
+  let valid = true;
+  let messages = [];
+
+  if (selectedProjectValue === "0" || !selectedProjectValue) {
+      valid = false;
+      messages.push("Proyek wajib diisi.");
+  }
+  if (!jumlahProyekValue) {
+      valid = false;
+      messages.push("Jumlah pasien wajib diisi.");
+  } else if (!(/^\d+$/.test(jumlahProyekValue))) { // Validate if input contains only digits
+      valid = false;
+      messages.push("Jumlah pasien harus berupa angka.");
+  }
+  if (!lokasiPelaksanaanValue) {
+      valid = false;
+      messages.push("Lokasi wajib diisi.");
+  }
+  if (!tanggalPemeriksaan) {
+      valid = false;
+      messages.push("Tanggal pemeriksaan wajib diisi.");
+  } else {
+      // Memeriksa apakah tanggal pemeriksaan di atas 3 hari dari sekarang
+      const today = new Date();
+      const selectedDate = new Date(tanggalPemeriksaan);
+      const timeDifference = selectedDate.getTime() - today.getTime();
+      const daysDifference = timeDifference / (1000 * 3600 * 24);
+      if (daysDifference < 3) {
+          valid = false;
+          messages.push("Tanggal pemeriksaan harus di atas 3 hari dari sekarang.");
+      }
+  }
+  if (jamPemeriksaan === null || jamPemeriksaan === "") {
+      valid = false;
+      messages.push("Jam pemeriksaan wajib diisi.");
+  }
+  if (!catatan.value.trim()) {
+      // Jika catatan kosong, isi secara default
+      catatan.value = "Tidak ada catatan tambahan";
+  }
+
+  if (!valid) {
+      // Tampilkan pesan validasi
+      validasiText.innerHTML = messages.join("<br>");
+      validasiDiv.style.display = 'block';
+      validasiDiv.style.marginBottom = '10px';
+  } else {
+      // Submit form jika valid
+      document.getElementById("medicalForm").submit();
+  }
+}
+
+</script>

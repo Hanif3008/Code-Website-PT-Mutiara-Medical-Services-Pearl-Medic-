@@ -1,0 +1,335 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Tambah Rekam Medis<span> Pesanan <%= results.nomorpesanan %></span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <form class="Padmin_formulir_rekammedis" id="rekamMedisFormD" action="/Tambah_DataRekamMedis_darurat_dokter" method="POST">
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Informasi Pribadi Pasien</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="nama_lengkap">Nama Lengkap</label>
+                <input type="text" id="nama_lengkap" required name="nama_lengkap" placeholder="Masukan Nama Lengkap . . ." />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nomor_identitas">Nomor Identitas (NIK)</label>
+                <input type="text" id="nomor_identitas" required name="nomor_identitas" placeholder="Masukan Nomor Identitas (NIK/KTP) . . ." />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="tanggal_lahir">Tanggal Lahir</label>
+                <input type="date" id="tanggal_lahir" required name="tanggal_lahir" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="jenis_kelamin">Jenis Kelamin</label>
+                <select required name="jenis_kelamin" id="jenis_kelamin">
+                  <option value="Laki-laki" selected>Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nomor_telepon">Nomor Telepon</label>
+                <input type="text" id="nomor_telepon" required name="nomor_telepon" placeholder="Masukan Nomor Telepon . . ." />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="alamat">Alamat</label>
+                <textarea id="alamat" required name="alamat" cols="30" rows="4" placeholder="Masukan Alamat . . ."></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Info Kedatangan</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="waktu_kedatangan">Waktu Kedatangan</label>
+                <input type="time" id="waktu_kedatangan" required name="waktu_kedatangan" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="keluhan_utama">Keluhan Utama</label>
+                <textarea id="keluhan_utama" required name="keluhan_utama" cols="30" rows="4" placeholder="Masukan Keluhan Utama . . ."></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Riwayat Pasien</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="riwayat_penyakit">Riwayat Penyakit</label>
+                <textarea id="riwayat_penyakit" required name="riwayat_penyakit" cols="30" rows="4" placeholder="Masukan Riwayat Penyakit . . ."></textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="konsumsi_obat">Obat yang Sedang Dikonsumsi</label>
+                <textarea id="konsumsi_obat" required name="konsumsi_obat" cols="30" rows="4" placeholder="Masukan Obat yang Sedang Dikonsumsi . . ."></textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="alergi">Alergi</label>
+                <input type="text" id="alergi" required name="alergi" placeholder="Masukan Alergi . . ." />
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Pemeriksaan Tanda Vital</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="tekanan_darah">Tekanan Darah (mmHg)</label>
+                <input type="text" id="tekanan_darah" required name="tekanan_darah" placeholder="Masukan Tekanan Darah . . ." />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="denyut_jantung">Denyut Jantung (bpm)</label>
+                <input type="text" id="denyut_jantung" required name="denyut_jantung" placeholder="Masukan Denyut Jantung . . ." />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="suhu_tubuh">Suhu Tubuh (°C)</label>
+                <input type="text" id="suhu_tubuh" required name="suhu_tubuh" placeholder="Masukan Suhu Tubuh . . ." />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="laju_pernapasan">Laju Pernapasan (rpm)</label>
+                <input type="text" id="laju_pernapasan" required name="laju_pernapasan" placeholder="Masukan Laju Pernapasan . . ." />
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Hasil dan Keputusan Lanjut</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="diagnosa_awal">Diagnosa Awal</label>
+                <textarea id="diagnosa_awal" required name="diagnosa_awal" cols="30" rows="4" placeholder="Masukan Diagnosa Awal . . ."></textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="tindakan_awal">Tindakan Awal</label>
+                <textarea id="tindakan_awal" required name="tindakan_awal" cols="30" rows="4" placeholder="Masukan Tindakan Awal . . ."></textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="perawatan_lanjutan">Rencana Perawatan Lanjutan</label>
+                <textarea id="perawatan_lanjutan" required name="perawatan_lanjutan" cols="30" rows="4" placeholder="Masukan Rencana Perawatan Lanjutan . . ."></textarea>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="nomorpesanan" id="nomorpesanan" value="<%= results.nomorpesanan %>" />
+          <input type="hidden" name="id_darurat" id="id_darurat" value="<%= results.id %>" />
+          <div class="confirm-button">
+            <button type="submit" class="btn btn-primary">Tambah Data</button>
+            <!-- <a href="/DataRekamMedis_darurat_dokter">Batalkan</a> -->
+          </div>
+          <span id="errorPesan" style="color: red; font-size: 12px; display: none"></span>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Padmin_pelayananmasuk {
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 0px;
+  }
+  #errorPesan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    border: 1px dotted red;
+    padding: 10px;
+  }
+</style>
+
+<script>
+  const form = document.getElementById("rekamMedisFormD");
+  const namaInput = document.getElementById("nama_lengkap");
+  const nikInput = document.getElementById("nik");
+  const tanggalLahirInput = document.getElementById("tanggal_lahir");
+  const jenisKelaminInput = document.getElementById("jenis_kelamin");
+  const nomorTeleponInput = document.getElementById("nomor_telepon");
+  const alamatInput = document.getElementById("alamat");
+  const waktukedatanganInput = document.getElementById("waktu_kedatangan");
+  const keluhanUtamaInput = document.getElementById("keluhan_utama");
+  const riwayatPenyakitInput = document.getElementById("riwayat_penyakit");
+  const konsumsiObatInput = document.getElementById("konsumsi_obat");
+  const alergiInput = document.getElementById("alergi");
+  const tekananDarahInput = document.getElementById("tekanan_darah");
+  const denyutJantungInput = document.getElementById("denyut_jantung");
+  const suhuTubuhInput = document.getElementById("suhu_tubuh");
+  const lajuPernapasanInput = document.getElementById("laju_pernapasan");
+  const diagnosaAwalInput = document.getElementById("diagnosa_awal");
+  const tindakanAwalInput = document.getElementById("tindakan_awal");
+  const rencanaPerawatanInput = document.getElementById("rencana_perawatan");
+
+  form.addEventListener("submit", function (e) {
+    let isValid = true;
+    let messages = [];
+
+    // Validasi Nama Lengkap
+    const nama = namaInput.value.trim();
+    if (!/^[a-zA-Z\s]+$/.test(nama)) {
+      isValid = false;
+      messages.push("Nama Lengkap hanya boleh berisi huruf dan spasi");
+    } else if (nama.length < 3) {
+      isValid = false;
+      messages.push("Nama Lengkap minimal 3 karakter");
+    }
+
+    // Validasi NIK
+    const nik = nikInput.value.trim();
+    if (!/^[0-9]+$/.test(nik)) {
+      isValid = false;
+      messages.push("NIK hanya boleh berisi angka");
+    } else if (nik.length < 16) {
+      isValid = false;
+      messages.push("NIK minimal 16 karakter");
+    }
+
+    // Validasi Tanggal Lahir
+    const tanggalLahir = tanggalLahirInput.value.trim();
+    if (!tanggalLahir) {
+      messages.push("Tanggal Lahir wajib diisi.");
+      isValid = false;
+    } else {
+      const today = new Date();
+      const birthDate = new Date(tanggalLahir);
+      const age = today.getFullYear() - birthDate.getFullYear();
+      const monthDifference = today.getMonth() - birthDate.getMonth();
+      const dayDifference = today.getDate() - birthDate.getDate();
+      if (age < 14 || (age === 14 && monthDifference < 0) || (age === 14 && monthDifference === 0 && dayDifference < 0)) {
+        messages.push("Usia harus lebih dari 14 tahun.");
+        isValid = false;
+      }
+    }
+
+    // Validasi Jenis Kelamin
+    if (!jenisKelaminInput.value) {
+      isValid = false;
+      messages.push("Jenis Kelamin wajib diisi");
+    }
+
+    // Validasi Nomor Telepon
+    const nomorTelepon = nomorTeleponInput.value.trim();
+    if (!/^[0-9]+$/.test(nomorTelepon)) {
+      isValid = false;
+      messages.push("Nomor Telepon hanya boleh berisi angka");
+    } else if (nomorTelepon.length < 10) {
+      isValid = false;
+      messages.push("Nomor Telepon minimal 10 karakter");
+    }
+
+    // Validasi Alamat
+    const alamat = alamatInput.value.trim();
+    if (!alamat) {
+      messages.push("Alamat wajib diisi.");
+      isValid = false;
+    }
+
+    // Validasi Waktu Kedatangan
+    const waktukedatangan = waktukedatanganInput.value.trim();
+    if (!waktukedatangan) {
+      messages.push("Waktu Kedatangan wajib diisi.");
+      isValid = false;
+    }
+
+    // Validasi Keluhan Utama
+    const keluhanUtama = keluhanUtamaInput.value.trim();
+    if (!keluhanUtama) {
+      messages.push("Keluhan Utama wajib diisi.");
+      isValid = false;
+    }
+
+    // Validasi Riwayat Penyakit
+    const riwayatPenyakit = riwayatPenyakitInput.value.trim();
+    if (!riwayatPenyakit) {
+      messages.push("Riwayat Penyakit wajib diisi.");
+      isValid = false;
+    }
+
+    // Validasi Konsumsi Obat
+    const konsumsiObat = konsumsiObatInput.value.trim();
+    if (!konsumsiObat) {
+      messages.push("Konsumsi Obat wajib diisi.");
+      isValid = false;
+    }
+
+    // Validasi Alergi
+    const alergi = alergiInput.value.trim();
+    if (!alergi) {
+      messages.push("Alergi wajib diisi.");
+      isValid = false;
+    }
+
+    // Validasi Tekanan Darah (misal, 120/80 mmHg)
+    const tekananDarah = tekananDarahInput.value.trim();
+    const tekananDarahRegex = /^(\d{2,3})\/(\d{2,3})$/;
+    if (!tekananDarahRegex.test(tekananDarah)) {
+      messages.push("Format Tekanan Darah salah. Contoh format yang benar: 120/80");
+      isValid = false;
+    }
+
+    // Validasi Denyut Jantung
+    const denyutJantung = denyutJantungInput.value.trim();
+    if (!/^[0-9]+$/.test(denyutJantung)) {
+      isValid = false;
+      messages.push("Denyut Jantung hanya boleh berisi angka");
+    }
+
+    // Validasi Suhu Tubuh
+    const suhuTubuh = suhuTubuhInput.value.trim();
+    // wajib angka, minimal 30, maksimal 45
+    if (!/^[0-9]+$/.test(suhuTubuh)) {
+      isValid = false;
+      messages.push("Suhu Tubuh hanya boleh berisi angka");
+    } else if (suhuTubuh < 25 || suhuTubuh > 45) {
+      isValid = false;
+      messages.push("Suhu Tubuh harus diantara 25 dan 45");
+    }
+
+    // Validasi Laju Pernapasan
+    const lajuPernapasan = lajuPernapasanInput.value.trim();
+    if (!/^[0-9]+$/.test(lajuPernapasan)) {
+      isValid = false;
+      messages.push("Laju Pernapasan hanya boleh berisi angka");
+    }
+
+    // Validasi Diagnosa Awal
+    const diagnosaAwal = diagnosaAwalInput.value.trim();
+    if (!diagnosaAwal) {
+      messages.push("Diagnosa Awal wajib diisi.");
+      isValid = false;
+    }
+
+    // Validasi Tindakan Awal
+    const tindakanAwal = tindakanAwalInput.value.trim();
+    if (!tindakanAwal) {
+      messages.push("Tindakan Awal wajib diisi.");
+      isValid = false;
+    }
+
+    // validasi rencana perawatan lanjutan
+    const rencanaPerawatanLanjutan = rencanaPerawatanInput.value.trim();
+    if (!rencanaPerawatanLanjutan) {
+      messages.push("Rencana Perawatan Lanjutan wajib diisi.");
+      isValid = false;
+    }
+    // Jika ada pesan error, tampilkan semuanya di bawah tombol submit
+    if (!isValid) {
+      e.preventDefault(); // Hentikan submit
+      errorPesan.innerHTML = messages.map((msg) => `<li>${msg}</li>`).join("");
+      errorPesan.style.display = "block";
+    } else {
+      errorPesan.style.display = "none"; // Sembunyikan pesan jika tidak ada error
+    }
+  });
+</script>

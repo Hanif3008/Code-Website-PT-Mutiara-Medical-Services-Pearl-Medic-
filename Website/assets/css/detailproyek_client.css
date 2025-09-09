@@ -1,0 +1,147 @@
+.profile-company-name .subjudul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-company-name .subjudul h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--questrial-font);
+}
+.profile-company-name .subjudul h2 span {
+  font-family: var(--questrial-font);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: block;
+  margin-left: 5px;
+}
+
+#detail-proyek h4 {
+  background-color: var(--green-color);
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--cream-color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+}
+.button-detailproyek {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 100px;
+}
+.button-edit-detail a {
+  background-color: var(--primary-color);
+  color: var(--cream-color);
+  padding: 10px 50px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: var(--questrial-font);
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.button-edit-detail a:hover {
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+  padding: 10px 50px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: var(--questrial-font);
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.button-kembali-detail a {
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+  padding: 10px 50px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: var(--questrial-font);
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.button-kembali-detail a:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: var(--red-color);
+  color: var(--cream-color);
+  padding: 10px 50px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: var(--questrial-font);
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 500px) {
+  .button-edit-detail a {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 5px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: var(--questrial-font);
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .button-kembali-detail a {
+    background-color: var(--secondary-color);
+    color: var(--cream-color);
+    padding: 5px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: var(--questrial-font);
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  #detail-proyek h4 {
+    background-color: var(--green-color);
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--cream-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 5px;
+  }
+  .profile-company-name .subjudul h2 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--questrial-font);
+  }
+  .profile-company-name .subjudul h2 span {
+    font-family: var(--questrial-font);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    margin-left: 5px;
+  }
+}

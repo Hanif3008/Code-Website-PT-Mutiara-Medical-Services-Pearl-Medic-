@@ -1,0 +1,136 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Edit Data<span> Rekam Medis</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <form class="Padmin_formulir_rekammedis">
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Data Pribadi Pasien</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="nama_lengkap">Nama Lengkap</label>
+                <input type="text" id="nama_lengkap" placeholder="Masukan Nama Lengkap . . ." value="Rizki Hanif Prasetyo" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nik">Nomor Identitas (NIK)</label>
+                <input type="text" id="nik" placeholder="Masukan Nomor Identitas (NIK/KTP) . . ." value="08123217" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="tanggal_lahir">Tanggal Lahir</label>
+                <input type="date" id="tanggal_lahir" value="21/08/2000" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="jenis_kelamin">Jenis Kelamin</label>
+                <select name="jenis_kelamin" id="jenis_kelamin">
+                  <option value="0" disabled>-- Pilih Jenis Kelamin --</option>
+                  <option value="Laki-laki" selected>Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nomor_telepon">Nomor Telepon</label>
+                <input type="text" id="nomor_telepon" placeholder="Masukan Nomor Telepon . . ." value="082120909053" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Masukan Email . . ." value="hanif@mail.com" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="alamat">Alamat</label>
+                <textarea id="alamat" cols="30" rows="4" placeholder="Masukan Alamat . . .">Jalan Merdeka 1</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Informasi Vaksinasi</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="jenis_vaksin">Jenis Vaksin</label>
+                <h4>: Sinovac</h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="tanggal_vaksin">Tanggal Vaksinasi</label>
+                <h4>: 21/08/24</h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="lokasi_vaksin">Lokasi Vaksinasi</label>
+                <h4>: RSUD Dr. Soetomo</h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Hasil Kondisi Setelah Menerima Vaksin</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="reaksi_vaksin">Reaksi Setelah Vaksinasi</label>
+                <select name="reaksi_vaksin" id="reaksi_vaksin">
+                  <option value="0" disabled>-- Pilih Reaksi --</option>
+                  <option value="Tidak ada reaksi">Tidak ada reaksi</option>
+                  <option value="Demam">Demam</option>
+                  <option value="Nyeri di tempat suntikan">Nyeri di tempat suntikan</option>
+                  <option value="Lelah">Lelah</option>
+                  <option value="Alergi ringan" selected>Alergi ringan</option>
+                </select>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="deskripsi_kondisi">Deskripsi Kondisi Setelah Vaksinasi</label>
+                <textarea id="deskripsi_kondisi" cols="30" rows="4" placeholder="Masukan Deskripsi Kondisi Setelah Vaksinasi . . .">Gatal gatal</textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="perawatan_lanjutan">Perawatan Lanjutan (Jika Ada)</label>
+                <textarea id="perawatan_lanjutan" cols="30" rows="4" placeholder="Masukan Perawatan Lanjutan . . .">Diberi salep</textarea>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="Padmin_formulir_datadiri">
+              <div class="Padmin_formulir_title">
+                <h3>Identitas Pemberi Vaksin</h3>
+              </div>
+              <div class="Padmin_formulir_input">
+                <div class="Padmin_formulir_input_option">
+                  <label for="nama_pemberi_vaksin">Nama Pemberi Vaksin</label>
+                  <input type="text" id="nama_pemberi_vaksin" placeholder="Masukan Nama Pemberi Vaksin . . ." value="Dr. Andi Setiawan" />
+                </div>
+                <div class="Padmin_formulir_input_option">
+                  <label for="jabatan_pemberi_vaksin">Jabatan Pemberi Vaksin</label>
+                  <input type="text" id="jabatan_pemberi_vaksin" placeholder="Masukan Jabatan Pemberi Vaksin . . ." value="Dokter Umum" />
+                </div>
+                <div class="Padmin_formulir_input_option">
+                  <label for="nomor_telepon_pemberi">Nomor Telepon Pemberi Vaksin</label>
+                  <input type="text" id="nomor_telepon_pemberi" placeholder="Masukan Nomor Telepon Pemberi Vaksin . . ." value="081212345678" />
+                </div>
+                <div class="Padmin_formulir_input_option">
+                  <label for="catatan_pemberi_vaksin">Catatan Pemberi Vaksin</label>
+                  <textarea id="catatan_pemberi_vaksin" cols="30" rows="4" placeholder="Masukan Catatan Pemberi Vaksin . . ."></textarea>
+                </div>
+              </div>
+            </div> -->
+          <div class="confirm-button">
+            <button type="submit" class="btn btn-primary">Edit Data</button>
+            <a href="/DataRekamMedis_vaksinasi_dokter">Batalkan</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Padmin_pelayananmasuk {
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 0px;
+  }
+</style>

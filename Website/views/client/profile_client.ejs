@@ -1,0 +1,481 @@
+<div class="profile-company-section">
+  <div class="profile-pic">
+    <img src="/img/<%= perusahaan.photo_perusahaan  %>" alt="profile" />
+  </div>
+  <div class="profile-wrapper">
+    <div class="profile-company-name">
+      <h1><%= perusahaan.nama_perusahaan %></h1>
+    </div>
+    <div class="profile-company-menu">
+      <div class="profile-company-menu-option">
+        <h2 class="proyek" id="proyek">Proyek Terdaftar</h2>
+      </div>
+      <div class="profile-company-menu-option">
+        <h2 class="profil" id="profil">Profil Akun</h2>
+      </div>
+      <div class="profile-company-menu-option">
+        <h2 class="histori" id="histori">Histori Pelayanan</h2>
+      </div>
+    </div>
+    <div class="profil-akun-perusahaan" id="profil-akun-perusahaan">
+      <div class="profil-akun-perusahaan-menu">
+        <div class="profil-akun-perusahaan-option">
+          <h3>Nama Perusahaan</h3>
+          <h4><%= perusahaan.nama_perusahaan %></h4>
+        </div>
+        <div class="profil-akun-perusahaan-option">
+          <h3>Bidang</h3>
+          <h4><%= perusahaan.bidang_perusahaan %></h4>
+        </div>
+        <div class="profil-akun-perusahaan-option">
+          <h3>Email</h3>
+          <h4 id="email"><%= perusahaan.email_perusahaan %></h4>
+        </div>
+        <div class="profil-akun-perusahaan-option">
+          <h3>Nomor Telepon</h3>
+          <h4><%= perusahaan.nomortelepon_perusahaan %></h4>
+        </div>
+        <div class="profil-akun-perusahaan-option">
+          <h3>Status</h3>
+          <h4 style="color: #41b06e"><%= statusPerusahaan %></h4>
+        </div>
+      </div>
+      <div class="profil-akun-perusahaan-alamat">
+        <h3>Alamat</h3>
+        <h4><%= perusahaan.alamat_perusahaan %></h4>
+      </div>
+      <div class="profil-akun-perusahaan-button">
+        <div class="profil-akun-perusahaan-edit">
+          <a href="/editprofile_client">Edit Profil<i class="fa-solid fa-pen"></i></a>
+        </div>
+        <div class="profil-akun-perusahaan-password">
+          <a href="/changepass_client">Ubah Password<i class="fa-solid fa-key"></i></a>
+        </div>
+        <div class="profil-akun-perusahaan-logout">
+          <a href="/logout_client">Logout<i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="proyek-terdaftar" id="proyek-terdaftar">
+      <div class="proyek-terdaftar-menu">
+        <!-- <div class="proyek-search">
+          <input type="text" placeholder="Cari Nama Proyek. . ." />
+          <i class="fas fa-search"></i>
+        </div> -->
+        <div class="proyek-table">
+          <table>
+            <thead>
+              <tr>
+                <th class="no">No</th>
+                <th>Nama Proyek</th>
+                <th>Jumlah Karyawan</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="projectTableBody">
+              <% if (projects.length === 0) { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } else { %> <% const truncate = (str, maxLength) => { if (str.length > maxLength) { return str.substring(0, maxLength) + '...'; } return str; }; %> <% projects.forEach((project, index) => { %>
+              <tr>
+                <td class="no"><%= index + 1 %></td>
+                <td class="proyek1"><%= truncate(project.nama_proyek, 15) %></td>
+                <td><%= project.jumlah_proyek %> Orang</td>
+                <td><%= project.status_proyek === 1 ? 'Aktif' : 'Tidak Aktif' %></td>
+                <td class="details"><a href="/detailproyek_client?id_proyek=<%= project.id_proyek %>">Detail</a></td>
+              </tr>
+              <% }); %> <% } %>
+            </tbody>
+          </table>
+        </div>
+        <div class="tambah-proyek">
+          <a href="/tambahproyek_client">Tambah Proyek <i class="fas fa-plus"></i></a>
+        </div>
+      </div>
+      <br />
+      <div class="proyek-terdaftar-menu">
+        <div class="profile-company-name">
+          <h1>Permintaan Penambahan Proyek</h1>
+        </div>
+        <div class="proyek-table">
+          <table>
+            <thead>
+              <tr>
+                <th class="no">No</th>
+                <th>Nama Proyek</th>
+                <th>Jumlah Karyawan</th>
+                <th>Status Permintaan</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% const truncate = (str, maxLength) => { if (str.length > maxLength) { return str.substring(0, maxLength) + '...'; } else { return str; } }; %> <% let pendingIndex = 1; %>
+              <!-- Counter for pending projects -->
+              <% let pendingProjects = tempProjects.filter(proyek => proyek.status_proyek === 0); %>
+              <!-- Filter pending projects -->
+              <% if (pendingProjects.length > 0) { %> <% pendingProjects.forEach((proyek) => { %>
+              <tr>
+                <td class="no"><%= pendingIndex++ %></td>
+                <td class="proyek1"><%= truncate(proyek.nama_proyek, 25) %></td>
+                <td><%= proyek.jumlah_proyek %> Orang</td>
+                <td id="yellow"><span>Menunggu Konfirmasi</span></td>
+                <td>
+                  <form action="/delete_temp_project" method="post">
+                    <input type="hidden" name="projectId" value="<%= proyek.id_proyek_request %>" />
+                    <button type="submit" id="cancel-btn">Batalkan</button>
+                  </form>
+                </td>
+              </tr>
+              <% }); %> <% } else { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+            <style>
+              #cancel-btn {
+                background-color: var(--primary-color);
+                padding: 5px;
+                border: none;
+                color: var(--cream-color);
+                border-radius: 5px;
+                font-size: 12px;
+              }
+              #cancel-btn:hover {
+                background-color: var(--red-color);
+                color: var(--cream-color);
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+              }
+              #yellow {
+                color: green;
+              }
+            </style>
+          </table>
+        </div>
+      </div>
+      <div class="proyek-terdaftar-menu">
+        <div class="profile-company-name">
+          <h1>Balasan Permintaan Proyek</h1>
+        </div>
+        <div class="proyek-table">
+          <table>
+            <thead>
+              <tr>
+                <th class="no">No</th>
+                <th>Nama Proyek</th>
+                <th>Jumlah Karyawan</th>
+                <th>Status Permintaan</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let projectIndex = 1; %>
+              <!-- Counter for projects -->
+              <% let responseProjects = tempProjects.filter(proyek => proyek.status_proyek === 2 || proyek.status_proyek === 1); %>
+              <!-- Filter projects with status 2 or 1 -->
+              <% if (responseProjects.length > 0) { %> <% responseProjects.forEach((proyek) => { %>
+              <tr>
+                <td class="no"><%= projectIndex++ %></td>
+                <td class="proyek1"><%= truncate(proyek.nama_proyek, 25) %></td>
+                <td><%= proyek.jumlah_proyek %> Orang</td>
+                <td id="<%= proyek.status_proyek === 2 ? 'reds' : 'green' %>"><span><%= proyek.status_proyek === 2 ? 'Ditolak' : 'Diterima' %></span></td>
+                <td>
+                  <form action="/delete_temp_project" method="post">
+                    <input type="hidden" name="projectId" value="<%= proyek.id_proyek_request %>" />
+                    <button type="submit" id="cancel-btn">Hapus Riwayat</button>
+                  </form>
+                </td>
+              </tr>
+              <% }); %> <% } else { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+            <style>
+              #cancel-btn {
+                background-color: var(--primary-color);
+                padding: 5px;
+                border: none;
+                color: var(--cream-color);
+                border-radius: 5px;
+                font-size: 12px;
+              }
+              #cancel-btn:hover {
+                background-color: var(--red-color);
+                color: var(--cream-color);
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+              }
+              #reds {
+                color: red;
+              }
+              #greens {
+                color: green;
+              }
+            </style>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="histori-pelayanan" id="histori-pelayanan">
+      <div class="histori-pelayanan-menu">
+        <!-- Medical Check Up -->
+        <div class="proyek-table-title">
+          <h1>Medical <span> Check Up</span></h1>
+          <div class="medical-sort">
+            <!-- <select name="sort" id="sort">
+              <option value="semua">Semua Pesanan</option>
+              <option value="belumdilayani">Belum Dilayani</option>
+              <option value="dalamproses">Dalam Proses</option>
+              <option value="sudahdilayani">Sudah Dilayani</option>
+            </select> -->
+          </div>
+        </div>
+        <div class="proyek-table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Pelayanan</th>
+                <th>Nomor Pesanan</th>
+                <th>Tanggal Pemesanan</th>
+                <th>Status Pelayanan</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (dataHistoriMedical && dataHistoriMedical.length > 0) { %> <% dataHistoriMedical.forEach((medical, index) => { %>
+              <tr>
+                <td class="no"><%= index + 1 %></td>
+                <td class="histori1"><%= medical.jenis_pelayanan %></td>
+                <td class="histori1"><%= medical.nomorpesanan %></td>
+                <td class="histori1"><%= medical.tanggalpemesanan_medical %></td>
+                <td class="histori1"><%= medical.status_text %></td>
+                <td class="details"><a href="/historimedical_client?id=<%= medical.id_medical %>">Detail</a></td>
+              </tr>
+              <% }) %> <% } else { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+        <!-- Medical Check Up -->
+        <!-- Vaksinasi -->
+        <div class="proyek-table-title">
+          <h1>Layanan <span> Vaksinasi</span></h1>
+          <div class="medical-sort">
+            <!-- <select name="sort" id="sort">
+              <option value="semua">Semua Pesanan</option>
+              <option value="belumdilayani">Belum Dilayani</option>
+              <option value="dalamproses">Dalam Proses</option>
+              <option value="sudahdilayani">Sudah Dilayani</option>
+            </select> -->
+          </div>
+        </div>
+        <div class="proyek-table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Pelayanan</th>
+                <th>Nomor Pesanan</th>
+                <th>Tanggal Pemesanan</th>
+                <th>Status Pelayanan</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (dataHistoriVaksin && dataHistoriVaksin.length > 0) { %> <% dataHistoriVaksin.forEach((vaksin, index) => { %>
+              <tr>
+                <td class="no"><%= index + 1 %></td>
+                <td class="histori1"><%= vaksin.jenis_pelayanan %></td>
+                <td class="histori1"><%= vaksin.nomorpesanan %></td>
+                <td class="histori1"><%= vaksin.tanggalpemesanan_vaksin %></td>
+                <td class="histori1"><%= vaksin.status_text %></td>
+                <td class="details"><a href="/historivaksin_client?id=<%= vaksin.id_vaksinasi %>">Detail</a></td>
+              </tr>
+              <% }) %> <% } else { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+        <!-- Vaksinasi -->
+        <!-- Darurat -->
+        <div class="proyek-table-title">
+          <h1>Layanan <span> Darurat</span></h1>
+          <div class="medical-sort">
+            <!-- <select name="sort" id="sort">
+              <option value="semua">Semua Pesanan</option>
+              <option value="belumdilayani">Belum Dilayani</option>
+              <option value="dalamproses">Dalam Proses</option>
+              <option value="sudahdilayani">Sudah Dilayani</option>
+            </select> -->
+          </div>
+        </div>
+        <div class="proyek-table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Pelayanan</th>
+                <th>Nomor Pesanan</th>
+                <th>Tanggal Pemesanan</th>
+                <th>Status Pelayanan</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (dataHistoriDarurat && dataHistoriDarurat.length > 0) { %> <% dataHistoriDarurat.forEach((darurat, index) => { %>
+              <tr>
+                <td class="no"><%= index + 1 %></td>
+                <td class="histori1"><%= darurat.jenis_pelayanan %></td>
+                <td class="histori1"><%= darurat.nomorpesanan %></td>
+                <td class="histori1"><%= darurat.tglpemesanan_darurat %></td>
+                <td class="histori1"><%= darurat.status_text %></td>
+                <td class="details"><a href="/historidarurat_client?id=<%= darurat.id_darurat %>">Detail</a></td>
+              </tr>
+              <% }) %> <% } else { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+        <!-- Darurat -->
+        <!-- Obat -obatan -->
+        <div class="proyek-table-title">
+          <h1>Pembelian <span>Obat-obatan</span></h1>
+          <div class="medical-sort">
+            <!-- <select name="sort" id="sort">
+              <option value="semua">Semua Pesanan</option>
+              <option value="belumdilayani">Belum Dilayani</option>
+              <option value="dalamproses">Dalam Proses</option>
+              <option value="sudahdilayani">Sudah Dilayani</option>
+            </select> -->
+          </div>
+        </div>
+        <div class="proyek-table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Pelayanan</th>
+                <th>Nomor Pesanan</th>
+                <th>Tanggal Pemesanan</th>
+                <th>Status Pelayanan</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (dataPelayananObat && dataPelayananObat.length > 0) { %> <% dataPelayananObat.forEach((pelayanan, index) => { %>
+              <tr>
+                <td class="no"><%= index + 1 %></td>
+                <td class="histori1"><%= pelayanan.jenis_pelayanan %></td>
+                <td class="histori1"><%= pelayanan.nomorpesanan %></td>
+                <td class="histori1"><%= pelayanan.tgl_pemesananobat %></td>
+                <td class="histori1"><% if (pelayanan.status_pesanan === 3) { %> Belum dilayani <% } else if (pelayanan.status_pesanan === 2) { %> Dalam Proses <% } else if (pelayanan.status_pesanan === 1) { %> Sudah Dilayani <% } %></td>
+                <td class="details"><a href="/historiobat_client?id=<%= pelayanan.id_pelayananobat %>">Detail</a></td>
+              </tr>
+              <% }) %> <% } else { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+        <!-- Obat-obatan -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const togglePassword = document.querySelector("#togglePassword");
+  const password = document.querySelector("#password");
+
+  togglePassword.addEventListener("click", function (e) {
+    // Ubah tipe teks
+    const type = password.textContent === "********" ? "text" : "********";
+    password.textContent = type === "text" ? password.getAttribute("data-password") : "********";
+    // Ubah ikon mata
+    this.classList.toggle("fa-eye-slash");
+  });
+</script>
+<script>
+  const proyek = document.getElementById("proyek");
+  const profil = document.getElementById("profil");
+  const histori = document.getElementById("histori");
+  const proyekTerdaftar = document.getElementById("proyek-terdaftar");
+  const historiPelayanan = document.getElementById("histori-pelayanan");
+  const profilAkunPerusahaan = document.getElementById("profil-akun-perusahaan");
+  // add active class when proyek is clicked
+  proyek.addEventListener("click", () => {
+    proyek.classList.add("active");
+    profil.classList.add("active");
+    histori.classList.remove("active");
+    proyekTerdaftar.classList.add("active");
+    profilAkunPerusahaan.classList.add("active");
+    historiPelayanan.classList.remove("active");
+  });
+  // add active class when profil
+  profil.addEventListener("click", () => {
+    proyek.classList.remove("active");
+    profil.classList.remove("active");
+    histori.classList.remove("active");
+    proyekTerdaftar.classList.remove("active");
+    profilAkunPerusahaan.classList.remove("active");
+    historiPelayanan.classList.remove("active");
+  });
+  // add active class when histori  is clicked
+  histori.addEventListener("click", () => {
+    proyek.classList.remove("active");
+    profil.classList.add("active");
+    histori.classList.add("active");
+    proyekTerdaftar.classList.remove("active");
+    profilAkunPerusahaan.classList.add("active");
+    historiPelayanan.classList.add("active");
+  });
+</script>

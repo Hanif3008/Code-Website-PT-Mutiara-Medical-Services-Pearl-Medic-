@@ -1,0 +1,1662 @@
+.Padmin_pelayananmasuk_wrapper {
+  background-color: var(--white-color);
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 100px;
+  padding: 30px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  padding-top: 150px;
+  z-index: 0;
+}
+.Padmin_pelayananmasuk_pic {
+  position: absolute;
+  top: -100px;
+  left: 37%;
+}
+.Padmin_pelayananmasuk_pic img {
+  /* position: absolute; */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+.Padmin_pelayananmasuk_data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+  /* text-align: center; */
+}
+.Padmin_pelayananmasuk_datamenu {
+  margin-left: 20px;
+}
+.Padmin_pelayananmasuk_datamenu h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-family: var(--questrial-font);
+}
+.Padmin_pelayananmasuk_datamenu p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  font-family: var(--questrial-font);
+  padding: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.Padmin_pelayananmasuk_datamenu p i {
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+.Padmin_pelayananmasuk_datamenu .date {
+  background-color: var(--primary-color);
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100px;
+  border-radius: 5px;
+  color: var(--cream-color);
+}
+.Padmin_pelayananmasuk_datamenu .date i {
+  color: var(--secondary-color);
+}
+.Padmin_pelayananmasuk_datamenu .status-pelayanan {
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100px;
+  border-radius: 5px;
+}
+.Padmin_pelayananmasuk_datamenu a {
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: var(--cream-color);
+  padding: 10px;
+  font-weight: 500;
+  font-family: var(--questrial-font);
+  border-radius: 5px;
+  font-size: 14px;
+}
+.Padmin_pelayananmasuk_datamenu a:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+.Padmin_pelayanan_dokter_bertugas {
+  margin-top: 50px;
+  margin-left: 20px;
+  padding-right: 50px;
+}
+.Padmin_pelayanan_dokter_bertugas h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--primary-color);
+  font-family: var(--questrial-font);
+}
+.Padmin_pelayanan_dokter_bertugas table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.Padmin_pelayanan_dokter_bertugas table thead {
+  background-color: var(--primary-color);
+  color: var(--cream-color);
+}
+.Padmin_pelayanan_dokter_bertugas table thead th {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--questrial-font);
+  text-align: left;
+}
+.Padmin_pelayanan_dokter_bertugas table tbody tr {
+  border-bottom: 1px solid var(--primary-color);
+}
+.Padmin_pelayanan_dokter_bertugas table tbody tr td {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--questrial-font);
+}
+.konfirmasi_detailpesanan {
+  width: 100%;
+  margin-top: 30px;
+}
+.konfirmasi_detailpesanan button {
+  background-color: var(--primary-color);
+  color: var(--cream-color);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--questrial-font);
+  cursor: pointer;
+  width: 100%;
+}
+.konfirmasi_detailpesanan button:hover {
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  color: var(--primary-color);
+}
+.Padmin_pelayananmasuk_input {
+  margin-top: 30px;
+}
+.Padmin_pelayananmasuk_input .konfirmasi_pelayanan_title h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-family: var(--questrial-font);
+}
+.konfirmasi_pelayananmenu {
+  display: flex;
+  flex-direction: column;
+}
+.konfirmasi_pelayananmenu label {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--secondary-color);
+  font-family: var(--questrial-font);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.konfirmasi_pelayananmenu input[type="date"] {
+  padding: 10px;
+  /* width: 150px; */
+  background-color: var(--cream-color);
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--questrial-font);
+  outline: none;
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+}
+.konfirmasi_pelayananmenu select {
+  padding: 10px;
+  background-color: var(--cream-color);
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--questrial-font);
+  outline: none;
+  border: none;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+.konfirmasi_pelayananmenu select option {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--questrial-font);
+  cursor: pointer;
+}
+.konfirmasi_pelayananmenu h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--secondary-color);
+  font-family: var(--questrial-font);
+  margin-top: 20px;
+}
+.konfirmasi_pelayananmenu table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.konfirmasi_pelayananmenu table thead {
+  background-color: var(--primary-color);
+  color: var(--cream-color);
+}
+.konfirmasi_pelayananmenu table thead th {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--questrial-font);
+  text-align: left;
+}
+.konfirmasi_pelayananmenu table tbody tr {
+  border-bottom: 1px solid var(--primary-color);
+}
+.konfirmasi_pelayananmenu table tbody tr td {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--questrial-font);
+}
+.konfirmasi_pelayananmenu table tbody tr td input[type="checkbox"] {
+  cursor: pointer;
+}
+.konfirmasi_pelayananmenu_button {
+  margin-top: 20px;
+}
+.konfirmasi_pelayananmenu_button button {
+  background-color: var(--primary-color);
+  color: var(--cream-color);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--questrial-font);
+  cursor: pointer;
+  width: 100%;
+}
+.konfirmasi_pelayananmenu_button button:hover {
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  color: var(--primary-color);
+}
+.Padmin_pelayananmasuk_catatan {
+  margin-top: 30px;
+  padding: 20px;
+  padding-right: 50px;
+}
+.Padmin_pelayananmasuk_catatan h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--primary-color);
+  font-family: var(--questrial-font);
+}
+.Padmin_pelayananmasuk_catatan p {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  font-family: var(--questrial-font);
+  margin-top: 20px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 1200px) {
+  .Padmin_pelayananmasuk_pic {
+    top: -70px;
+    left: 37%;
+  }
+  .Padmin_pelayananmasuk_pic img {
+    /* position: absolute; */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .Padmin_pelayananmasuk_wrapper {
+    background-color: var(--white-color);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+    padding: 30px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    padding-top: 150px;
+    z-index: 0;
+  }
+  .Padmin_pelayananmasuk_pic {
+    position: absolute;
+    top: -70px;
+    left: 37%;
+  }
+  .Padmin_pelayananmasuk_pic img {
+    /* position: absolute; */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+  .Padmin_pelayananmasuk_data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+    /* text-align: center; */
+  }
+  .Padmin_pelayananmasuk_datamenu {
+    margin-left: 20px;
+  }
+  .Padmin_pelayananmasuk_datamenu h3 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayananmasuk_datamenu p {
+    font-size: 12px !important;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .Padmin_pelayananmasuk_datamenu p i {
+    color: var(--primary-color);
+    margin-right: 10px;
+  }
+  .Padmin_pelayananmasuk_datamenu .date {
+    background-color: var(--primary-color);
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100px;
+    border-radius: 5px;
+    color: var(--cream-color);
+  }
+  .Padmin_pelayananmasuk_datamenu .date i {
+    color: var(--secondary-color);
+  }
+  .Padmin_pelayananmasuk_datamenu .status-pelayanan {
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100px;
+    border-radius: 5px;
+  }
+  .Padmin_pelayananmasuk_datamenu a {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    border-radius: 5px;
+    font-size: 12px !important;
+  }
+  .Padmin_pelayananmasuk_datamenu a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+  }
+  .Padmin_pelayanan_dokter_bertugas {
+    margin-top: 50px;
+    margin-left: 20px;
+    padding-right: 50px;
+  }
+  .Padmin_pelayanan_dokter_bertugas h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayanan_dokter_bertugas table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .Padmin_pelayanan_dokter_bertugas table thead {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+  }
+  .Padmin_pelayanan_dokter_bertugas table thead th {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    text-align: left;
+  }
+  .Padmin_pelayanan_dokter_bertugas table tbody tr {
+    border-bottom: 1px solid var(--primary-color);
+  }
+  .Padmin_pelayanan_dokter_bertugas table tbody tr td {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_detailpesanan {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .konfirmasi_detailpesanan button {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px !important;
+    font-weight: 600;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+    width: 100%;
+  }
+  .konfirmasi_detailpesanan button:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+  }
+  .Padmin_pelayananmasuk_input {
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_input .konfirmasi_pelayanan_title h2 {
+    font-size: 22px !important;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_pelayananmenu {
+    display: flex;
+    flex-direction: column;
+  }
+  .konfirmasi_pelayananmenu label {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .konfirmasi_pelayananmenu input[type="date"] {
+    padding: 10px;
+    /* width: 150px; */
+    background-color: var(--cream-color);
+    border-radius: 5px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    outline: none;
+    color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu select {
+    padding: 10px;
+    background-color: var(--cream-color);
+    border-radius: 5px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    outline: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu select option {
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu table thead {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+  }
+  .konfirmasi_pelayananmenu table thead th {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    text-align: left;
+  }
+  .konfirmasi_pelayananmenu table tbody tr {
+    border-bottom: 1px solid var(--primary-color);
+  }
+  .konfirmasi_pelayananmenu table tbody tr td {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_pelayananmenu table tbody tr td input[type="checkbox"] {
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu_button {
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu_button button {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px !important;
+    font-weight: 600;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+    width: 100%;
+  }
+  .konfirmasi_pelayananmenu_button button:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+  }
+  .Padmin_pelayananmasuk_catatan {
+    margin-top: 30px;
+    padding: 20px;
+    padding-right: 50px;
+  }
+  .Padmin_pelayananmasuk_catatan h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayananmasuk_catatan p {
+    font-size: 12px !important;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+}
+
+@media only screen and (max-width: 765px) {
+  .Padmin_pelayananmasuk_wrapper {
+    background-color: var(--white-color);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 100px;
+    padding: 30px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    padding-top: 100px;
+    z-index: 0;
+  }
+  .Padmin_pelayananmasuk_pic {
+    position: absolute;
+    top: -70px;
+    left: 37%;
+  }
+  .Padmin_pelayananmasuk_pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+  .Padmin_pelayananmasuk_data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+    /* text-align: center; */
+  }
+  .Padmin_pelayananmasuk_datamenu {
+    margin-left: 20px;
+  }
+  .Padmin_pelayananmasuk_datamenu h3 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayananmasuk_datamenu p {
+    font-size: 12px !important;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .Padmin_pelayananmasuk_datamenu p i {
+    color: var(--primary-color);
+    margin-right: 10px;
+  }
+  .Padmin_pelayananmasuk_datamenu .date {
+    background-color: var(--primary-color);
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100px;
+    border-radius: 5px;
+    color: var(--cream-color);
+  }
+  .Padmin_pelayananmasuk_datamenu .date i {
+    color: var(--secondary-color);
+  }
+  .Padmin_pelayananmasuk_datamenu .status-pelayanan {
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100px;
+    border-radius: 5px;
+  }
+  .Padmin_pelayananmasuk_datamenu a {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    border-radius: 5px;
+    font-size: 12px !important;
+  }
+  .Padmin_pelayananmasuk_datamenu a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+  }
+  .Padmin_pelayanan_dokter_bertugas {
+    margin-top: 50px;
+    margin-left: 20px;
+    padding-right: 50px;
+  }
+  .Padmin_pelayanan_dokter_bertugas h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayanan_dokter_bertugas table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .Padmin_pelayanan_dokter_bertugas table thead {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+  }
+  .Padmin_pelayanan_dokter_bertugas table thead th {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    text-align: left;
+  }
+  .Padmin_pelayanan_dokter_bertugas table tbody tr {
+    border-bottom: 1px solid var(--primary-color);
+  }
+  .Padmin_pelayanan_dokter_bertugas table tbody tr td {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_detailpesanan {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .konfirmasi_detailpesanan button {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px !important;
+    font-weight: 600;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+    width: 100%;
+  }
+  .konfirmasi_detailpesanan button:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+  }
+  .Padmin_pelayananmasuk_input {
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_input .konfirmasi_pelayanan_title h2 {
+    font-size: 22px !important;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_pelayananmenu {
+    display: flex;
+    flex-direction: column;
+  }
+  .konfirmasi_pelayananmenu label {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .konfirmasi_pelayananmenu input[type="date"] {
+    padding: 10px;
+    /* width: 150px; */
+    background-color: var(--cream-color);
+    border-radius: 5px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    outline: none;
+    color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu select {
+    padding: 10px;
+    background-color: var(--cream-color);
+    border-radius: 5px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    outline: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu select option {
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu table thead {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+  }
+  .konfirmasi_pelayananmenu table thead th {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    text-align: left;
+  }
+  .konfirmasi_pelayananmenu table tbody tr {
+    border-bottom: 1px solid var(--primary-color);
+  }
+  .konfirmasi_pelayananmenu table tbody tr td {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_pelayananmenu table tbody tr td input[type="checkbox"] {
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu_button {
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu_button button {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px !important;
+    font-weight: 600;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+    width: 100%;
+  }
+  .konfirmasi_pelayananmenu_button button:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+  }
+  .Padmin_pelayananmasuk_catatan {
+    margin-top: 30px;
+    padding: 20px;
+    padding-right: 50px;
+  }
+  .Padmin_pelayananmasuk_catatan h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayananmasuk_catatan p {
+    font-size: 12px !important;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .Padmin_pelayananmasuk_wrapper {
+    background-color: var(--white-color);
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    margin-top: 100px;
+    padding: 30px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    padding-top: 100px;
+    z-index: 0;
+  }
+  .Padmin_pelayananmasuk_pic {
+    position: absolute;
+    top: -70px;
+    left: 35%;
+  }
+  .Padmin_pelayananmasuk_pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+  .Padmin_pelayananmasuk_data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+    /* text-align: center; */
+  }
+  .Padmin_pelayananmasuk_datamenu {
+    margin-left: 5px !important;
+  }
+  .Padmin_pelayananmasuk_datamenu h3 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayananmasuk_datamenu p {
+    font-size: 12px !important;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .Padmin_pelayananmasuk_datamenu p i {
+    color: var(--primary-color);
+    margin-right: 10px;
+  }
+  .Padmin_pelayananmasuk_datamenu .date {
+    background-color: var(--primary-color);
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100px;
+    border-radius: 5px;
+    color: var(--cream-color);
+  }
+  .Padmin_pelayananmasuk_datamenu .date i {
+    color: var(--secondary-color);
+  }
+  .Padmin_pelayananmasuk_datamenu .status-pelayanan {
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100px;
+    border-radius: 5px;
+  }
+  .Padmin_pelayananmasuk_datamenu a {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    border-radius: 5px;
+    font-size: 12px !important;
+  }
+  .Padmin_pelayananmasuk_datamenu a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+  }
+  .Padmin_pelayanan_dokter_bertugas {
+    margin-top: 50px;
+    margin-left: 5px !important;
+    padding-right: 50px;
+  }
+  .Padmin_pelayanan_dokter_bertugas h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayanan_dokter_bertugas table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .Padmin_pelayanan_dokter_bertugas table thead {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+  }
+  .Padmin_pelayanan_dokter_bertugas table thead th {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    text-align: left;
+  }
+  .Padmin_pelayanan_dokter_bertugas table tbody tr {
+    border-bottom: 1px solid var(--primary-color);
+  }
+  .Padmin_pelayanan_dokter_bertugas table tbody tr td {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_detailpesanan {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .konfirmasi_detailpesanan button {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px !important;
+    font-weight: 600;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+    width: 100%;
+  }
+  .konfirmasi_detailpesanan button:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+  }
+  .Padmin_pelayananmasuk_input {
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_input .konfirmasi_pelayanan_title h2 {
+    font-size: 22px !important;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_pelayananmenu {
+    display: flex;
+    flex-direction: column;
+  }
+  .konfirmasi_pelayananmenu label {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .konfirmasi_pelayananmenu input[type="date"] {
+    padding: 10px;
+    /* width: 150px; */
+    background-color: var(--cream-color);
+    border-radius: 5px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    outline: none;
+    color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu select {
+    padding: 10px;
+    background-color: var(--cream-color);
+    border-radius: 5px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    outline: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu select option {
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu table thead {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+  }
+  .konfirmasi_pelayananmenu table thead th {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    text-align: left;
+  }
+  .konfirmasi_pelayananmenu table tbody tr {
+    border-bottom: 1px solid var(--primary-color);
+  }
+  .konfirmasi_pelayananmenu table tbody tr td {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_pelayananmenu table tbody tr td input[type="checkbox"] {
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu_button {
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu_button button {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px !important;
+    font-weight: 600;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+    width: 100%;
+  }
+  .konfirmasi_pelayananmenu_button button:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+  }
+  .Padmin_pelayananmasuk_catatan {
+    margin-top: 30px;
+    padding: 10px !important;
+    padding-right: 10px !important;
+  }
+  .Padmin_pelayananmasuk_catatan h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayananmasuk_catatan p {
+    font-size: 12px !important;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .Padmin_pelayananmasuk_wrapper {
+    background-color: var(--white-color);
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    margin-top: 100px;
+    padding: 30px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    padding-top: 100px;
+    z-index: 0;
+  }
+  .Padmin_pelayananmasuk_pic {
+    position: absolute;
+    top: -60px;
+    left: 33%;
+  }
+  .Padmin_pelayananmasuk_pic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+  .Padmin_pelayananmasuk_data {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+    margin-top: 20px;
+    /* text-align: center; */
+  }
+  .Padmin_pelayananmasuk_datamenu {
+    margin-left: 5px !important;
+  }
+  .Padmin_pelayananmasuk_datamenu h3 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayananmasuk_datamenu p {
+    font-size: 12px !important;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .Padmin_pelayananmasuk_datamenu p i {
+    color: var(--primary-color);
+    margin-right: 10px;
+  }
+  .Padmin_pelayananmasuk_datamenu .date {
+    background-color: var(--primary-color);
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100px;
+    border-radius: 5px;
+    color: var(--cream-color);
+  }
+  .Padmin_pelayananmasuk_datamenu .date i {
+    color: var(--secondary-color);
+  }
+  .Padmin_pelayananmasuk_datamenu .status-pelayanan {
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100px;
+    border-radius: 5px;
+  }
+  .Padmin_pelayananmasuk_datamenu a {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    border-radius: 5px;
+    font-size: 12px !important;
+  }
+  .Padmin_pelayananmasuk_datamenu a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+  }
+  .Padmin_pelayanan_dokter_bertugas {
+    margin-top: 50px;
+    margin-left: 5px !important;
+    padding-right: 0px !important;
+  }
+  .Padmin_pelayanan_dokter_bertugas h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayanan_dokter_bertugas table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .Padmin_pelayanan_dokter_bertugas table thead {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+  }
+  .Padmin_pelayanan_dokter_bertugas table thead th {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    text-align: left;
+  }
+  .Padmin_pelayanan_dokter_bertugas table tbody tr {
+    border-bottom: 1px solid var(--primary-color);
+  }
+  .Padmin_pelayanan_dokter_bertugas table tbody tr td {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_detailpesanan {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .konfirmasi_detailpesanan button {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px !important;
+    font-weight: 600;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+    width: 100%;
+  }
+  .konfirmasi_detailpesanan button:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+  }
+  .Padmin_pelayananmasuk_input {
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_input .konfirmasi_pelayanan_title h2 {
+    font-size: 22px !important;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_pelayananmenu {
+    display: flex;
+    flex-direction: column;
+  }
+  .konfirmasi_pelayananmenu label {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .konfirmasi_pelayananmenu input[type="date"] {
+    padding: 10px;
+    /* width: 150px; */
+    background-color: var(--cream-color);
+    border-radius: 5px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    outline: none;
+    color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu select {
+    padding: 10px;
+    background-color: var(--cream-color);
+    border-radius: 5px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    outline: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu select option {
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu table thead {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+  }
+  .konfirmasi_pelayananmenu table thead th {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    text-align: left;
+  }
+  .konfirmasi_pelayananmenu table tbody tr {
+    border-bottom: 1px solid var(--primary-color);
+  }
+  .konfirmasi_pelayananmenu table tbody tr td {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_pelayananmenu table tbody tr td input[type="checkbox"] {
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu_button {
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu_button button {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px !important;
+    font-weight: 600;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+    width: 100%;
+  }
+  .konfirmasi_pelayananmenu_button button:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+  }
+  .Padmin_pelayananmasuk_catatan {
+    margin-top: 30px;
+    padding: 10px !important;
+    padding-right: 10px !important;
+  }
+  .Padmin_pelayananmasuk_catatan h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayananmasuk_catatan p {
+    font-size: 12px !important;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .Padmin_pelayananmasuk_pic {
+    position: absolute;
+    top: -60px;
+    left: 30%;
+  }
+  .Padmin_pelayananmasuk_pic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+@media only screen and (max-width: 360px) {
+  .Padmin_pelayananmasuk_wrapper {
+    background-color: var(--white-color);
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    margin-top: 100px;
+    padding: 10px !important;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    padding-top: 100px !important;
+    z-index: 0;
+  }
+  .Padmin_pelayananmasuk_pic {
+    position: absolute;
+    top: -60px;
+    left: 28%;
+  }
+  .Padmin_pelayananmasuk_pic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+  .Padmin_pelayananmasuk_data {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+    margin-top: 20px;
+    /* text-align: center; */
+  }
+  .Padmin_pelayananmasuk_datamenu {
+    margin-left: 5px !important;
+  }
+  .Padmin_pelayananmasuk_datamenu h3 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 10px !important;
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayananmasuk_datamenu p {
+    font-size: 12px !important;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .Padmin_pelayananmasuk_datamenu p i {
+    color: var(--primary-color);
+    margin-right: 10px;
+  }
+  .Padmin_pelayananmasuk_datamenu .date {
+    background-color: var(--primary-color);
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100px;
+    border-radius: 5px;
+    color: var(--cream-color);
+  }
+  .Padmin_pelayananmasuk_datamenu .date i {
+    color: var(--secondary-color);
+  }
+  .Padmin_pelayananmasuk_datamenu .status-pelayanan {
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100px;
+    border-radius: 5px;
+  }
+  .Padmin_pelayananmasuk_datamenu a {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    border-radius: 5px;
+    font-size: 12px !important;
+  }
+  .Padmin_pelayananmasuk_datamenu a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+  }
+  .Padmin_pelayanan_dokter_bertugas {
+    margin-top: 50px;
+    margin-left: 5px !important;
+    padding-right: 0px !important;
+  }
+  .Padmin_pelayanan_dokter_bertugas h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayanan_dokter_bertugas table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .Padmin_pelayanan_dokter_bertugas table thead {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+  }
+  .Padmin_pelayanan_dokter_bertugas table thead th {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    text-align: left;
+  }
+  .Padmin_pelayanan_dokter_bertugas table tbody tr {
+    border-bottom: 1px solid var(--primary-color);
+  }
+  .Padmin_pelayanan_dokter_bertugas table tbody tr td {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_detailpesanan {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .konfirmasi_detailpesanan button {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px !important;
+    font-weight: 600;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+    width: 100%;
+  }
+  .konfirmasi_detailpesanan button:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+  }
+  .Padmin_pelayananmasuk_input {
+    margin-top: 30px;
+  }
+  .Padmin_pelayananmasuk_input .konfirmasi_pelayanan_title h2 {
+    font-size: 22px !important;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_pelayananmenu {
+    display: flex;
+    flex-direction: column;
+  }
+  .konfirmasi_pelayananmenu label {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .konfirmasi_pelayananmenu input[type="date"] {
+    padding: 10px;
+    /* width: 150px; */
+    background-color: var(--cream-color);
+    border-radius: 5px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    outline: none;
+    color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu select {
+    padding: 10px;
+    background-color: var(--cream-color);
+    border-radius: 5px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    outline: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu select option {
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu table thead {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+  }
+  .konfirmasi_pelayananmenu table thead th {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    text-align: left;
+  }
+  .konfirmasi_pelayananmenu table tbody tr {
+    border-bottom: 1px solid var(--primary-color);
+  }
+  .konfirmasi_pelayananmenu table tbody tr td {
+    padding: 10px;
+    font-size: 12px !important;
+    font-weight: 400;
+    font-family: var(--questrial-font);
+  }
+  .konfirmasi_pelayananmenu table tbody tr td input[type="checkbox"] {
+    cursor: pointer;
+  }
+  .konfirmasi_pelayananmenu_button {
+    margin-top: 20px;
+  }
+  .konfirmasi_pelayananmenu_button button {
+    background-color: var(--primary-color);
+    color: var(--cream-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px !important;
+    font-weight: 600;
+    font-family: var(--questrial-font);
+    cursor: pointer;
+    width: 100%;
+  }
+  .konfirmasi_pelayananmenu_button button:hover {
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+  }
+  .Padmin_pelayananmasuk_catatan {
+    margin-top: 30px;
+    padding: 10px !important;
+    padding-right: 10px !important;
+  }
+  .Padmin_pelayananmasuk_catatan h2 {
+    font-size: 16px !important;
+    font-weight: 500;
+    color: var(--primary-color);
+    font-family: var(--questrial-font);
+  }
+  .Padmin_pelayananmasuk_catatan p {
+    font-size: 12px !important;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+}

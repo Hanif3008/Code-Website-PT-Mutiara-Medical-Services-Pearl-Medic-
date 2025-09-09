@@ -1,0 +1,189 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Pelayanan<span>Obat-Obatan</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Pelayanan Masuk <span id="reds"> *Belum Dilayani</span></h2>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Nomor Pesanan</th>
+                <th>Tanggal Pemesanan</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let indexBelumDilayani = 1; %> <% if (PelayananObat && PelayananObat.length > 0) { %> <% let hasData = false; %> <% PelayananObat.forEach(Obat => { %> <% if (Obat.status_pesanan === 3) { %>
+              <tr>
+                <td><%= indexBelumDilayani++ %></td>
+                <td><%= Obat.nama_perusahaan %></td>
+                <td><%= Obat.nomorpesanan %></td>
+                <td><%= Obat.tgl_pemesananobat %></td>
+                <td id="reds">Belum Dilayani</td>
+                <td><a href="/LObat_Admin_detail/<%= Obat.id_pelayananobat %>">Detail</a></td>
+              </tr>
+              <% hasData = true; %> <% } %> <% }); %> <% if (!hasData) { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %> <% } else { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Pelayanan Masuk <span id="yellow"> *Dalam Proses</span></h2>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Nomor Pesanan</th>
+                <th>Tanggal Pemesanan</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let indexDalamProses = 1; %> <% if (PelayananObat && PelayananObat.length > 0) { %> <% let hasData = false; %> <% PelayananObat.forEach(Obat => { %> <% if (Obat.status_pesanan === 2) { %>
+              <tr>
+                <td><%= indexDalamProses++ %></td>
+                <td><%= Obat.nama_perusahaan %></td>
+                <td><%= Obat.nomorpesanan %></td>
+                <td><%= Obat.tgl_pemesananobat %></td>
+                <td id="yellow">Dalam Proses</td>
+                <td><a href="/LObat_Admin_detail/<%= Obat.id_pelayananobat %>">Detail</a></td>
+              </tr>
+              <% hasData = true; %> <% } %> <% }); %> <% if (!hasData) { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %> <% } else { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Pelayanan Masuk <span id="green"> *Sudah Dilayani</span></h2>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Nomor Pesanan</th>
+                <th>Tanggal Pemesanan</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let indexSudahDilayani = 1; %> <% if (PelayananObat && PelayananObat.length > 0) { %> <% let hasData = false; %> <% PelayananObat.forEach(Obat => { %> <% if (Obat.status_pesanan === 1) { %>
+              <tr>
+                <td><%= indexSudahDilayani++ %></td>
+                <td><%= Obat.nama_perusahaan %></td>
+                <td><%= Obat.nomorpesanan %></td>
+                <td><%= Obat.tgl_pemesananobat %></td>
+                <td id="green">Sudah Dilayani</td>
+                <td><a href="/LObat_Admin_detail/<%= Obat.id_pelayananobat %>">Detail</a></td>
+              </tr>
+              <% hasData = true; %> <% } %> <% }); %> <% if (!hasData) { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %> <% } else { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="#">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="#">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

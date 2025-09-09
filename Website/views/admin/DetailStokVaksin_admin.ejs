@@ -1,0 +1,114 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Detail <span>Stok Vaksin</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <form id="stokvaksin" class="edit-profile-perusahaan" action="/EditDetailStokVaksin_admin/<%=DataVaksin.id_vaksin%>" method="post">
+            <div class="Padmin_pelayananmasuk_pic">
+              <img src="/img/vaksins.jpg" alt="" />
+            </div>
+            <div class="Padmin_pelayananmasuk_data">
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nama Vaksin</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-syringe"></i>
+                  <input type="text" name="nama_vaksin" id="nama_vaksin" value="<%= DataVaksin ? DataVaksin.nama_vaksin : '' %>" placeholder="Masukan Nama Vaksin . . ." required />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Stok Vaksin</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-vial-virus"></i>
+                  <input type="number" name="stock_vaksin" id="stock_vaksin" value="<%= DataVaksin ? DataVaksin.stock_vaksin : '' %>" placeholder="Masukan Stok Vaksin  . . ." required />
+                </div>
+              </div>
+            </div>
+            <div class="Padmin_pelayananmasuk_catatan">
+              <h2>Deskripsi Vaksin</h2>
+              <div class="Padmin_pelayananmasuk_datamenu_input" id="deskripsi_perusahaan_input">
+                <textarea name="deskripsi_vaksin" id="deskripsi_perusahaan" placeholder="Masukan Beberapa Deskripsi Perusahaan . . ." required><%= DataVaksin ? DataVaksin.deskripsi_vaksin : '' %></textarea>
+              </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="edit-all-button">
+              <div class="edit-menu-button">
+                <button type="submit">Konfirmasi</button>
+              </div>
+              <div class="edit-menu-button">
+                <button type="button" onclick="confirmDelete('<%= DataVaksin.id_vaksin %>')" id="red">Hapus Obat</button>
+              </div>
+            </div>
+            <div class="validasi" id="validasi">
+              <p id="validasi_text">Pastikan data yang anda masukkan benar dan valid</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .validasi {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px dashed var(--red-color);
+    padding: 5px;
+    text-align: center;
+  }
+  .validasi p {
+    color: var(--red-color);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
+<script>
+  function confirmDelete(id) {
+    if (confirm("Apakah Anda yakin ingin menghapus data vaksin?")) {
+      // Kirim permintaan penghapusan ke server
+      fetch(`/deleteDataVaksinById/${id}`, {
+        method: "POST",
+      })
+        .then((response) => response.json()) // Parse JSON response
+        .then((data) => {
+          if (data.message === "data vaksin berhasil dihapus") {
+            // Redirect atau tindakan lain setelah penghapusan berhasil
+            window.location.href = "/StokVaksin_admin";
+          } else {
+            throw new Error(data.message || "Gagal menghapus vaksin");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert(error.message);
+        });
+    }
+  }
+</script>

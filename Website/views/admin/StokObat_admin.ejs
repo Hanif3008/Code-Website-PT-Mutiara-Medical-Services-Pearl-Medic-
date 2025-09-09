@@ -1,0 +1,293 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Stok<span> Obat-Obatan</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_search">
+          <input type="text" id="searchObatInput" placeholder="Masukan nama obat - obatan . . ." />
+          <button id="searchObatButton"><i class="fa-solid fa-search"></i></button>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Obat</th>
+                <th>Jumlah Tersedia (Box)</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="obatTableBody">
+              <% let indexObat = 1; %> <% if (StockObat && StockObat.length > 0) { %> <% StockObat.forEach(obat => { %>
+              <tr>
+                <td><%= indexObat++ %></td>
+                <td><%= obat.nama_obat %></td>
+                <td><%= obat.stock_obat %> <%= obat.jenis_kemasan %></td>
+                <% if (obat.stock_obat < 50) { %>
+                <td><span id="yellow">Stok Sedikit</span></td>
+                <% } else { %>
+                <td><span id="green">Stok Banyak</span></td>
+                <% } %>
+                <td><a href="/StokObat_admin_details/<%= obat.id_obat %>">Detail</a></td>
+              </tr>
+              <% }); %> <% } else { %>
+              <tr>
+                <td colspan="6">Tidak Ada Data Obat</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br />
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <form action="/tambahDataObat_admin" method="post" id="TambahStokObat" enctype="multipart/form-data">
+            <div class="Padmin_pelayananmasuk_pic">
+              <img id="profilePic" src="/img/vaksins.jpg" alt="" />
+              <span class="change-text">Atur Gambar</span>
+              <input type="file" name="obat_photo" id="fileInput" accept="image/*" style="display: none" />
+            </div>
+            <div class="Padmin_pelayananmasuk_data">
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nama Obat</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid-fa-pills"></i>
+                  <input type="text" name="nama_obat" id="nama_obat" placeholder="masukan nama obat . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Jenis Obat</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid-fa-pills"></i>
+                  <input type="text" name="jenis_obat" id="jenis_obat" placeholder="masukan jenis obat . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Jenis Kemasan</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid-fa-pills"></i>
+                  <input type="text" name="jenis_kemasan" id="jenis_kemasan" placeholder="masukan jenis kemasan . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Jumlah Stock Obat</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid-fa-pills"></i>
+                  <input type="number" name="stock_obat" id="stock_obat" placeholder="masukan jumlah stock obat . . ." />
+                </div>
+              </div>
+            </div>
+            <div class="Padmin_pelayananmasuk_catatan">
+              <h2>Deskripsi Obat</h2>
+              <div class="Padmin_pelayananmasuk_datamenu_input" id="deskripsi_obats">
+                <textarea name="deskripsi_obat" id="deskripsi_obat_textarea" placeholder="Masukan Deskripsi Obat"></textarea>
+              </div>
+            </div>
+            <div class="edit-all-button">
+              <div class="edit-menu-button">
+                <button type="submit">Tambah Obat</button>
+              </div>
+            </div>
+            <div class="validasi" id="validasi">
+              <p id="validasi_text">Pastikan data yang anda masukkan benar dan valid</p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById("searchObatButton").addEventListener("click", function () {
+    const searchQuery = document.getElementById("searchObatInput").value;
+    fetchSearchResults(searchQuery);
+  });
+
+  document.getElementById("searchObatInput").addEventListener("input", function () {
+    const searchQuery = this.value;
+    fetchSearchResults(searchQuery);
+  });
+
+  function fetchSearchResults(query) {
+    fetch(`/searchObat?nama_obat=${encodeURIComponent(query)}`)
+      .then((response) => response.json())
+      .then((data) => {
+        updateTable(data);
+      })
+      .catch((error) => console.error("Error fetching search results:", error));
+  }
+
+  function updateTable(data) {
+    let tableBody = document.getElementById("obatTableBody");
+    tableBody.innerHTML = ""; // Clear existing table data
+
+    if (data.length === 0) {
+      tableBody.innerHTML = '<tr><td colspan="6">Tidak Ada Data Obat</td></tr>';
+      return;
+    }
+
+    let indexObat = 1; // Reinitialize the index for each search
+    data.forEach((obat) => {
+      let row = `<tr>
+              <td>${indexObat++}</td>
+              <td>${obat.nama_obat}</td>
+              <td>${obat.stock_obat} ${obat.jenis_kemasan}</td>
+              <td>${obat.stock_obat < 50 ? '<span id="yellow">Stok Sedikit</span>' : '<span id="green">Stok Banyak</span>'}</td>
+              <td><a href="/StokObat_admin_details/${obat.id_obat}">Detail</a></td>
+          </tr>`;
+      tableBody.innerHTML += row;
+    });
+  }
+</script>
+<style>
+  .Padmin_pelayananmasuk_datamenu button {
+    padding: 10px;
+    transition: all ease-in-out 0.3s;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #deskripsi_obat_textarea,
+  #deskripsi_obats {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: var(--cream-color);
+    border: none;
+    padding: 10px;
+    height: 150px;
+    resize: none;
+    outline: none;
+  }
+  .validasi {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px dashed var(--red-color);
+    padding: 5px;
+    text-align: center;
+  }
+  .validasi p {
+    color: var(--red-color);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
+<script>
+  document.querySelector(".Padmin_pelayananmasuk_pic").addEventListener("click", function () {
+    document.getElementById("fileInput").click();
+  });
+
+  document.getElementById("fileInput").addEventListener("change", function (event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      document.getElementById("profilePic").src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  });
+</script>
+<script>
+  document.getElementById("TambahStokObat").addEventListener("submit", function (event) {
+    const obat_photo = document.getElementById("fileInput").files[0];
+    const nama_obat = document.getElementById("nama_obat").value.trim();
+    const jenis_obat = document.getElementById("jenis_obat").value.trim();
+    const jenis_kemasan = document.getElementById("jenis_kemasan").value.trim();
+    const stock_obat = document.getElementById("stock_obat").value.trim();
+    const deskripsi_obat = document.getElementById("deskripsi_obat_textarea").value.trim(); // Updated ID
+    const validasiText = document.getElementById("validasi_text");
+
+    let isValid = true;
+    validasiText.innerHTML = "";
+
+    // validasi foto obat wajib diisi, file jpg/jpeg/png
+    if (!obat_photo) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Foto Obat wajib diisi</p>";
+    } else {
+      const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+      if (!allowedExtensions.exec(obat_photo.name)) {
+        isValid = false;
+        validasiText.innerHTML += "<p>Foto Obat harus berupa file jpg/jpeg/png</p>";
+      }
+    }
+    // nama obat wajib diisi
+    if (!nama_obat) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Nama Obat wajib diisi</p>";
+    }
+    // jenis obat wajib diisi
+    if (!jenis_obat) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Jenis Obat wajib diisi</p>";
+    }
+    // jenis kemasan wajib diisi
+    if (!jenis_kemasan) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Jenis Kemasan wajib diisi</p>";
+    }
+    // stock obat wajib diisi
+    if (!stock_obat) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Stock Obat wajib diisi</p>";
+    }
+    // deskripsi obat wajib diisi
+    if (!deskripsi_obat) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Deskripsi Obat wajib diisi</p>";
+    }
+
+    const validasiDiv = document.getElementById("validasi");
+    if (!isValid) {
+      event.preventDefault();
+      validasiDiv.style.display = "flex";
+    } else {
+      validasiDiv.style.display = "none";
+    }
+  });
+</script>

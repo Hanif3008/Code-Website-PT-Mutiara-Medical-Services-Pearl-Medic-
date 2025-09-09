@@ -1,0 +1,110 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Pelayanan<span> Medical Check Up</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Pelayanan Masuk <span id="yellow"> *Dalam Proses</span></h2>
+        </div>
+        <!-- <div class="Padmin_pelayananmasuk_search">
+          <input type="text" id="searchInput" placeholder="Masukan nama perusahaan untuk mencari pelayanan . . ." />
+          <button id="searchButton"><i class="fa-solid fa-search"></i></button>
+        </div> -->
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Nomor Pesanan</th>
+                <th>Tanggal Pemesanan</th>
+                <th>Tanggal Pelayanan</th>
+                <th>Status</th>
+                <!-- <th>Rekam Medis</th> -->
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <% if (layanan && layanan.length > 0) { %> <% layanan.forEach((item, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= item.nama_perusahaan %></td>
+                <td><%= item.nomorpesanan %></td>
+                <td><% if (item.tanggal_pemesanan) { %> <%= new Date(item.tanggal_pemesanan).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' }) %> <% } else { %> N/A <% } %></td>
+                <td><% if (item.tanggal_pelayanan) { %> <%= new Date(item.tanggal_pelayanan).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' }) %> <% } else { %> N/A <% } %></td>
+                <td id="yellow"><%= item.status == 2 ? "Dalam Proses" : "Lainnya" %></td>
+                <!-- <td id="reds">0 / 100</td> -->
+                <td>
+                  <a href="/LMedical_dokter_detail/<%= item.id %>">Detail</a>
+                </td>
+              </tr>
+              <% }); %> <% } else { %>
+              <tr>
+                <td colspan="7">Tidak Ada Pelayanan Berlangsung</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Pelayanan Masuk <span id="green"> *Sudah Dilayani</span></h2>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Tanggal Pemesanan</th>
+                <th>Tanggal Pelayanan</th>
+                <th>Status</th>
+                <!-- <th>Rekam Medis</th> -->
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tableBody2">
+              <% if (layanan1 && layanan1.length > 0) { %> <% layanan1.forEach((item, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= item.nama_perusahaan %></td>
+                <td><% if (item.tanggal_pemesanan) { %> <%= new Date(item.tanggal_pemesanan).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' }) %> <% } else { %> N/A <% } %></td>
+                <td><% if (item.tanggal_pelayanan) { %> <%= new Date(item.tanggal_pelayanan).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' }) %> <% } else { %> N/A <% } %></td>
+                <td id="green"><%= item.status == 1 ? "Sudah Dilayani" : "Lainnya" %></td>
+                <!-- <td id="reds">0 / 100</td> -->
+                <td>
+                  <a href="/LMedical_dokter_detail/<%= item.id %>">Detail</a>
+                </td>
+              </tr>
+              <% }); %> <% } else { %>
+              <tr>
+                <td colspan="7">Tidak Ada Pelayanan Berlangsung</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+</style>
+<style>
+  .status-green {
+    color: green;
+  }
+
+  .status-red {
+    color: red;
+  }
+</style>

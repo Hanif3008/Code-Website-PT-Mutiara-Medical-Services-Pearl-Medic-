@@ -1,0 +1,132 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Edit <span>Profil Kepala Administrasi</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <form id="editProfileForm" class="edit-profile-perusahaan" method="POST" action="/editPKstaff_admin" enctype="multipart/form-data">
+            <div class="Padmin_pelayananmasuk_pic">
+              <img id="profilePic" src="/img/<%= kstaffData.photo_kstafadmin %>" alt="Company Pictures" />
+              <span class="change-text">Ubah Gambar</span>
+              <input type="file" name="photo_kstafadmin" id="fileInput" accept="image/*" style="display: none" />
+            </div>
+            <div class="Padmin_pelayananmasuk_data">
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nama Lengkap</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-building"></i>
+                  <input type="text" name="nama_lengkap" id="nama_lengkap" value="<%= kstaffData.namalengkap_kstafadmin %>" placeholder="Masukan Nama Lengkap . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Username</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-school-circle-check"></i>
+                  <input type="text" name="username" id="username" value="<%= kstaffData.username_kstafadmin %>" placeholder="Masukan Username Anda . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Email</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" name="email" id="email" value="<%= kstaffData.email_kstafadmin %>" placeholder="Masukan Email Anda . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nomor Telepon</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-square-phone"></i>
+                  <input type="text" name="nomor_telepon" id="nomor_telepon" value="<%= kstaffData.nomortelepon_kstafadmin %>" placeholder="Masukan Nomor Telepon . . ." />
+                </div>
+              </div>
+            </div>
+            <div class="Padmin_pelayananmasuk_catatan">
+              <h2>Alamat Lengkap</h2>
+              <div class="Padmin_pelayananmasuk_datamenu_input" id="alamat_perusahaan_input">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <input type="text" name="alamat" id="alamat_perusahaan" value="<%= kstaffData.alamat_kstafadmin %>" placeholder="Masukan Alamat Lengkap Perusahaan . . ." />
+              </div>
+            </div>
+            <div class="edit-all-button">
+              <div class="edit-menu-button">
+                <button type="submit">Edit Profil</button>
+              </div>
+              <div class="back-menu-button">
+                <a href="/profileKstaff_admin">Kembali</a>
+              </div>
+            </div>
+            <div class="validasi" id="validasi">
+              <p id="validasi_text">Pastikan data yang anda masukkan benar dan valid</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right"></div>
+  </div>
+</div>
+<script>
+  document.querySelector(".Padmin_pelayananmasuk_pic").addEventListener("click", function () {
+    document.getElementById("fileInput").click();
+  });
+
+  document.getElementById("fileInput").addEventListener("change", function (event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      document.getElementById("profilePic").src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  });
+
+  document.getElementById("editProfileForm").addEventListener("submit", function (event) {
+    const namaLengkap = document.getElementById("nama_lengkap").value;
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
+    const nomorTelepon = document.getElementById("nomor_telepon").value;
+    const validasiDiv = document.getElementById("validasi");
+
+    let valid = true;
+    let validasiText = "Pastikan data yang anda masukkan benar dan valid";
+
+    if (!/^[a-zA-Z\s]+$/.test(namaLengkap)) {
+      valid = false;
+      validasiText = "Nama lengkap hanya boleh berisi huruf";
+    } else if (!/^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+$/.test(username)) {
+      valid = false;
+      validasiText = "Username harus berisi kombinasi huruf dan angka";
+    } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      valid = false;
+      validasiText = "Email tidak sesuai format";
+    } else if (!/^\d+$/.test(nomorTelepon)) {
+      valid = false;
+      validasiText = "Nomor telepon hanya boleh berisi angka";
+    }
+
+    if (!valid) {
+      event.preventDefault();
+      validasiDiv.style.display = "flex";
+      document.getElementById("validasi_text").innerText = validasiText;
+    } else {
+      validasiDiv.style.display = "none";
+    }
+  });
+</script>
+<style>
+  .validasi {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px dashed var(--red-color);
+    padding: 5px;
+    text-align: center;
+  }
+  .validasi p {
+    color: var(--red-color);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>

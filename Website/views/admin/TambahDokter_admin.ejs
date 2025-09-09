@@ -1,0 +1,293 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Tambah<span> Dokter</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <form action="TambahDokter_admin" method="post" class="edit-profile-perusahaan" enctype="multipart/form-data" id="TambahDataDokter">
+            <div class="Padmin_pelayananmasuk_pic">
+              <img id="profilePic" src="/img/users.jpg" alt="Company Pictures" />
+              <span class="change-text">Atur Gambar</span>
+              <input type="file" name="photo_stafkesehatan" id="fileInput" accept="image/*" style="display: none" />
+            </div>
+            <div class="Padmin_pelayananmasuk_data">
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nama Lengkap</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-user-nurse"></i>
+                  <input type="text" value="" name="namalengkap_stafkesehatan" id="namalengkap_stafkesehatan" placeholder="Masukan Nama Lengkap . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Username</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" value="" name="username_stafkesehatan" id="username_stafkesehatan" placeholder="Masukan Username . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Password</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-key"></i>
+                  <input type="password" value="" name="password_stafkesehatan" id="password_stafkesehatan" placeholder="Masukan Username . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Konfirmasi Password</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-key"></i>
+                  <input type="password" value="" name="konfirmpass_stafkesehatan" id="konfirmpass_stafkesehatan" placeholder="Masukan Username . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Spesialisasi</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-user-doctor"></i>
+                  <input type="text" value="" name="spesialisasi_stafkesehatan" id="spesialisasi_stafkesehatan" placeholder="Masukan Spesialisasi Dokter . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Email</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" value="" name="email_stafkesehatan" id="email_stafkesehatan" placeholder="Masukan Email Perusahaan . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nomor Telepon</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-square-phone"></i>
+                  <input type="text" name="nomortelepon_stafkesehatan" id="nomortelepon_stafkesehatan" value="" placeholder="Masukan Nomor Telepon . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nomor Induk</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-square-phone"></i>
+                  <input type="text" name="noinduk_stafkesehatan" id="noinduk_stafkesehatan" value="" placeholder="Masukan Nomor Telepon . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Jenis Kelamin</h3>
+                <select name="jeniskelamin_stafkesehatan" id="jeniskelamin_stafkesehatan">
+                  <option value="Laki-laki">Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="edit-all-button">
+              <div class="edit-menu-button">
+                <button type="submit">Tambah Dokter</button>
+              </div>
+              <div class="back-menu-button">
+                <a href="/LDokter_admin">Kembali</a>
+              </div>
+            </div>
+            <div class="validasi" id="validasi">
+              <p id="validasi_text">Pastikan data yang anda masukkan benar dan valid</p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .Padmin_pelayananmasuk_datamenu select {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--cream-color);
+    border-radius: 5px;
+    color: grey;
+  }
+  .validasi {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px dashed var(--red-color);
+    padding: 5px;
+    text-align: center;
+  }
+  .validasi p {
+    color: var(--red-color);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
+<script>
+  document.querySelector(".Padmin_pelayananmasuk_pic").addEventListener("click", function () {
+    document.getElementById("fileInput").click();
+  });
+
+  document.getElementById("fileInput").addEventListener("change", function (event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      document.getElementById("profilePic").src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  });
+</script>
+<script>
+  document.getElementById("TambahDataDokter").addEventListener("submit", function (event) {
+    const namalengkap_stafkesehatan = document.getElementById("namalengkap_stafkesehatan").value;
+    const username_stafkesehatan = document.getElementById("username_stafkesehatan").value;
+    const password_stafkesehatan = document.getElementById("password_stafkesehatan").value;
+    const konfirmpass_stafkesehatan = document.getElementById("konfirmpass_stafkesehatan").value;
+    const spesialisasi_stafkesehatan = document.getElementById("spesialisasi_stafkesehatan").value;
+    const email_stafkesehatan = document.getElementById("email_stafkesehatan").value;
+    const nomortelepon_stafkesehatan = document.getElementById("nomortelepon_stafkesehatan").value;
+    const noinduk_stafkesehatan = document.getElementById("noinduk_stafkesehatan").value;
+    const photo_stafkesehatan = document.getElementById("photo_stafkesehatan").value;
+    const jeniskelamin_stafkesehatan = document.getElementById("jeniskelamin_stafkesehatan").value;
+    let valid = true;
+    let validasi_text = "Pastikan data yang dimasukan benar dan valid";
+
+    // validasi nama lengkap tidak boleh kosong dan harus huruf
+    if (namalengkap_stafkesehatan == "") {
+      valid = false;
+      validasi_text = "Nama lengkap tidak boleh kosong";
+    } else {
+      const namalengkap_stafkesehatan_regex = /^[a-zA-Z ]+$/;
+      if (!namalengkap_stafkesehatan.match(namalengkap_stafkesehatan_regex)) {
+        valid = false;
+        validasi_text = "Nama lengkap hanya boleh huruf";
+      }
+    }
+    // validasi username tidak boleh kosong dan kombinasi huruf dan angka
+    if (username_stafkesehatan == "") {
+      valid = false;
+      validasi_text = "Username tidak boleh kosong";
+    } else {
+      const username_stafkesehatan_regex = /^[a-zA-Z0-9]+$/;
+      if (!username_stafkesehatan.match(username_stafkesehatan_regex)) {
+        valid = false;
+        validasi_text = "Username hanya boleh huruf dan angka";
+      }
+    }
+    // validasi password tidak boleh kosong, minimal 8 karakter, kombinasi huruf dan angka, dan harus sama dengan konfirmasi password
+    if (password_stafkesehatan == "") {
+      valid = false;
+      validasi_text = "Password tidak boleh kosong";
+    } else {
+      const password_stafkesehatan_regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+      if (!password_stafkesehatan.match(password_stafkesehatan_regex)) {
+        valid = false;
+        validasi_text = "Password minimal 8 karakter, kombinasi huruf dan angka";
+      } else {
+        if (password_stafkesehatan != konfirmpass_stafkesehatan) {
+          valid = false;
+          validasi_text = "Password dan konfirmasi password harus sama";
+        }
+      }
+    }
+    // validasi konfirmasi password harus sama dengan password
+    if (konfirmpass_stafkesehatan == "") {
+      valid = false;
+      validasi_text = "Konfirmasi password tidak boleh kosong";
+    } else {
+      if (password_stafkesehatan != konfirmpass_stafkesehatan) {
+        valid = false;
+        validasi_text = "Password dan konfirmasi password harus sama";
+      }
+    }
+    // validasi spesialisasi tidak boleh kosong
+    if (spesialisasi_stafkesehatan == "") {
+      valid = false;
+      validasi_text = "Spesialisasi tidak boleh kosong";
+    }
+    // validasi email tidak boleh kosong dan harus format email
+    if (email_stafkesehatan == "") {
+      valid = false;
+      validasi_text = "Email tidak boleh kosong";
+    } else {
+      const email_stafkesehatan_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (!email_stafkesehatan.match(email_stafkesehatan_regex)) {
+        valid = false;
+        validasi_text = "Email harus format email";
+      }
+    }
+    // validasi nomor telepon tidak boleh kosong dan harus angka
+    if (nomortelepon_stafkesehatan == "") {
+      valid = false;
+      validasi_text = "Nomor telepon tidak boleh kosong";
+    } else {
+      const nomortelepon_stafkesehatan_regex = /^[0-9]+$/;
+      if (!nomortelepon_stafkesehatan.match(nomortelepon_stafkesehatan_regex)) {
+        valid = false;
+        validasi_text = "Nomor telepon hanya boleh angka";
+      }
+    }
+    // validasi nomor induk tidak boleh kosong dan harus angka
+    if (noinduk_stafkesehatan == "") {
+      valid = false;
+      validasi_text = "Nomor induk tidak boleh kosong";
+    } else {
+      const noinduk_stafkesehatan_regex = /^[0-9]+$/;
+      if (!noinduk_stafkesehatan.match(noinduk_stafkesehatan_regex)) {
+        valid = false;
+        validasi_text = "Nomor induk hanya boleh angka";
+      }
+    }
+    // validasi photo tidak boleh kosong
+    if (photo_stafkesehatan == "") {
+      valid = false;
+      validasi_text = "Photo tidak boleh kosong";
+    }
+    const validasiDiv = document.getElementById("validasi");
+    if (!valid) {
+      event.preventDefault();
+      validasiDiv.style.display = "flex";
+      document.getElementById("validasi_text").innerText = validasi_text;
+    } else {
+      validasiDiv.style.display = "none";
+    }
+  });
+</script>

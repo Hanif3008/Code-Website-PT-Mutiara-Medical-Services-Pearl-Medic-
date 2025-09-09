@@ -1,0 +1,50 @@
+<div class="profile-company-section">
+  <div class="profile-pic">
+    <img src="/img/<%= perusahaan.photo_perusahaan %>" alt="profile" />
+  </div>
+  <div class="profile-wrapper">
+    <div class="profile-company-name">
+      <div class="subjudul">
+        <h2>Detail <span>Proyek Perusahaan</span></h2>
+      </div>
+      <h1><%= project.nama_proyek %></h1>
+    </div>
+    <br />
+    <br />
+    <div class="profil-akun-perusahaan" id="profil-akun-perusahaan">
+      <div class="profil-akun-perusahaan-menu">
+        <div class="profil-akun-perusahaan-option">
+          <h3>Nama Proyek</h3>
+          <h4><%= project.nama_proyek %></h4>
+        </div>
+        <div class="profil-akun-perusahaan-option">
+          <h3>Jumlah Karyawan</h3>
+          <h4><%= project.jumlah_proyek %> Orang</h4>
+        </div>
+        <div class="profil-akun-perusahaan-option">
+          <h3>Nomor Telepon</h3>
+          <h4><%= project.nomortelepon_proyek %></h4>
+        </div>
+        <div class="profil-akun-perusahaan-option" id="detail-proyek">
+          <h3>Status Proyek</h3>
+          <h4><%= project.status_proyek === 1 ? 'Aktif' : 'Tidak Aktif' %></h4>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="profil-akun-perusahaan-alamat">
+        <h3>Lokasi Proyek</h3>
+        <h4><%= project.lokasi_proyek %></h4>
+      </div>
+      <div class="profil-akun-perusahaan-deskripsi">
+        <h3>Deskripsi Proyek</h3>
+        <h4 style="text-align: justify"><%= project.deskripsi_proyek %></h4>
+      </div>
+      <div class="button-detailproyek">
+        <div id="button-kembali-detail" class="button-kembali-detail" style="width: 100%; background-color: var(--secondary-color); padding: 5px; border-radius: 10px; display: flex; justify-content: center; align-items: center">
+          <a href="/profile_client" class="btn btn-kembali" style="width: 100%; background-color: transparent; text-align: center; box-shadow: none">Kembali</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

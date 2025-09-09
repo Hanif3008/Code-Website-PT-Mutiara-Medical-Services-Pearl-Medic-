@@ -1,0 +1,57 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Kepala Staff <span>Administrasi</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <div class="Padmin_pelayananmasuk_pic">
+            <img src="/img/<%= kstaffData.photo_kstafadmin %>" alt="" />
+          </div>
+          <div class="Padmin_pelayananmasuk_data">
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nama Lengkap</h3>
+              <p><i class="fa-solid fa-user-tie"></i><%= kstaffData.namalengkap_kstafadmin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Username</h3>
+              <p><i class="fa-solid fa-user"></i><%= kstaffData.username_kstafadmin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Email</h3>
+              <p><i class="fa-solid fa-envelope"></i><%= kstaffData.email_kstafadmin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nomor Telepon</h3>
+              <p><i class="fa-solid fa-square-phone"></i><%= kstaffData.nomortelepon_kstafadmin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nomor Induk</h3>
+              <p><i class="fa-solid fa-user"></i><%= kstaffData.noinduk_kstafadmin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jabatan</h3>
+              <p><i class="fa-solid fa-user-tie"></i><%= kstaffData.jabatan_kstafadmin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Status</h3>
+              <p id="greens" class="status-pelayanan">Akun Aktif</p>
+            </div>
+          </div>
+          <div class="Padmin_pelayananmasuk_catatan">
+            <h2>Alamat Rumah</h2>
+            <p><i class="fa-solid fa-location-dot" style="color: var(--primary-color); margin-right: 10px; font-size: 12px"></i><%= kstaffData.alamat_kstafadmin %></p>
+          </div>
+          <div class="edit-all-button">
+            <div class="edit-menu-button">
+              <a href="/editPKstaff_admin">Edit Profil</a>
+              <a href="/gantipass_Kadmin" style="background-color: var(--red-color)">Ganti Password</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right"></div>
+  </div>
+</div>

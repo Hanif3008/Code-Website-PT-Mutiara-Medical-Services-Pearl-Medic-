@@ -1,0 +1,211 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Edit <span>Profil Perusahaan</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <form action="/EditDataPerusahaan/<%= DataPerusahaan.id_perusahaan %>" method="post" enctype="multipart/form-data" class="edit-profile-perusahaan" id="EditProfilPerusahaaan">
+            <div class="Padmin_pelayananmasuk_pic">
+              <img id="profilePic" src="/img/<%= DataPerusahaan.photo_perusahaan %>" alt="Company Pictures" />
+              <span class="change-text">Ubah Gambar</span>
+              <input type="file" name="photo_perusahaan" id="fileInput" accept="image/*" style="display: none" />
+            </div>
+            <div class="Padmin_pelayananmasuk_data">
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nama Perusahaan</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-building"></i>
+                  <input type="text" name="nama_perusahaan" id="nama_perusahaan" value="<%= DataPerusahaan.nama_perusahaan %>" placeholder="Masukan Nama Perusahaan . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Username</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" name="username_perusahaan" id="username_perusahaan" value="<%= DataPerusahaan.username_perusahaan %>" placeholder="Masukan Username . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Password</h3>
+                <p><i class="fa-solid fa-user-lock"></i><a href="/EditPassPDokter_admin/<%= DataPerusahaan.id_perusahaan %>">Ubah Password</a></p>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Bidang Perusahaan</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-school-circle-check"></i>
+                  <input type="text" name="bidang_perusahaan" id="bidang_perusahaan" value="<%= DataPerusahaan.bidang_perusahaan %>" placeholder="Masukan Bidang Perusahaan . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Email</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" name="email_perusahaan" id="email_perusahaan" value="<%= DataPerusahaan.email_perusahaan %>" placeholder="Masukan Email Perusahaan . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nomor Telepon</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-square-phone"></i>
+                  <input type="text" name="nomortelepon_perusahaan" id="nomortelepon_perusahaan" value="<%= DataPerusahaan.nomortelepon_perusahaan %>" placeholder="Masukan Nomor Telepon . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Status</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <select name="status_perusahaan" id="status_perusahaan">
+                    <option value="" disabled selected>-- Pilih Status Akun --</option>
+                    <option value="1" <%= DataPerusahaan.status_perusahaan === 1 ? 'selected' : '' %>>Akun Aktif</option>
+                    <option value="0" <%= DataPerusahaan.status_perusahaan === 0 ? 'selected' : '' %>>Non Aktif</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="Padmin_pelayananmasuk_catatan">
+              <h2>Alamat Lengkap</h2>
+              <div class="Padmin_pelayananmasuk_datamenu_input" id="alamat_perusahaan_input">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <input type="text" value="<%= DataPerusahaan.alamat_perusahaan %>" name="alamat_perusahaan" id="alamat_perusahaan" placeholder="Masukan Alamat Lengkap Perusahaan . . ." />
+              </div>
+            </div>
+            <input type="hidden" name="existing_photo_perusahaan" id="existing_photo_perusahaan" value="<%= DataPerusahaan.photo_perusahaan %>">
+            <div class="edit-all-button">
+              <div class="edit-menu-button">
+                <button type="submit">Edit Profil</button>
+              </div>
+              <div class="back-menu-button">
+                <a href="/LPerusahaan_admin">Kembali</a>
+              </div>
+            </div>
+              <div class="validasi" id="validasi">
+              <p id="validasi_text">Pastikan data yang anda masukkan benar dan valid</p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .validasi {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px dashed var(--red-color);
+    padding: 5px;
+    text-align: center;
+  }
+  .validasi p {
+    color: var(--red-color);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
+<script>
+  document.querySelector(".Padmin_pelayananmasuk_pic").addEventListener("click", function () {
+    document.getElementById("fileInput").click();
+  });
+
+  document.getElementById("fileInput").addEventListener("change", function (event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      document.getElementById("profilePic").src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  });
+</script>
+<script>
+  document.getElementById("EditProfilPerusahaaan").addEventListener("submit", function (event) {
+    const namaPerusahaan = document.getElementById("nama_perusahaan").value.trim();
+    const usernamePerusahaan = document.getElementById("username_perusahaan").value.trim();
+    const bidangPerusahaan = document.getElementById("bidang_perusahaan").value.trim();
+    const emailPerusahaan = document.getElementById("email_perusahaan").value.trim();
+    const nomorTeleponPerusahaan = document.getElementById("nomortelepon_perusahaan").value.trim();
+    const alamatPerusahaan = document.getElementById("alamat_perusahaan").value.trim();
+    const validasiText = document.getElementById("validasi_text");
+
+    let isValid = true;
+    validasiText.innerHTML = "";
+    // nama perusahaan wajib diisi
+    if (!namaPerusahaan) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Nama Perusahaan wajib diisi</p>";
+    }
+    // username perusahaan wajib diisi, kombinasi huruf dan angka, > 8 karakter
+    if (!/^[a-zA-Z0-9]{8,}$/.test(usernamePerusahaan)) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Username minimal 8 karakter dan hanya huruf dan angka</p>";
+    }
+    // bidang perusahaan wajib diisi
+    if (!bidangPerusahaan) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Bidang Perusahaan wajib diisi</p>";
+    }
+    // email perusahaan wajib diisi, format email
+    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailPerusahaan)) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Email tidak valid</p>";
+    }
+    // nomor telepon perusahaan wajib diisi, kombinasi angka, > 8 karakter
+    if (!/^[0-9]{8,}$/.test(nomorTeleponPerusahaan)) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Nomor telepon minimal 8 karakter dan hanya angka</p>";
+    }
+    // alamat perusahaan wajib diisi
+    if (!alamatPerusahaan) {
+      isValid = false;
+      validasiText.innerHTML += "<p>Alamat Perusahaan wajib diisi</p>";
+    }
+    const validasiDiv = document.getElementById("validasi");
+    if (!isValid) {
+      event.preventDefault();
+      validasiDiv.style.display = "flex";
+    } else {
+      validasiDiv.style.display = "none";
+    }
+  });
+</script>

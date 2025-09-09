@@ -1,0 +1,29 @@
+<div class="login_container">
+  <div class="login_logo">
+    <img src="/img/pearlmedic.png" alt="PearlMedic Logo" />
+  </div>
+  <div class="login_form">
+    <div class="form_submission">
+      <div class="form_icon_logo">
+        <i class="fa-solid fa-user-large"></i>
+      </div>
+      <form action="/login_dokter" method="POST">
+        <div class="form_input" id="validation-box">
+          <i class="fa-solid fa-user-tie"></i>
+          <input type="text" name="username" id="username" placeholder="Username Staf Dokter..." />
+        </div>
+        <div class="form_input" id="validation-box">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" name="password" id="password" placeholder="Password..." />
+        </div>
+        <% if (typeof error !== 'undefined') { %>
+        <p style="color: red; display: flex; width: 90%; justify-content: center; align-items: center; border: 1px dashed red; margin-top: -10px; margin-bottom: 10px; font-size: 10px; padding: 2px"><%= error %></p>
+        <% } %>
+        <div class="form_submit">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- 

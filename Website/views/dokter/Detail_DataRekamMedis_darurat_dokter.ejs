@@ -1,0 +1,151 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Detail Data<span> Rekam Medis</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <form class="Padmin_formulir_rekammedis">
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Informasi Pribadi Pasien</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="nama_lengkap">Nama Lengkap</label>
+                <h4>: <%= results.nama_lengkap %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nik">Nomor Identitas (NIK)</label>
+                <h4>: <%= results.nomor_identitas %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="tanggal_lahir">Tanggal Lahir</label>
+                <h4>: <%= results.tanggal_lahir %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="jenis_kelamin">Jenis Kelamin</label>
+                <h4>: <%= results.jenis_kelamin %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nomor_telepon">Nomor Telepon</label>
+                <h4>: <%= results.nomor_telepon %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="alamat">Alamat</label>
+                <h4>: <%= results.alamat %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Info Kedatangan</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="waktu_kedatangan">Waktu Kedatangan</label>
+                <h4>: <%= results.waktu_kedatangan %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="keluhan_utama">Keluhan Utama</label>
+                <h4>: <%= results.keluhan_utama %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Riwayat Pasien</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="riwayat_penyakit">Riwayat Penyakit</label>
+                <h4>: <%= results.riwayat_penyakit %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="obat_yang_dikonsumsi">Obat yang Sedang Dikonsumsi</label>
+                <h4>: <%= results.konsumsi_obat %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="alergi">Alergi</label>
+                <h4>: <%= results.alergi %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Pemeriksaan Tanda Vital</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="tekanan_darah">Tekanan Darah (mmHg)</label>
+                <h4>: <%= results.tekanan_darah %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="denyut_jantung">Denyut Jantung (bpm)</label>
+                <h4>: <%= results.denyut_jantung %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="suhu_tubuh">Suhu Tubuh (°C)</label>
+                <h4>: <%= results.suhu_tubuh %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="laju_pernapasan">Laju Pernapasan (rpm)</label>
+                <h4>: <%= results.laju_pernapasan %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Hasil dan Keputusan Lanjut</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="diagnosa_awal">Diagnosa Awal</label>
+                <h4>: <%= results.diagnosa_awal %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="tindakan_awal">Tindakan Awal</label>
+                <h4>: <%= results.tindakan_awal %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="rencana_perawatan">Rencana Perawatan Lanjutan</label>
+                <h4>: <%= results.perawatan_lanjutan %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Dokter Bertugas</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="nama_pemberi_vaksin">Nama Dokter</label>
+                <h4>: <%= results.namalengkap_stafkesehatan %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="spesialisasi_dokter">Spesialisasi Dokter</label>
+                <h4>: <%= results.spesialisasi_stafkesehatan %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nomor_telepon_pemberi">Nomor Telepon Dokter</label>
+                <h4>: <%= results.nomortelepon_stafkesehatan %></h4>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Padmin_pelayananmasuk {
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 0px;
+  }
+</style>

@@ -1,0 +1,206 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Tambah Akun <span>Staff Administrasi</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <form id="editProfileForm" class="edit-profile-perusahaan" method="POST" action="/tambahakun_Kadmin" enctype="multipart/form-data">
+            <div class="Padmin_pelayananmasuk_pic">
+              <img id="profilePic" src="/img/users.jpg" alt="Company Pictures" />
+              <span class="change-text">Tambah Gambar</span>
+              <input type="file" name="photo_kstafadmin" id="fileInput" accept="image/*" style="display: none" />
+            </div>
+            <div class="Padmin_pelayananmasuk_data">
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nama Lengkap</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-building"></i>
+                  <input type="text" name="nama_lengkap" id="nama_lengkap" placeholder="Masukan Nama Lengkap . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Username</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-school-circle-check"></i>
+                  <input type="text" name="username" id="username" placeholder="Masukan Username Anda . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Password</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="password" name="password_akun" id="password_akun" placeholder="Masukan Password Anda . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Konfirmasi Password</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="password" name="konfirm_password" id="konfirm_password" placeholder="Konfirmasi Password Anda . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Email</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" name="email" id="email" placeholder="Masukan Email Anda . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nomor Telepon</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-square-phone"></i>
+                  <input type="text" name="nomor_telepon" id="nomor_telepon" placeholder="Masukan Nomor Telepon . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nomor Induk</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-school-circle-check"></i>
+                  <input type="text" name="no_induk" id="no_induk" placeholder="Masukan Nomor Induk Anda . . ." />
+                </div>
+              </div>
+            </div>
+            <br />
+            <br />
+            <!-- <div class="Padmin_pelayananmasuk_catatan">
+              <h2>Alamat Lengkap</h2>
+              <div class="Padmin_pelayananmasuk_datamenu_input" id="alamat_perusahaan_input">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <input type="text" name="alamat" id="alamat_perusahaan" placeholder="Masukan Alamat Lengkap Perusahaan . . ." />
+              </div>
+            </div> -->
+            <div class="edit-all-button">
+              <div class="edit-menu-button">
+                <button type="submit">Tambah Akun</button>
+              </div>
+              <div class="back-menu-button">
+                <a href="/index_Kadmin">Kembali</a>
+              </div>
+            </div>
+            <div class="validasi" id="validasi">
+              <p id="validasi_text">Pastikan data yang anda masukkan benar dan valid</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right"></div>
+  </div>
+</div>
+<style>
+  .validasi {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px dashed var(--red-color);
+    padding: 5px;
+    text-align: center;
+  }
+  .validasi p {
+    color: var(--red-color);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
+<script>
+  document.querySelector(".Padmin_pelayananmasuk_pic").addEventListener("click", function () {
+    document.getElementById("fileInput").click();
+  });
+
+  document.getElementById("fileInput").addEventListener("change", function (event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      document.getElementById("profilePic").src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("editProfileForm");
+    const validasi = document.getElementById("validasi");
+    const validasiText = document.getElementById("validasi_text");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      let isValid = true;
+
+      // Reset validation messages
+      validasi.style.display = "none";
+      validasiText.textContent = "";
+
+      // Validation logic
+      const namaLengkap = document.getElementById("nama_lengkap").value.trim();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password_akun").value.trim();
+      const konfirmPassword = document.getElementById("konfirm_password").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const nomorTelepon = document.getElementById("nomor_telepon").value.trim();
+      const nomorInduk = document.getElementById("no_induk").value.trim();
+      const foto = document.getElementById("fileInput").files[0]; // Ambil file foto
+
+      // Validasi foto
+      if (!foto) {
+        isValid = false;
+        displayValidationMessage("File foto harus dipilih.");
+      }
+
+      // 1. Nama lengkap
+      if (!namaLengkap || !/^[a-zA-Z\s]+$/.test(namaLengkap)) {
+        isValid = false;
+        displayValidationMessage("Nama lengkap harus diisi dan hanya huruf.");
+      }
+
+      // 2. Username
+      if (!username || username.length < 8) {
+        isValid = false;
+        displayValidationMessage("Username harus diisi dan minimal 8 karakter.");
+      }
+
+      // 3. Password
+      if (!password || !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+        isValid = false;
+        displayValidationMessage("Password harus diisi, kombinasi huruf dan angka, minimal 8 karakter.");
+      }
+
+      // 4. Konfirmasi Password
+      if (!konfirmPassword || konfirmPassword !== password) {
+        isValid = false;
+        displayValidationMessage("Konfirmasi password harus sama dengan password sebelumnya.");
+      }
+
+      // 5. Email
+      if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+        isValid = false;
+        displayValidationMessage("Email harus diisi sesuai format email.");
+      }
+
+      // 6. Nomor Telepon
+      if (!nomorTelepon || !/^\d{8,}$/.test(nomorTelepon)) {
+        isValid = false;
+        displayValidationMessage("Nomor telepon harus diisi, hanya angka, minimal 8 digit.");
+      }
+
+      // 7. Nomor Induk
+      if (!nomorInduk) {
+        isValid = false;
+        displayValidationMessage("Nomor induk harus diisi.");
+      }
+
+      // Submit if all validations pass
+      if (isValid) {
+        form.submit();
+      }
+    });
+
+    function displayValidationMessage(message) {
+      validasi.style.display = "flex";
+      validasiText.textContent = message;
+    }
+  });
+</script>

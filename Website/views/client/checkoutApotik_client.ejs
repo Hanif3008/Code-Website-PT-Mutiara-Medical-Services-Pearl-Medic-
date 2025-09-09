@@ -1,0 +1,258 @@
+<div class="konfirmMedical_section">
+  <div class="konfirmMedical_wrapper">
+    <div class="konfirmMedical_menu-up">
+      <div class="konfirmMedical_title">
+        <h2>Checkout Pelayanan</h2>
+      </div>
+      <div class="konfirmMedical_subtitle">
+        <p>Silahkan isi dan konfirmasi beberapa data di bawah ini untuk melakukan checkout pesanan</p>
+      </div>
+      <form action="/checkout" class="checkout-obat-menu-all" method="post">
+        <div class="checkout-obat-menu" id="checkout-obat-menu">
+          <div class="checkout-obat-select">
+            <select name="proyek" id="proyekSelect">
+              <option value="0" disabled selected>--- Pilih Proyek ---</option>
+              <% projects.forEach(project => { %>
+              <option value="<%= project.id_proyek %>" data-location="<%= project.lokasi_proyek %>"><%= project.nama_proyek %></option>
+              <% }) %>
+            </select>
+            <i class="fa-solid fa-sort-down"></i>
+          </div>
+        </div>
+        <div class="checkout-obat-menu">
+          <div class="another-location">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <input type="text" id="locationInput" name="locationInput" placeholder="Masukan Alamat Lengkap Lokasi . . ." />
+          </div>
+        </div>
+        <br />
+        <div class="checkout-obat-menu" id="checkout-obat-menu">
+          <label for="checkbox" class="check-all">
+            <input type="checkbox" id="checkbox" />
+            <p class="check-desc">Tampilkan alamat lokasi sesuai dengan proyek yang dipilih</p>
+          </label>
+        </div>
+        <br />
+        <div class="checkout-obat-menu" id="checkout-obat-menu">
+          <label for="" class="jenis-pelayanan">
+            <h3>Jenis Pelayanan</h3>
+            <p>Pembelian Obat</p>
+          </label>
+        </div>
+        <br />
+        <div class="checkout-obat-menu" id="checkout-obat-menu">
+          <label for="" class="tanggal-pemesanan">
+            <h3>Tanggal Pemesanan</h3>
+            <p>25-08-2024</p>
+          </label>
+        </div>
+        <br />
+        <div class="checkout-obat-menu" id="checkout-obat-menu">
+          <label for="" class="estimasi-pengiriman">
+            <h3>Estimasi Pengiriman</h3>
+            <p>29-08-2024</p>
+          </label>
+        </div>
+        <div class="checkout-obat-menu" id="checkout-obat-menu">
+          <table class="checkout-all-obat">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Obat</th>
+                <th>Jumlah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% keranjangData.forEach(function(item, index) { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= item.nama_obat %></td>
+                <td><%= item.jumlah_obat %></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+        <div class="checkout-obat-menu" id="checkout-obat-menu">
+          <div class="catatan-tambahan-obat">
+            <label for="">Catatan Tambahan</label>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Silahkan Masukan Catatan Tambahan (opsional) . . ."></textarea>
+          </div>
+        </div>
+        <div class="terms_agreement">
+          <div class="terms_agreement_title">
+            <h2>Syarat dan Ketentuan</h2>
+          </div>
+          <div class="terms_agreement_menu">
+            <h3>1. Terdapat 3 Kondisi pesanan setelah dikonfirmasi</h3>
+            <p>a. <span id="reds"> Belum dilayani</span> : Pesanan belum dibaca dan dilayani admin</p>
+            <p>b. <span id="yellow"> Dalam Proses</span> : Pesanan sudah dibaca dan disetujui admin</p>
+            <p>c. <span id="green"> Sudah dilayani</span> : Pesanan sudah selesai dilayani</p>
+          </div>
+          <div class="terms_agreement_menu">
+            <h3>2. Pesanan dengan status <span id="reds"> "Belum Dilayani" </span>dapat dibatalkan</h3>
+          </div>
+          <div class="terms_agreement_menu">
+            <h3>3. Pesanan dengan status selain <span id="reds"> "Belum Dilayani" </span> tak dapat dibatalkan</h3>
+          </div>
+          <div class="terms_agreement_menu">
+            <h3>4. Jika ada perubahan data terkait pesanan yang sedang <span id="yellow"> "Dalam Proses"</span>,silahkan menghubungi langsung kontak pearl medic</h3>
+          </div>
+          <div class="terms_agreement_menu">
+            <h3>5. Admin Pearl Medic akan merespon pesanan dalam rentang waktu 1 jam hingga 24 jam setelah pemesanan diterima</h3>
+          </div>
+          <div class="terms_agreement_check">
+            <input type="checkbox" name="terms_agreement" id="terms_agreement" />
+            <span class="terms_agreement_checkbox"></span>
+            <label for="terms_agreement">Dengan menyetujui syarat dan ketentuan ini, dianggap bahwa Anda telah memahami dan menyetujui seluruh ketentuan yang telah ditetapkan.</label>
+          </div>
+        </div>
+        <div class="konfirmMedical_button">
+          <button type="submit">Konfirmasi</button>
+          <button id="back-btn" type="button" onclick="window.location.href='/LayananApotik_client'">Kembali</button>
+        </div>
+        <div class="validasi">
+          <p></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const proyekSelect = document.getElementById("proyekSelect");
+    const locationInput = document.getElementById("locationInput");
+    const termsAgreement = document.getElementById("terms_agreement");
+    const validasiDiv = document.querySelector(".validasi");
+
+    // Function to validate form fields
+    const validateForm = () => {
+      validasiDiv.innerHTML = ""; // Kosongkan pesan validasi sebelum mengecek lagi
+
+      if (proyekSelect.value === "0") {
+        displayValidationMessage("Silahkan pilih proyek.");
+        return false;
+      }
+
+      if (locationInput.value.trim() === "") {
+        displayValidationMessage("Silahkan isi alamat pengiriman.");
+        return false;
+      }
+
+      if (!termsAgreement.checked) {
+        displayValidationMessage("Silahkan setujui syarat dan ketentuan.");
+        return false;
+      }
+
+      return true;
+    };
+
+    // Function to display validation message
+    const displayValidationMessage = (message) => {
+      // show error message with .validasi border red
+      validasiDiv.innerHTML = `<p>${message}</p>`;
+      validasiDiv.style.border = "1px dashed red";
+      //   validasiDiv.innerHTML = `<p>${message}</p>`;
+    };
+
+    // Add event listener to form submission
+    const form = document.querySelector(".checkout-obat-menu-all");
+    form.addEventListener("submit", (event) => {
+      if (!validateForm()) {
+        event.preventDefault(); // Prevent form submission if validation fails
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const proyekSelect = document.getElementById("proyekSelect");
+    const checkAll = document.getElementById("checkbox");
+    const locationInput = document.getElementById("locationInput");
+
+    // Fungsi untuk mengisi lokasi proyek ke input teks
+    const updateLocationInput = () => {
+      const selectedOption = proyekSelect.options[proyekSelect.selectedIndex];
+      const projectLocation = selectedOption.getAttribute("data-location");
+
+      if (checkAll.checked) {
+        locationInput.value = projectLocation;
+      } else {
+        locationInput.value = ""; // Kosongkan input teks jika checkbox tidak dicentang
+      }
+    };
+
+    // Tambahkan event listener untuk perubahan pada elemen select
+    proyekSelect.addEventListener("change", () => {
+      updateLocationInput(); // Perbarui input teks saat proyek berubah
+    });
+
+    // Tambahkan event listener untuk perubahan pada checkbox
+    checkAll.addEventListener("change", updateLocationInput);
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const tanggalPemesanan = document.querySelector(".tanggal-pemesanan p");
+    const estimasiPengiriman = document.querySelector(".estimasi-pengiriman p");
+
+    // Mendapatkan tanggal hari ini
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, "0");
+    const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+    const yyyy = today.getFullYear();
+
+    // Format tanggal sesuai keinginan
+    const formattedDate = dd + "-" + mm + "-" + yyyy;
+
+    // Update tanggal pemesanan
+    tanggalPemesanan.textContent = formattedDate;
+
+    // Hitung estimasi pengiriman (2 hari dari tanggal pemesanan)
+    const estimasiPengirimanDate = new Date(today);
+    estimasiPengirimanDate.setDate(estimasiPengirimanDate.getDate() + 2);
+    const estimasiPengirimanFormatted = String(estimasiPengirimanDate.getDate()).padStart(2, "0") + "-" + String(estimasiPengirimanDate.getMonth() + 1).padStart(2, "0") + "-" + estimasiPengirimanDate.getFullYear();
+
+    // Update estimasi pengiriman
+    estimasiPengiriman.textContent = estimasiPengirimanFormatted;
+  });
+</script>
+
+<style>
+  .jenis-pelayanan h3 {
+    font-size: 18px;
+    color: var(--brown-color);
+    margin-bottom: 15px;
+  }
+  .jenis-pelayanan p {
+    font-size: 14px;
+    color: var(--white-color);
+  }
+  .validasi {
+    margin-top: 20px;
+    width: 100%;
+    /* border: 1px dashed var(--red-color); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  .validasi p {
+    color: var(--red-color);
+    text-align: center;
+    font-size: 12px;
+  }
+</style>
+<style>
+  .konfirmMedical_button {
+    width: 100%;
+  }
+  .konfirmMedical_button button {
+    width: 100%;
+  }
+  #back-btn {
+    background-color: var(--red-color);
+  }
+</style>

@@ -1,0 +1,139 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Edit <span>Password</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <form action="/gantipass_Kadmin" method="post" class="edit-profile-perusahaan">
+            <div class="Padmin_pelayananmasuk_pic">
+              <img src="/img/<%= kstaff.photo_kstafadmin %>" alt="" />
+            </div>
+            <div class="Padmin_pelayananmasuk_data">
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Password Lama</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-user-lock"></i>
+                  <input type="password" id="passwordLama" name="passwordLama" placeholder="Masukan Password Lama . . ." />
+                  <i class="fa-solid fa-eye" style="cursor: pointer"></i>
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Password Baru</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-key"></i>
+                  <input type="password" id="passwordBaru" name="passwordBaru" placeholder="Masukan Password Baru . . ." />
+                  <i class="fa-solid fa-eye" style="cursor: pointer"></i>
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Konfirmasi Password Baru</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-key"></i>
+                  <input type="password" id="konfirmasiPassword" name="konfirmasiPassword" placeholder="Masukan Konfirmasi Password Baru . . ." />
+                  <i class="fa-solid fa-eye" style="cursor: pointer"></i>
+                </div>
+              </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="edit-all-button">
+              <div class="edit-menu-button">
+                <button type="submit">Edit Password</button>
+              </div>
+              <div class="back-menu-button">
+                <a href="/profileKstaff_admin">Kembali</a>
+              </div>
+            </div>
+            <div class="validasi" id="validasi">
+              <p id="validasi_text">Pastikan data yang anda masukkan benar dan valid</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const passwordInputs = document.querySelectorAll('.Padmin_pelayananmasuk_datamenu_input input[type="password"]');
+    const form = document.querySelector(".edit-profile-perusahaan");
+
+    form.addEventListener("submit", function (event) {
+      const passwordLama = document.getElementById("passwordLama").value;
+      const passwordBaru = document.getElementById("passwordBaru").value;
+      const konfirmasiPassword = document.getElementById("konfirmasiPassword").value;
+      const validasiDiv = document.getElementById("validasi");
+
+      let valid = true;
+      let validasiText = "Pastikan data yang anda masukkan benar dan valid";
+
+      //   Validasi password lama
+      if (passwordLama.trim() === "") {
+        valid = false;
+        validasiText = "Password lama harus diisi";
+      }
+
+      // Validasi password baru
+      if (passwordBaru.trim() === "") {
+        valid = false;
+        validasiText = "Password baru harus diisi";
+      } else if (!/^(?=.*[a-zA-Z])(?=.*\d).{8,}$/.test(passwordBaru)) {
+        valid = false;
+        validasiText = "Password baru harus terdiri dari setidaknya 8 karakter dengan kombinasi huruf dan angka";
+      }
+
+      // Validasi konfirmasi password
+      if (konfirmasiPassword.trim() === "") {
+        valid = false;
+        validasiText = "Konfirmasi password harus diisi";
+      } else if (konfirmasiPassword !== passwordBaru) {
+        valid = false;
+        validasiText = "Konfirmasi password tidak cocok dengan password baru";
+      }
+
+      if (!valid) {
+        event.preventDefault();
+        validasiDiv.style.display = "flex";
+        document.getElementById("validasi_text").innerText = validasiText;
+      } else {
+        validasiDiv.style.display = "none";
+      }
+    });
+
+    passwordInputs.forEach(function (input) {
+      const eyeIcon = input.nextElementSibling;
+
+      eyeIcon.addEventListener("click", function () {
+        const type = input.getAttribute("type") === "password" ? "text" : "password";
+        input.setAttribute("type", type);
+
+        // Ganti ikon mata sesuai dengan keadaan
+        eyeIcon.classList.toggle("fa-eye-slash");
+      });
+    });
+  });
+</script>
+
+<style>
+  .validasi {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px dashed var(--red-color);
+    padding: 5px;
+    text-align: center;
+  }
+  .validasi p {
+    color: var(--red-color);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>

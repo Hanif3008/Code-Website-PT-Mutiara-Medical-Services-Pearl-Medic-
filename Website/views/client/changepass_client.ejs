@@ -1,0 +1,123 @@
+<div class="profile-company-section">
+  <div class="profile-pic">
+    <img src="/img/company.jpg" alt="profile" />
+  </div>
+  <div class="profile-wrapper">
+    <div class="profile-company-name">
+      <h1>Ganti Password</h1>
+    </div>
+    <form id="change-password-form" action="/changepass_client" method="POST">
+      <div class="ganti-pass-menu" id="ganti-pass-menu">
+        <div class="ganti-pass-menu-option">
+          <h3>Password Lama</h3>
+          <div class="edit-pass">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <input type="password" name="oldPassword" placeholder="Masukan Password Lama . . ." required />
+            <i class="fas fa-eye-slash toggle-password"></i>
+          </div>
+        </div>
+        <div class="ganti-pass-menu-option">
+          <h3>Password Baru</h3>
+          <div class="edit-pass">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <input type="password" name="newPassword" id="newPassword" placeholder="Masukan Password Baru . . ." required />
+            <i class="fas fa-eye-slash toggle-password"></i>
+          </div>
+        </div>
+        <div class="ganti-pass-menu-option">
+          <h3>Konfirmasi Password Baru</h3>
+          <div class="edit-pass">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Konfirmasi Password Baru . . ." required />
+            <i class="fas fa-eye-slash toggle-password"></i>
+          </div>
+        </div>
+      </div>
+      <div class="validasi" id="validasi" style="display: none">
+        <p id="validasi-message">Silahkan Cek Kembali Kebenaran Data Anda</p>
+      </div>
+      <div class="konfirm-button">
+        <button type="submit">Konfirmasi</button>
+        <a href="/profile_client">Kembali</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.getElementById("change-password-form").addEventListener("submit", function (event) {
+    const newPassword = document.getElementById("newPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const validationMessage = document.getElementById("validasi-message");
+    const validationBox = document.getElementById("validasi");
+
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    if (!passwordRegex.test(newPassword)) {
+      validationMessage.textContent = "Password baru harus memiliki kombinasi huruf dan angka minimal 8 karakter.";
+      validationBox.style.display = "block";
+      event.preventDefault();
+    } else if (newPassword !== confirmPassword) {
+      validationMessage.textContent = "Konfirmasi password tidak cocok.";
+      validationBox.style.display = "block";
+      event.preventDefault();
+    } else {
+      validationBox.style.display = "none";
+    }
+  });
+</script>
+
+<script>
+  const togglePassword = document.querySelectorAll(".toggle-password");
+  togglePassword.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const input = toggle.previousElementSibling;
+      if (input.type === "password") {
+        input.type = "text";
+        toggle.classList.remove("fa-eye-slash");
+        toggle.classList.add("fa-eye");
+      } else {
+        input.type = "password";
+        toggle.classList.remove("fa-eye");
+        toggle.classList.add("fa-eye-slash");
+      }
+    });
+  });
+</script>
+
+<style>
+  .validasi {
+    padding: 20px;
+    display: flex;
+    text-align: center;
+  }
+  .validasi p {
+    font-size: 12px;
+    color: var(--red-color);
+    border: 1px dashed var(--red-color);
+    padding: 5px;
+    width: 95%;
+  }
+  @media only screen and (max-width: 695px) {
+    .validasi {
+      padding: 15px;
+      display: flex;
+      text-align: center;
+    }
+    .validasi p {
+      font-size: 10px;
+      width: 95%;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .validasi {
+      padding: 15px;
+      display: flex;
+      text-align: center;
+    }
+    .validasi p {
+      font-size: 8px;
+      width: 90%;
+    }
+  }
+</style>

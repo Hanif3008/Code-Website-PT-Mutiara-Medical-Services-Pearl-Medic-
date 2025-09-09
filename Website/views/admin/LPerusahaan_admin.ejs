@@ -1,0 +1,270 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Data<span> Perusahaan</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <br />
+        <div class="Padmin_pelayananmasuk_sort">
+          <div class="Padmin_pelayananmasuk_tambahperusahaan">
+            <a href="/TambahAPerusahaan_admin">Tambah Perusahaan</a>
+          </div>
+        </div>
+        <div class="Padmin_pelayananmasuk_search">
+          <input type="text" id="searchInput" placeholder="Masukan nama perusahaan untuk mencari pelayanan . . ." />
+          <button id="searchButton"><i class="fa-solid fa-search"></i></button>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Email</th>
+                <th>status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="perusahaanTableBody">
+              <% DataPerusahaan.forEach((PerusahaanItems, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= PerusahaanItems.nama_perusahaan %></td>
+                <td><%= PerusahaanItems.email_perusahaan %></td>
+                <td class="<%= PerusahaanItems.status_perusahaan === 1 ? 'status-aktif' :'status-tidak-aktif' %>"><%= PerusahaanItems.status_perusahaan === 1 ? 'Aktif' : 'Tidak Aktif' %></td>
+                <td><a href="/PerusahaanDetail_admin/<%= PerusahaanItems.id_perusahaan %>">Detail</a></td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <% function truncateString(str, num) { %> <% if (str.length <= num) { %> <%= str %> <% } else { %> <%= str.slice(0, num) + '...' %> <% } %> <% } %>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Permintaan Penambahan Proyek <span id="yellow">*Belum Dikonfirmasi</span></h2>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Nama Proyek</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let index1 = 1; %> <% let emptyTable1 = true; %> <% DataProyek.forEach((ProyekItems) => { %> <% if (ProyekItems.status_proyek === 0) { %> <% emptyTable1 = false; %>
+              <tr>
+                <td><%= index1++ %></td>
+                <td><%= ProyekItems.nama_perusahaan %></td>
+                <td><%= truncateString(ProyekItems.nama_proyek, 15) %></td>
+                <td class="status-belum-dikonfirmasi">Belum Dikonfirmasi</td>
+                <td><a href="/ReqProyekP_admin/<%= ProyekItems.id_proyek_request %>">Detail</a></td>
+              </tr>
+              <% } %> <% }); %> <% if (emptyTable1) { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Permintaan Penambahan Proyek <span id="green">*Sudah Dikonfirmasi</span></h2>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Nama Proyek</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let index2 = 1; %> <% let emptyTable2 = true; %> <% DataProyek.forEach((ProyekItems) => { %> <% if (ProyekItems.status_proyek === 1) { %> <% emptyTable2 = false; %>
+              <tr>
+                <td><%= index2++ %></td>
+                <td><%= ProyekItems.nama_perusahaan %></td>
+                <td><%= truncateString(ProyekItems.nama_proyek, 20) %></td>
+                <td class="status-sudah-dikonfirmasi">Sudah Dikonfirmasi</td>
+                <!-- <td><i class="fa-solid fa-trash"></i></td> -->
+              </tr>
+              <% } %> <% }); %> <% if (emptyTable2) { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Permintaan Penambahan Proyek <span id="reds">*Permintaan Ditolak</span></h2>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Nama Proyek</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let index3 = 1; %> <% let emptyTable3 = true; %> <% DataProyek.forEach((ProyekItems) => { %> <% if (ProyekItems.status_proyek === 2) { %> <% emptyTable3 = false; %>
+              <tr>
+                <td><%= index3++ %></td>
+                <td><%= ProyekItems.nama_perusahaan %></td>
+                <td><%= truncateString(ProyekItems.nama_proyek, 20) %></td>
+                <td class="status-ditolak">Ditolak</td>
+                <td><i class="fa-solid fa-trash"></i></td>
+              </tr>
+              <% } %> <% }); %> <% if (emptyTable3) { %>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  td .fa-trash {
+    color: var(--red-color);
+    cursor: pointer;
+  }
+  .status-aktif {
+    color: var(--green-color);
+  }
+
+  .status-tidak-aktif {
+    color: var(--red-color);
+  }
+  .status-belum-dikonfirmasi {
+    color: var(--yellow-color);
+  }
+  .status-sudah-dikonfirmasi {
+    color: var(--green-color);
+  }
+  .status-ditolak {
+    color: var(--red-color);
+  }
+</style>
+<script>
+  document.getElementById("searchButton").addEventListener("click", function () {
+    const searchValue = document.getElementById("searchInput").value;
+
+    fetch(`/searchPerusahaan_admin?q=${encodeURIComponent(searchValue)}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const perusahaanTableBody = document.getElementById("perusahaanTableBody");
+        perusahaanTableBody.innerHTML = "";
+
+        if (data.length === 0) {
+          perusahaanTableBody.innerHTML = `
+          <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>`;
+          return;
+        }
+
+        data.forEach((PerusahaanItems, index) => {
+          const statusClass = PerusahaanItems.status_perusahaan === 1 ? "status-aktif" : "status-tidak-aktif";
+          const statusText = PerusahaanItems.status_perusahaan === 1 ? "Aktif" : "Tidak Aktif";
+          const row = `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${PerusahaanItems.nama_perusahaan}</td>
+            <td>${PerusahaanItems.email_perusahaan}</td>
+            <td class="${statusClass}">${statusText}</td>
+            <td><a href="/PerusahaanDetail_admin?id=${PerusahaanItems.id_perusahaan}">Detail</a></td>
+          </tr>`;
+          perusahaanTableBody.insertAdjacentHTML("beforeend", row);
+        });
+      })
+      .catch((error) => {
+        console.error("Error fetching search results:", error);
+        const perusahaanTableBody = document.getElementById("perusahaanTableBody");
+        perusahaanTableBody.innerHTML = `
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>`;
+      });
+  });
+</script>

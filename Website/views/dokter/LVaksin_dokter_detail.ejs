@@ -1,0 +1,86 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Detail <span>Pelayanan Vaksinasi</span></h1>
+      </div>
+      <br />
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <div class="Padmin_pelayananmasuk_pic">
+            <img src="/img/<%= vaksin.photo_perusahaan %>" alt="" />
+          </div>
+          <div class="Padmin_pelayananmasuk_data">
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nama Perusahaan</h3>
+              <p><i class="fa-solid fa-building"></i> <%= vaksin.nama_perusahaan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jenis Pelayanan</h3>
+              <p><i class="fa-solid fa-notes-medical"></i> <%= vaksin.jenis_pelayanan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nomor Pesanan</h3>
+              <p><i class="fa-solid fa-notes-medical"></i> <%= vaksin.nomorpesanan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nama Proyek</h3>
+              <p><i class="fa-solid fa-user-shield"></i> <%= vaksin.nama_proyek %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Kontak Proyek</h3>
+              <p><i class="fa-solid fa-square-phone"></i> <%= vaksin.nomortelepon_proyek %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nama Vaksin</h3>
+              <p><i class="fa-solid fa-syringe"></i> <%= vaksin.nama_vaksin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Lokasi Pelayanan</h3>
+              <p><i class="fa-solid fa-location-dot"></i> <%= vaksin.lokasipelayanan_vaksin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jumlah Pasien</h3>
+              <p><i class="fa-solid fa-bed"></i> <%= vaksin.jumlahpasien_vaksin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Tanggal Pemesanan</h3>
+              <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= vaksin.tanggalpemesanan_vaksin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Tanggal Pelayanan</h3>
+              <p class="date"><i class="fa-solid fa-calendar-days"></i> <%= vaksin.tanggalpelayanan_vaksin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jam Pelayanan</h3>
+              <p class="clock"><i class="fa-solid fa-clock"></i> <%= vaksin.jampelayanan_vaksin %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Status Pelayanan</h3>
+              <p id="yellow"><%= vaksin.status === 1 ? 'Dalam Proses' : 'Selesai' %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Data Rekam Medis</h3>
+              <a href="/DataRekamMedis_vaksinasi_dokter/<%= vaksin.id %>">Lihat Selengkapnya</a>
+            </div>
+          </div>
+          <div class="Padmin_pelayananmasuk_catatan">
+            <h2>Catatan Tambahan</h2>
+            <p><%= vaksin.catatan_vaksinasi ? vaksin.catatan_vaksinasi : 'Tidak ada catatan tambahan' %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<style>
+  .Padmin_pelayananmasuk_datamenu button {
+    padding: 10px;
+    transition: all ease-in-out 0.3s;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>

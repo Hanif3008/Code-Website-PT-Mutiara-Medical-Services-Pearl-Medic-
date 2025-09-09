@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Poppins:wght@400;500;600&family=Prata&family=Questrial&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--cream-color);
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--poppins-font);
+}
+*::-webkit-scrollbar {
+  width: 0.5rem;
+}
+/* scrollbar color */
+*::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+}
+/* scrollbar left and right none */
+*::-webkit-scrollbar-thumb {
+  background: var(--cream-color);
+  border-radius: 0.5rem;
+}
+*::-webkit-scrollbar:horizontal {
+  height: 0.5rem;
+  display: none;
+}
+:root {
+  --lora-font: "Lora", serif;
+  --montserrat-font: "Montserrat", sans-serif;
+  --poppins-font: "Poppins", sans-serif;
+  --prata-font: "Prata", serif;
+  --questrial-font: "Questrial", sans-serif;
+  --primary-color: #eb791f;
+  --secondary-color: #424141;
+  --red-color: #b31312;
+  --white-color: #ffffff;
+  --cream-color: #f2f2f2;
+  --footer-color: #f0eaea;
+  --black-color: #0f0f0f;
+  --green-color: #41b06e;
+  --yellow-color: #ffc94a;
+  --brown-color: #d6a076;
+  --table-color: #eeedeb;
+  --gray-color: #eae4dd;
+}
+#none {
+  display: none;
+}
+#red {
+  color: var(--red-color);
+}
+#reds {
+  color: var(--red-color);
+}
+#green {
+  color: var(--green-color);
+}
+#yellow {
+  color: var(--yellow-color);
+}
+#primary {
+  color: var(--primary-color);
+}
+#red {
+  background-color: var(--red-color);
+  color: var(--cream-color);
+}
+#red:hover {
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+}
+#greens {
+  background-color: var(--green-color);
+  color: var(--cream-color);
+}
+#greens:hover {
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+}
+#yellows {
+  background-color: var(--yellow-color);
+  color: var(--secondary-color);
+}
+#yellows:hover {
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+}
+#black {
+  background-color: var(--secondary-color);
+}
+#subjudul {
+  display: flex;
+  flex-direction: row;
+}
+.sudah-dilayani {
+  background-color: var(--green-color);
+  padding: 5px;
+  border-radius: 10px;
+  color: var(--cream-color) !important;
+  width: 120px;
+  text-align: center;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dalam-proses {
+  background-color: var(--yellow-color);
+  padding: 5px;
+  border-radius: 10px;
+  color: var(--secondary-color) !important;
+  width: 120px;
+  text-align: center;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.belum-dilayani {
+  background-color: var(--red-color);
+  padding: 5px;
+  border-radius: 10px;
+  color: var(--cream-color) !important;
+  width: 120px;
+  text-align: center;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 605px) {
+  #subjudul h2 {
+    font-size: 14px;
+  }
+  #subjudul h2 span {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  #subjudul h2 {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  #subjudul h2 span {
+    font-size: 10px;
+  }
+}

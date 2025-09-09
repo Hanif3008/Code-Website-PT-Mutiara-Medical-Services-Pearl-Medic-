@@ -1,0 +1,301 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Detail <span>Pelayanan</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <div class="Padmin_pelayananmasuk_pic">
+            <img src="/img/<%= PelayananObat.photo_perusahaan %>" alt="" />
+          </div>
+          <div class="Padmin_pelayananmasuk_data">
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nama Perusahaan</h3>
+              <p><i class="fa-solid fa-building"></i><%= PelayananObat.nama_perusahaan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jenis Pelayanan</h3>
+              <p><i class="fa-solid fa-notes-medical"></i><%= PelayananObat.jenis_pelayanan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nomor Pesanan</h3>
+              <p><i class="fa-solid fa-notes-medical"></i><%= PelayananObat.nomorpesanan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nama Proyek</h3>
+              <p><i class="fa-solid fa-user-shield"></i><%= PelayananObat.nama_proyek %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Kontak Proyek</h3>
+              <p><i class="fa-solid fa-square-phone"></i><%= PelayananObat.nomortelepon_proyek %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Tanggal Pemesanan</h3>
+              <p><i class="fa-solid fa-calendar"></i><%= PelayananObat.tgl_pemesananobat %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Tanggal Pengiriman</h3>
+              <p><i class="fa-solid fa-calendar"></i><%= PelayananObat.tgl_pengiriman %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Lokasi Pengiriman</h3>
+              <p><i class="fa-solid fa-map-marker-alt"></i><%= PelayananObat.lokasi_pengirimanobat %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Status Pelayanan</h3>
+              <% if(PelayananObat.status_pesanan == 3) {%>
+              <p id="reds">Belum Dilayani</p>
+              <% } else if (PelayananObat.status_pesanan == 2) {%>
+              <p id="yellow">Dalam Proses</p>
+              <% } else if (PelayananObat.status_pesanan == 1) {%>
+              <p id="green">Sudah Dilayani</p>
+              <% } %>
+            </div>
+            <% if(PelayananObat.status_pesanan == 3) { %>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Batalkan Pesanan</h3>
+              <button id="red" onclick="confirmDelete('<%= PelayananObat.id_pelayananobat %>')">Batalkan</button>
+            </div>
+            <% } %>
+          </div>
+          <div class="Padmin_pelayananmasuk_catatan">
+            <h2>Catatan Tambahan</h2>
+            <p><%= PelayananObat.catatantambahanobat %></p>
+          </div>
+          <div class="Padmin_pelayanan_dokter_bertugas">
+            <div class="Padmin_pelayanan_dokter_bertugas_title">
+              <h2>Keranjang Pembelian Obat</h2>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama Obat</th>
+                  <th>Jumlah Obat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if (keranjangData && keranjangData.length > 0) { %> <% keranjangData.forEach((item, index) => { %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><%= item.nama_obat %></td>
+                  <td><%= item.jumlah_obat %></td>
+                </tr>
+                <% }); %> <% } else { %>
+                <tr>
+                  <td colspan="3">Tidak ada data di keranjang.</td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+          <% if (PelayananObat.status_pesanan == 2) { %>
+            <form action="/changeStatusObat/<%= PelayananObat.id_pelayananobat %>" method="POST" class="Padmin_ubahstatus_vaksinasi">
+                <h2>Status Pesanan</h2>
+                <select name="status_pesanan" id="status_pesanan">
+                    <option value="0" disabled>-- Pilih Status Pesanan --</option>
+                    <option value="2" <%= PelayananObat.status_pesanan === 2 ? 'selected' : "" %>>Dalam Proses</option>
+                    <option value="1" <%= PelayananObat.status_pesanan === 1 ? 'selected' : "" %>>Sudah Dilayani</option>
+                </select>
+                <button type="submit">Ubah Status Pesanan</button>
+            </form>
+        <% } %>
+          <% if (PelayananObat.status_pesanan == 3) {%>
+          <div class="konfirmasi_detailpesanan" id="konfirmasi_detailpesanan">
+            <button type="button">Balas Pesanan</button>
+          </div>
+          <div class="Padmin_pelayananmasuk_input" id="none">
+            <div class="konfirmasi_pelayanan_title">
+              <h2>Konfirmasi Pelayanan</h2>
+            </div>
+            <form action="/LPelayananObatDetail_admin/<%= PelayananObat.id_pelayananobat %>/update" method="post">
+              <div class="konfirmasi_pelayananmenu">
+                <label for="tanggal_pengiriman">Tanggal Pengiriman</label>
+                <input type="date" id="tgl_pengiriman" name="tgl_pengiriman" value="<%= PelayananObat.tgl_pengiriman %>" required />
+              </div>
+              <div class="konfirmasi_pelayananmenu">
+                <h2>Silahkan Konfirmasi Pesanan Obat</h2>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Nama Obat</th>
+                      <th>Jumlah</th>
+                      <th>Stok</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% if (keranjangData && keranjangData.length > 0) { %> <% keranjangData.forEach((item, index) => { %>
+                    <tr>
+                      <td><%= index + 1 %></td>
+                      <td><%= item.nama_obat %></td>
+                      <td><%= item.jumlah_obat %></td>
+                      <td><%= item.stock_obat %></td>
+                      <!-- Menampilkan stok obat -->
+                    </tr>
+                    <% }); %> <% } else { %>
+                    <tr>
+                      <td colspan="4">Tidak ada data di keranjang.</td>
+                    </tr>
+                    <% } %>
+                  </tbody>
+                </table>
+              </div>
+              <input type="hidden" name="status_pesanan" id="status_pesanan" value="2" />
+              <div class="konfirmasi_pelayananmenu_button">
+                <button type="submit">Konfirmasi</button>
+              </div>
+            </form>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const konfirmpesanan = document.getElementById("konfirmasi_detailpesanan");
+  const Padmin_pelayananmasuk_input = document.querySelector(".Padmin_pelayananmasuk_input");
+
+  // if konfirmpesanan clicked remove id none
+  konfirmpesanan.addEventListener("click", () => {
+    Padmin_pelayananmasuk_input.id = "";
+  });
+</script>
+<style>
+  .title {
+    margin-bottom: 10px;
+  }
+  .jumlah_Vaksin {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    width: 250px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .stok-vaksin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .stok-tersedia .stok-tersedia-jumlah p {
+    padding: 10px;
+    background-color: var(--green-color);
+    text-align: center;
+    border-radius: 5px;
+    width: 250px;
+    font-size: 14px;
+    color: var(--white-color);
+  }
+  .Padmin_pelayananmasuk_datamenu button {
+    padding: 10px;
+    transition: all ease-in-out 0.3s;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+<style>
+  .Padmin_ubahstatus_vaksinasi {
+    padding: 20px;
+  }
+  .Padmin_ubahstatus_vaksinasi h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .Padmin_ubahstatus_vaksinasi select {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    outline: none;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .Padmin_ubahstatus_vaksinasi button {
+    width: 95%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all ease-in-out 0.3s;
+    margin-top: 50px;
+  }
+  .Padmin_ubahstatus_vaksinasi button:hover {
+    background-color: var(--red-color);
+  }
+</style>
+<script>
+    function confirmDelete(id) {
+        if (confirm("Apakah Anda yakin ingin membatalkan pesanan?")) {
+            // Kirim permintaan penghapusan ke server
+            fetch(`/deleteObat/${id}`, {
+                method: 'POST'
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect atau tindakan lain setelah penghapusan berhasil
+                    window.location.href = '/LObat_admin';
+                } else {
+                    throw new Error('Gagal menghapus pesanan');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Gagal menghapus pesanan');
+            });
+        }
+    }
+    </script>

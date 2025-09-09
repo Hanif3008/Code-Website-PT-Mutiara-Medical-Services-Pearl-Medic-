@@ -1,0 +1,88 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Dashboard<span> Kepala Staff Admin</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Data Akun Staff Administrasi Pearl Medic</h2>
+        </div>
+        <div class="Padmin_pelayananmasuk_sort">
+          <div class="Padmin_pelayananmasuk_tambahperusahaan">
+            <a href="/tambahakun_Kadmin">Tambah Akun Staff Administrasi</a>
+          </div>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Lengkap</th>
+                <th>Nomor Induk</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% akunStafAdmin.forEach((akun, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= akun.namalengkap_stafadmin %></td>
+                <td><%= akun.noinduk_stafadmin %></td>
+                <td class="<%= akun.status_stafadmin === 1 ? 'status-aktif' : 'status-tidak-aktif' %>"><%= akun.status_stafadmin === 1 ? 'Aktif' : 'Tidak Aktif' %></td>
+                <td><a href="/detailStafAdmin/<%= akun.id_stafadmin %>">Detail</a></td>
+                <td>
+                  <a href="#" onclick="confirmDeletion('<%= akun.id_stafadmin %>', event)"><i class="fa-solid fa-trash"></i></a>
+                </td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .status-aktif {
+    color: var(--green-color);
+  }
+
+  .status-tidak-aktif {
+    color: var(--red-color);
+  }
+  .fa-trash {
+    color: var(--secondary-color);
+  }
+  .fa-trash:hover {
+    color: var(--red-color);
+  }
+</style>
+<script>
+  function confirmDeletion(id, event) {
+    event.preventDefault(); // Prevent the default action of the link
+    if (confirm("Are you sure you want to delete this staff admin?")) {
+      fetch(`/deleteStafAdmin/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json()) // Parse the JSON response
+        .then((data) => {
+          if (data.message === "Staff admin deleted successfully") {
+            alert(data.message);
+            window.location.reload(); // Reload the page to reflect changes
+          } else {
+            alert("Failed to delete staff admin");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("An error occurred while deleting the staff admin.");
+        });
+    }
+  }
+</script>

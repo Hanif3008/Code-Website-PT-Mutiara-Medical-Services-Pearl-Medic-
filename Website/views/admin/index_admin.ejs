@@ -1,0 +1,136 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Dashboard<span> Staff Admin</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Pelayanan Masuk Terbaru</h2>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Nomor Pesanan</th>
+                <th>Jenis Pelayanan</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (layananMasuk.length > 0) { %>
+                <% layananMasuk.forEach((layanan, index) => { %>
+                  <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= layanan.nama_perusahaan %></td>
+                    <td><%= layanan.nomorpesanan %></td>
+                    <td><%= layanan.jenis_pelayanan %></td>
+                    <td id="reds"><%= layanan.status == 3 ? 'Belum Dilayani' : 'Lainnya' %></td>
+                    <td>
+                      <% if (layanan.jenis_pelayanan === 'Darurat') { %>
+                        <a href="/LPelayananDetailDarurat_admin/<%= layanan.id %>">Detail</a>
+                      <% } else if (layanan.jenis_pelayanan === 'Medical Check Up') { %>
+                        <a href="/LPelayananDetailMedical_admin/<%= layanan.id %>">Detail</a>
+                      <% } else if (layanan.jenis_pelayanan === 'Vaksinasi') { %>
+                        <a href="/LPelayananDetail_admin/<%= layanan.id %>">Detail</a>
+                      <% } else if (layanan.jenis_pelayanan === 'Pembelian Obat') { %>
+                        <a href="/LObat_Admin_detail/<%= layanan.id %>">Detail</a>
+                      <% } else { %>
+                        <span>Tidak tersedia</span>
+                      <% } %>
+                    </td>
+                  </tr>
+                <% }); %>
+              <% } else { %>
+                <tr>
+                  <td colspan="5">Tidak ada data yang ditemukan</td>
+                </tr>
+              <% } %>
+            </tbody>
+            
+          </table>
+        </div>
+        
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Permintaan Penambahan Proyek</h2>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Nama Proyek</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% function truncateString(str, num) { %> <% if (str.length <= num) { %> <%= str %> <% } else { %> <%= str.slice(0, num) + '...' %> <% } %> <% } %>
+              <% if (ProyekMasuk.length > 0) { %>
+                <% ProyekMasuk.forEach((proyek, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= proyek.nama_perusahaan %></td>
+                <td><%= truncateString(proyek.nama_proyek, 25) %></td>
+                <td id="reds"><%= proyek.status_proyek == 0 ? 'Belum Dikonfirmasi' : 'Lainnya' %></td>
+                <td><a href="/ReqProyekP_admin/<%= proyek.id_proyek_request %>">Detail</a></td>
+              </tr>
+              <% }); %>
+              <% } else { %>
+                 <tr>
+                  <td colspan="5">Tidak ada data yang ditemukan</td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

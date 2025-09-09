@@ -1,0 +1,304 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Edit <span>Proyek</span></h1>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div class="Padmin_notifikasi_responsive" id="none">
+        <div class="Padmin_notifikasi_wrapper" id="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_title" id="Padmin_notifikasi_title">
+            <h2>Notifikasi <span>Pesan</span></h2>
+          </div>
+          <div class="Padmin_notifikasi_content" id="Padmin_notifikasi_content">
+            <div class="notifikasi_content" id="notifikasi_content">
+              <div class="notifikasi_content_icon" id="notifikasi_content_icon_darurat">
+                <i class="fa-solid fa-bell"></i>
+                <div class="notifikasi_content_pesan" id="notifikasi_content_pesan">
+                  <p>Ada 2 pelayanan darurat yang belum dilayani</p>
+                </div>
+              </div>
+              <div class="notifikasi_content_detail" id="notifikasi_content_detail_darurat">
+                <a href="#">Lihat Pesanan</a>
+              </div>
+            </div>
+            <div class="notifikasi_content" id="notifikasi_content">
+              <div class="notifikasi_content_icon" id="notifikasi_content_icon">
+                <i class="fa-solid fa-bell"></i>
+                <div class="notifikasi_content_pesan" id="notifikasi_content_pesan">
+                  <p>Ada 2 pelayanan darurat yang belum dilayani</p>
+                </div>
+              </div>
+              <div class="notifikasi_content_detail" id="notifikasi_content_detail">
+                <a href="#">Lihat Pesanan</a>
+              </div>
+            </div>
+            <div class="notifikasi_content" id="notifikasi_content">
+              <div class="notifikasi_content_icon" id="notifikasi_content_icon">
+                <i class="fa-solid fa-bell"></i>
+                <div class="notifikasi_content_pesan" id="notifikasi_content_pesan">
+                  <p>Ada 2 pelayanan darurat yang belum dilayani</p>
+                </div>
+              </div>
+              <div class="notifikasi_content_detail" id="notifikasi_content_detail">
+                <a href="#">Lihat Pesanan</a>
+              </div>
+            </div>
+            <div class="notifikasi_content" id="notifikasi_content">
+              <div class="notifikasi_content_icon" id="notifikasi_content_icon">
+                <i class="fa-solid fa-bell"></i>
+                <div class="notifikasi_content_pesan" id="notifikasi_content_pesan">
+                  <p>Ada 2 pelayanan darurat yang belum dilayani</p>
+                </div>
+              </div>
+              <div class="notifikasi_content_detail" id="notifikasi_content_detail">
+                <a href="#">Lihat Pesanan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper" id="Padmin_pelayananmasuk_wrapper">
+          <form action="/EditDetailProyekP_admin/<%= DataProyek.id_proyek %>" method="POST" class="edit-profile-perusahaan" id="formEditProyek">
+            <div class="Padmin_pelayananmasuk_pic">
+              <img src="/img/<%= DataProyek.photo_perusahaan %>" alt="" />
+            </div>
+            <div class="Padmin_pelayananmasuk_title" style="margin-top: 100px">
+              <h2>Edit Profil Proyek</h2>
+            </div>
+            <div class="Padmin_pelayananmasuk_data">
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nama Proyek</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-building"></i>
+                  <input type="text" name="nama_proyek" id="nama_proyek" value="<%= DataProyek.nama_proyek %>" placeholder="Masukan Nama Proyek . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Jumlah Karyawan</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-school-circle-check"></i>
+                  <input type="number" name="jumlah_proyek" id="jumlah_proyek" value="<%= DataProyek.jumlah_proyek %>" placeholder="Masukan Jumlah Karyawan . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nomor Telepon</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-square-phone"></i>
+                  <input type="text" name="nomortelepon_proyek" id="nomortelepon_proyek" value="<%= DataProyek.nomortelepon_proyek %>" placeholder="Masukan Nomor Telepon . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Status Proyek</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <select name="status_proyek" id="status_proyek">
+                    <option value="" disabled selected>-- Pilih Status Akun --</option>
+                    <option value="1" <%= DataProyek.status_proyek === 1 ? 'selected' : '' %>>Aktif</option>
+                    <option value="0" <%= DataProyek.status_proyek === 0 ? 'selected' : '' %>>Non Aktif</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="Padmin_pelayananmasuk_catatan">
+              <h2>Lokasi Proyek</h2>
+              <div class="Padmin_pelayananmasuk_datamenu_input" id="alamat_perusahaan_input">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <input type="text" name="lokasi_proyek" id="lokasi_proyek" placeholder="Masukan Alamat Lengkap Perusahaan . . ." value="<%= DataProyek.lokasi_proyek %>" />
+              </div>
+            </div>
+            <div class="Padmin_pelayananmasuk_catatan">
+              <h2>Catatan atau Deskripsi</h2>
+              <div class="Padmin_pelayananmasuk_datamenu_input" id="deskripsi_perusahaan_input">
+                <textarea name="deskripsi_proyek" id="deskripsi_perusahaan" placeholder="Masukan Beberapa Deskripsi Perusahaan . . ."><%= DataProyek.deskripsi_proyek %></textarea>
+              </div>
+            </div>
+            <div class="edit-all-button">
+              <div class="edit-menu-button">
+                <button type="submit">Edit Proyek</button>
+              </div>
+              <div class="back-menu-button">
+                <a href="/DetailProyekP_admin/<%= DataProyek.id_proyek %>">Kembali</a>
+              </div>
+            </div>
+            <div class="validasi" id="validasi">
+              <p id="validasi_text">Pastikan data yang anda masukkan benar dan valid</p>
+            </div>
+          </form>
+          
+        </div>
+        <br>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+        <div class="Padmin_notifikasi_title">
+          <h2>Notifikasi <span>Pesan</span></h2>
+        </div>
+        <div class="Padmin_notifikasi_content">
+          <div class="Padmin_notifikasi_darurat">
+            <div class="Padmin_notifikasi_darurat_icon">
+              <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="Padmin_notifikasi_darurat_text">
+              <p>Ada 2 pelayanan darurat yang belum dilayani</p>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_detail">
+            <a href="/LDarurat_admin">Lihat Pesanan</a>
+          </div>
+          <div class="Padmin_notifikasi_medical">
+            <div class="Padmin_notifikasi_medical_icon">
+              <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="Padmin_notifikasi_medical_text">
+              <p>Ada 2 pelayanan medical check up yang belum dilayani</p>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_detail" id="Padmin_notifikasi_detail">
+            <a href="/LMedical_admin">Lihat Pesanan</a>
+          </div>
+          <div class="Padmin_notifikasi_vaksin">
+            <div class="Padmin_notifikasi_vaksin_icon">
+              <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="Padmin_notifikasi_vaksin_text">
+              <p>Ada 2 pelayanan vaksinasi yang belum dilayani</p>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_detail" id="Padmin_notifikasi_detail">
+            <a href="/LVaksin_admin">Lihat Pesanan</a>
+          </div>
+          <div class="Padmin_notifikasi_vaksin">
+            <div class="Padmin_notifikasi_vaksin_icon">
+              <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="Padmin_notifikasi_vaksin_text">
+              <p>Ada 2 permintaan penambahan proyek yang belum dikonfirmasi</p>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_detail" id="Padmin_notifikasi_detail">
+            <a href="/index_admin">Lihat Pesanan</a>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .validasi {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  border: 1px dashed var(--red-color);
+  padding: 5px;
+  text-align: center;
+}
+.validasi p {
+  color: var(--red-color);
+  font-size: 12px;
+  text-align: center;
+}
+</style>
+
+<script>
+  document.getElementById('formEditProyek').addEventListener('submit', function(e) {
+  e.preventDefault(); // Prevent the default form submission
+
+  const nama_proyek = document.getElementById('nama_proyek').value;
+  const jumlah_proyek = document.getElementById('jumlah_proyek').value;
+  const nomortelepon_proyek = document.getElementById('nomortelepon_proyek').value;
+  const lokasi_proyek = document.getElementById('lokasi_proyek').value;
+  const deskripsi_proyek = document.getElementById('deskripsi_perusahaan').value;
+
+  let valid = true;
+  let errorMessage = '';
+
+  // nama proyek wajib diisi
+  if (nama_proyek === '') {
+    valid = false;
+    errorMessage += 'Nama proyek wajib diisi\n';
+  }
+  // jumlah proyek wajib diisi
+  if (jumlah_proyek === '') {
+    valid = false;
+    errorMessage += 'Jumlah proyek wajib diisi\n';
+  }
+  // nomor telepon proyek wajib diisi, dan harus angka, > 10, dan < 13
+  if (nomortelepon_proyek === '') {
+    valid = false;
+    errorMessage += 'Nomor telepon proyek wajib diisi\n';
+  } else if (isNaN(nomortelepon_proyek)) {
+    valid = false;
+    errorMessage += 'Nomor telepon proyek harus berupa angka\n';
+  } else if (nomortelepon_proyek.length < 10 || nomortelepon_proyek.length > 13) {
+    valid = false;
+    errorMessage += 'Nomor telepon proyek harus berjumlah 10-13 digit\n';
+  }
+  // lokasi proyek wajib diisi
+  if (lokasi_proyek === '') {
+    valid = false;
+    errorMessage += 'Lokasi proyek wajib diisi\n';
+  }
+  // deskripsi proyek wajib diisi, minimal 20 karakter
+  if (deskripsi_proyek === '') {
+    valid = false;
+    errorMessage += 'Deskripsi proyek wajib diisi\n';
+  } else if (deskripsi_proyek.length < 20) {
+    valid = false;
+    errorMessage += 'Deskripsi proyek minimal 20 karakter\n';
+  }
+
+  const validasi = document.getElementById('validasi');
+  const validasiText = document.getElementById('validasi_text'); // Ensure this matches the HTML ID
+
+  if (valid) {
+    validasi.style.display = 'none';
+    this.submit(); // Submit the form
+  } else {
+    validasi.style.display = 'flex';
+    validasiText.innerText = errorMessage;
+  }
+});
+
+</script>

@@ -1,0 +1,121 @@
+<div class="profile-company-section">
+  <div class="profile-pic">
+    <img src="/img/<%= perusahaan.photo_perusahaan %>" alt="profile" />
+  </div>
+  <div class="profile-wrapper">
+    <div class="profile-company-name">
+      <h1>Detail Pemesanan Pelayanan</h1>
+    </div>
+    <div class="histori-detail-menu">
+      <div class="histori-detail-menu-option">
+        <h2>Nama Proyek</h2>
+        <p><%= proyek.nama_proyek %></p>
+      </div>
+      <div class="histori-detail-menu-option">
+        <h2>Jenis Pelayanan</h2>
+        <p><%= medical.jenis_pelayanan %></p>
+      </div>
+      <div class="histori-detail-menu-option">
+        <h2>Nomor Pesanan</h2>
+        <p><%= medical.nomorpesanan %></p>
+      </div>
+      <div class="histori-detail-menu-option">
+        <h2>Lokasi Pelayanan</h2>
+        <p><%= medical.lokasipelayanan_medical %></p>
+      </div>
+      <div class="histori-detail-menu-option">
+        <h2>Jumlah Pasien</h2>
+        <p><%= medical.jumlahpasien_medical %></p>
+      </div>
+      <div class="histori-detail-menu-option">
+        <h2>Tanggal Permintaan</h2>
+        <p><%= medical.tanggalpermintaan_medical %></p>
+      </div>
+      <div class="histori-detail-menu-option">
+        <h2>Tanggal Pelayanan</h2>
+        <% if(medical.tanggalpelayanan_medical === "") {%>
+          <p>Belum Dikonfirmasi</p>
+        <% } else { %>
+          <p><%= medical.tanggalpelayanan_medical %></p>
+        <% } %>
+      </div>
+      <div class="histori-detail-menu-option">
+        <h2>Jam Pemesanan</h2>
+        <p><%= medical.jampermintaan_medical %></p>
+      </div>
+      <div class="histori-detail-menu-option">
+        <h2>Jam Pelayanan</h2>
+        <% if(medical.jampelayanan_medical === "") {%>
+          <p>Belum Dikonfirmasi</p>
+        <% } else { %>
+          <p><%= medical.jampelayanan_medical %></p>
+        <% } %>
+      </div>
+      <div class="histori-detail-menu-option">
+        <h2>Status Pelayanan</h2>
+        <% if (medical.status_text === "Belum Dilayani") { %>
+            <p class="belum-dilayani">Belum Dilayani</p>
+        <% } else if (medical.status_text === "Dalam Proses") { %>
+            <p class="dalam-proses">Dalam Proses</p>
+        <% } else if (medical.status_text === "Sudah Dilayani") { %>
+            <p class="sudah-dilayani">Sudah Dilayani</p>
+        <% } else { %>
+            <p class="status-unknown">Status tidak diketahui</p>
+        <% } %>
+    </div>
+      <div class="histori-detail-menu-option">
+        <h2>Data Rekam Medis</h2>
+        <a href="/rmMedical_client/<%= medical.id_medical %>">Lihat Selengkapnya</a>
+      </div>
+    </div>
+     <div class="catatan-darurat">
+      <h2>Catatan Tambahan</h2>
+      <p><%= medical.catatan_medical %></p>
+    </div>
+    <div class="dokter-bertugas">
+      <div class="dokter-bertugas-title">
+        <h3>Dokter <span>Bertugas</span> </h2>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Dokter</th>
+            <th>No Telepon</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><%= staf.namalengkap_stafkesehatan %></td>
+            <td><%= staf.nomortelepon_stafkesehatan %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="histori-button">
+        <a href="/profile_client" class="btn btn-back">Kembali</a>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .catatan-darurat {
+    margin-top: 20px;
+    padding: 50px;
+  }
+  .catatan-darurat h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+  }
+  .catatan-darurat p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-family: var(--questrial-font);
+  }
+</style>

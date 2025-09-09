@@ -1,0 +1,218 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Data<span> Rekam Medis</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="detail-pesanan">
+          <div class="detail-pesanan-info">
+            <h3>Nama Perusahaan</h3>
+            <p>: <%= PelayananMedical.nama_perusahaan %></p>
+          </div>
+          <div class="detail-pesanan-info">
+            <h3>Nama Proyek</h3>
+            <p>: <%= PelayananMedical.nama_proyek %></p>
+          </div>
+          <div class="detail-pesanan-info">
+            <h3>Nomor Pesanan</h3>
+            <p>: <%= PelayananMedical.nomorpesanan %></p>
+          </div>
+          <div class="detail-pesanan-info">
+            <h3>Jenis Pelayanan</h3>
+            <p>: <%= PelayananMedical.jenis_pelayanan %></p>
+          </div>
+          <div class="detail-pesanan-info">
+            <h3>Tanggal Pelayanan</h3>
+            <p>: <%= PelayananMedical.tanggal_pelayanan %></p>
+          </div>
+          <div class="detail-pesanan-info">
+            <h3>Total Rekam Medis</h3>
+            <p>: <%= totalRekamMedis %>/<%= PelayananMedical.jumlah_pasien %></p>
+          </div>
+        </div>
+        <div class="Padmin_pelayananmasuk_option">
+          <div class="Padmin_pelayananmasuk_tambahdata">
+            <a href="/Tambah_DataRekamMedis_medical_dokter/<%= PelayananMedical.id %>">Tambah Data<i class="fa-solid fa-plus"></i></a>
+          </div>
+        </div>
+        <div class="Padmin_pelayananmasuk_search">
+          <input type="text" id="searchInput" placeholder="Masukan nama pasien atau nomor rekam medis untuk mencari rekam medis . . ." />
+          <button id="searchButton"><i class="fa-solid fa-search"></i></button>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nomor Rekam Medis</th>
+                <th>Nama Pasien</th>
+                <th>Jenis Kelamin</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (RekamMedis.length > 0) { %> <% RekamMedis.forEach((rekamMedis, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= rekamMedis.nomor_rmMedical %></td>
+                <td><%= rekamMedis.nama_lengkap %></td>
+                <td><%= rekamMedis.jenis_kelamin %></td>
+                <td>
+                  <a href="/Detail_DataRekamMedis_medical_dokter/<%= rekamMedis.nomor_rmMedical %>" class="btn btn-primary">Lihat Detail</a>
+                </td>
+                <td>
+                  <form action="/delete_DataRekamMedis/<%= rekamMedis.nomor_rmMedical %>" method="POST" onsubmit="return confirmDelete();">
+                    <button type="submit" class="btn btn-danger" style="border: none; background: none">
+                      <i class="fa-solid fa-trash-can text-danger"></i>
+                    </button>
+                  </form>
+                </td>
+              </tr>
+              <% }); %> <% } else { %>
+              <tr>
+                <td colspan="5" style="text-align: center">Data rekam medis kosong</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("searchButton").addEventListener("click", function () {
+    const searchInput = document.getElementById("searchInput").value;
+    const nomorPesanan = "<%= PelayananMedical.nomorpesanan %>"; // Ambil nomor pesanan dari server
+
+    fetch(`/searchRMMedical?query=${encodeURIComponent(searchInput)}&nomorpesanan=${encodeURIComponent(nomorPesanan)}`)
+      .then((response) => response.json())
+      .then((data) => {
+        const tbody = document.querySelector(".Padmin_pelayananmasuk_table tbody");
+        tbody.innerHTML = ""; // Bersihkan tabel sebelum menambahkan data baru
+
+        if (data.results.length > 0) {
+          data.results.forEach((result, index) => {
+            const row = `
+            <tr>
+              <td>${index + 1}</td>
+              <td>${result.nomor_rmMedical}</td>
+              <td>${result.nama_lengkap}</td>
+              <td>${result.jenis_kelamin}</td>
+              <td>
+                <a href="/Detail_DataRekamMedis_medical_dokter/${result.nomor_rmMedical}" class="btn btn-primary">Lihat Detail</a>
+              </td>
+              <td>
+                <form action="/delete_DataRekamMedis/${result.nomor_rmMedical}" method="POST" onsubmit="return confirmDelete();">
+                  <button type="submit" class="btn btn-danger" style="border: none; background: none">
+                    <i class="fa-solid fa-trash-can text-danger"></i>
+                  </button>
+                </form>
+              </td>
+            </tr>
+          `;
+            tbody.innerHTML += row;
+          });
+        } else {
+          tbody.innerHTML = '<tr><td colspan="6" style="text-align: center">Data tidak ditemukan</td></tr>';
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  });
+</script>
+
+<script>
+  function confirmDelete() {
+    return confirm("Apakah Anda yakin ingin menghapus data rekam medis ini?");
+  }
+</script>
+<style>
+  .fa-trash-can:hover {
+    color: var(--red-color);
+    cursor: pointer;
+  }
+  .detail-pesanan {
+    background-color: var(--white-color);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: max-content;
+    margin-top: 20px;
+    border: 3px solid var(--secondary-color);
+    margin-bottom: 30px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  .detail-pesanan .detail-pesanan-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    text-align: left !important;
+    padding: 5px 15px;
+    font-family: var(--questrial-font);
+  }
+  .detail-pesanan-info h3 {
+    /* background-color: aqua; */
+    width: 250px;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+  }
+  .detail-pesanan-info p {
+    width: 100%;
+    /* background-color: red; */
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+  }
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Padmin_pelayananmasuk {
+    padding: 10px;
+  }
+</style>
+
+<style>
+  .Padmin_pelayananmasuk_option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .Padmin_pelayananmasuk_showsum h3 {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+  }
+  .Padmin_pelayananmasuk_showsum h3 select {
+    padding: 5px 5px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: var(--white-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    outline: none;
+    width: 50px;
+  }
+  .Padmin_pelayananmasuk_tambahdata a {
+    padding: 5px 10px;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .Padmin_pelayananmasuk_tambahdata a:hover {
+    background-color: var(--primary-color);
+    transition: all ease-in-out 0.3s;
+    color: var(--secondary-color);
+  }
+</style>

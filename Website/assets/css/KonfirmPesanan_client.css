@@ -1,0 +1,999 @@
+.konfirmMedical_section {
+  background-image: url("/img/mainpage-03.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.konfirmMedical_section:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.konfirmMedical_wrapper {
+  background-color: rgb(66, 65, 65, 0.8);
+  padding: 40px;
+  width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.konfirmMedical_title {
+  text-align: center;
+}
+.konfirmMedical_title h2 {
+  color: var(--brown-color);
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-family: var(--questrial-font);
+}
+.konfirmMedical_subtitle {
+  text-align: center;
+}
+.konfirmMedical_subtitle p {
+  color: var(--cream-color);
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  font-family: var(--questrial-font);
+}
+.konfirmMedical_menus {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 80px;
+  padding-left: 80px;
+  grid-gap: 50px;
+}
+.konfirmMedical_menu h3 {
+  color: var(--brown-color);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-family: var(--questrial-font);
+}
+.konfirmMedical_menu p {
+  color: var(--cream-color);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--questrial-font);
+}
+.catatan-tambahan-menu {
+  padding-left: 50px;
+  width: 90%;
+  /* background-color: aqua; */
+}
+.catatan-tambahan-menu h3 {
+  color: var(--brown-color);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  font-family: var(--questrial-font);
+}
+.catatan-tambahan-menu p {
+  color: var(--cream-color);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--questrial-font);
+  line-height: 1.5;
+  text-align: justify;
+}
+.terms_agreement {
+  padding-left: 50px;
+  width: 90%;
+  margin-top: 30px;
+  text-align: justify;
+}
+.terms_agreement .terms_agreement_title h2 {
+  color: var(--brown-color);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-family: var(--questrial-font);
+}
+.terms_agreement_menu h3 {
+  color: var(--cream-color);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-family: var(--questrial-font);
+}
+.terms_agreement_menu p {
+  color: var(--cream-color);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--questrial-font);
+  line-height: 1.5;
+  text-align: justify;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+.terms_agreement_check {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.terms_agreement_check input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-right: 1px;
+  cursor: pointer;
+}
+.terms_agreement_check label {
+  color: var(--cream-color);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--questrial-font);
+  margin-left: 10px;
+}
+.konfirmMedical_button {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 20px;
+}
+.konfirmMedical_button button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--questrial-font);
+  width: 40%;
+}
+.konfirmMedical_button button:hover {
+  background-color: var(--cream-color);
+  color: var(--secondary-color);
+  transition: 0.3s ease-in-out;
+}
+.konfirmMedical_button a {
+  width: 40%;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--questrial-font);
+  text-decoration: none;
+  text-align: center;
+}
+.konfirmMedical_button a:hover {
+  background-color: var(--cream-color);
+  color: var(--secondary-color);
+  transition: 0.3s ease-in-out;
+}
+.konfirmMedical_button #back {
+  background-color: var(--red-color);
+  color: var(--cream-color);
+}
+@media only screen and (max-width: 900px) {
+  .konfirmMedical_wrapper {
+    width: 600px;
+    padding: 30px;
+  }
+  .konfirmMedical_title {
+    text-align: center;
+  }
+  .konfirmMedical_title h2 {
+    color: var(--brown-color);
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_subtitle {
+    text-align: center;
+  }
+  .konfirmMedical_subtitle p {
+    color: var(--cream-color);
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_menus {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 50px;
+    padding-left: 30px;
+    grid-gap: 30px;
+  }
+  .konfirmMedical_menu h3 {
+    color: var(--brown-color);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_menu p {
+    color: var(--cream-color);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+  }
+  .catatan-tambahan-menu {
+    padding-left: 30px;
+    width: 90%;
+    /* background-color: aqua; */
+  }
+  .catatan-tambahan-menu h3 {
+    color: var(--brown-color);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    font-family: var(--questrial-font);
+  }
+  .catatan-tambahan-menu p {
+    color: var(--cream-color);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    line-height: 1.5;
+    text-align: justify;
+  }
+  .terms_agreement {
+    padding-left: 30px;
+    width: 90%;
+    margin-top: 30px;
+    text-align: justify;
+  }
+  .terms_agreement .terms_agreement_title h2 {
+    color: var(--brown-color);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .terms_agreement_menu h3 {
+    color: var(--cream-color);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: var(--questrial-font);
+  }
+  .terms_agreement_menu p {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    line-height: 1.5;
+    text-align: justify;
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+  .terms_agreement_check {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .terms_agreement_check input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+  .terms_agreement_check label {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    margin-left: 10px;
+  }
+  .konfirmMedical_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px;
+  }
+  .konfirmMedical_button button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--questrial-font);
+    width: 40%;
+  }
+  .konfirmMedical_button button:hover {
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+  }
+  .konfirmMedical_button a {
+    width: 40%;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--questrial-font);
+    text-decoration: none;
+    text-align: center;
+  }
+  .konfirmMedical_button a:hover {
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+  }
+  .konfirmMedical_button #back {
+    background-color: var(--red-color);
+    color: var(--cream-color);
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .konfirmMedical_wrapper {
+    width: 80%;
+    padding: 30px;
+  }
+  .konfirmMedical_title {
+    text-align: center;
+  }
+  .konfirmMedical_title h2 {
+    color: var(--brown-color);
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_subtitle {
+    text-align: center;
+  }
+  .konfirmMedical_subtitle p {
+    color: var(--cream-color);
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_menus {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 50px;
+    padding-left: 30px;
+    grid-gap: 30px;
+  }
+  .konfirmMedical_menu h3 {
+    color: var(--brown-color);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_menu p {
+    color: var(--cream-color);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+  }
+  .catatan-tambahan-menu {
+    padding-left: 30px;
+    width: 90%;
+    /* background-color: aqua; */
+  }
+  .catatan-tambahan-menu h3 {
+    color: var(--brown-color);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    font-family: var(--questrial-font);
+  }
+  .catatan-tambahan-menu p {
+    color: var(--cream-color);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    line-height: 1.5;
+    text-align: justify;
+  }
+  .terms_agreement {
+    padding-left: 30px;
+    width: 90%;
+    margin-top: 30px;
+    text-align: justify;
+  }
+  .terms_agreement .terms_agreement_title h2 {
+    color: var(--brown-color);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .terms_agreement_menu h3 {
+    color: var(--cream-color);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: var(--questrial-font);
+  }
+  .terms_agreement_menu p {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    line-height: 1.5;
+    text-align: justify;
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+  .terms_agreement_check {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .terms_agreement_check input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+  .terms_agreement_check label {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    margin-left: 10px;
+  }
+  .konfirmMedical_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px;
+  }
+  .konfirmMedical_button button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--questrial-font);
+    width: 40%;
+  }
+  .konfirmMedical_button button:hover {
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+  }
+  .konfirmMedical_button a {
+    width: 40%;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--questrial-font);
+    text-decoration: none;
+    text-align: center;
+  }
+  .konfirmMedical_button a:hover {
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+  }
+  .konfirmMedical_button #back {
+    background-color: var(--red-color);
+    color: var(--cream-color);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .konfirmMedical_wrapper {
+    padding: 30px;
+  }
+  .konfirmMedical_title {
+    text-align: center;
+  }
+  .konfirmMedical_title h2 {
+    color: var(--brown-color);
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_subtitle {
+    text-align: center;
+  }
+  .konfirmMedical_subtitle p {
+    color: var(--cream-color);
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_menus {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 50px;
+    padding-left: 30px;
+    grid-gap: 30px;
+  }
+  .konfirmMedical_menu h3 {
+    color: var(--brown-color);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_menu p {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+  }
+  .catatan-tambahan-menu {
+    padding-left: 30px;
+    width: 90%;
+    /* background-color: aqua; */
+  }
+  .catatan-tambahan-menu h3 {
+    color: var(--brown-color);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    font-family: var(--questrial-font);
+  }
+  .catatan-tambahan-menu p {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    line-height: 1.5;
+    text-align: justify;
+  }
+  .terms_agreement {
+    padding-left: 30px;
+    width: 90%;
+    margin-top: 30px;
+    text-align: justify;
+  }
+  .terms_agreement .terms_agreement_title h2 {
+    color: var(--brown-color);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .terms_agreement_menu h3 {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: var(--questrial-font);
+  }
+  .terms_agreement_menu p {
+    color: var(--cream-color);
+    font-size: 10px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    line-height: 1.5;
+    text-align: justify;
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+  .terms_agreement_check {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .terms_agreement_check input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+  .terms_agreement_check label {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    margin-left: 10px;
+  }
+  .konfirmMedical_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px;
+  }
+  .konfirmMedical_button button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--questrial-font);
+    width: 40%;
+  }
+  .konfirmMedical_button button:hover {
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+  }
+  .konfirmMedical_button a {
+    width: 40%;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--questrial-font);
+    text-decoration: none;
+    text-align: center;
+  }
+  .konfirmMedical_button a:hover {
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+  }
+  .konfirmMedical_button #back {
+    background-color: var(--red-color);
+    color: var(--cream-color);
+  }
+}
+@media only screen and (max-width: 420px) {
+  .konfirmMedical_wrapper {
+    padding: 20px;
+  }
+  .konfirmMedical_title {
+    text-align: center;
+  }
+  .konfirmMedical_title h2 {
+    color: var(--brown-color);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_subtitle {
+    text-align: center;
+  }
+  .konfirmMedical_subtitle p {
+    color: var(--cream-color);
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+    text-align: center;
+  }
+  .konfirmMedical_menus {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+    padding-left: 10px;
+    grid-gap: 20px;
+  }
+  .konfirmMedical_menu h3 {
+    color: var(--brown-color);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_menu p {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+  }
+  .catatan-tambahan-menu {
+    padding-left: 10px;
+    width: 90%;
+    /* background-color: aqua; */
+  }
+  .catatan-tambahan-menu h3 {
+    color: var(--brown-color);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    font-family: var(--questrial-font);
+  }
+  .catatan-tambahan-menu p {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    line-height: 1.5;
+    text-align: justify;
+  }
+  .terms_agreement {
+    padding-left: 10px;
+    width: 90%;
+    margin-top: 30px;
+    text-align: justify;
+  }
+  .terms_agreement .terms_agreement_title h2 {
+    color: var(--brown-color);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .terms_agreement_menu h3 {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: var(--questrial-font);
+  }
+  .terms_agreement_menu p {
+    color: var(--cream-color);
+    font-size: 10px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    line-height: 1.5;
+    text-align: justify;
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+  .terms_agreement_check {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .terms_agreement_check input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+  .terms_agreement_check label {
+    color: var(--cream-color);
+    font-size: 10px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    margin-left: 10px;
+  }
+  .konfirmMedical_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px;
+  }
+  .konfirmMedical_button button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--questrial-font);
+    width: 40%;
+  }
+  .konfirmMedical_button button:hover {
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+  }
+  .konfirmMedical_button a {
+    width: 40%;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--questrial-font);
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+  }
+  .konfirmMedical_button a:hover {
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+  }
+  .konfirmMedical_button #back {
+    background-color: var(--red-color);
+    color: var(--cream-color);
+  }
+}
+@media only screen and (max-width: 380px) {
+  .konfirmMedical_wrapper {
+    padding: 20px;
+  }
+  .konfirmMedical_title {
+    text-align: center;
+  }
+  .konfirmMedical_title h2 {
+    color: var(--brown-color);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_subtitle {
+    text-align: center;
+  }
+  .konfirmMedical_subtitle p {
+    color: var(--cream-color);
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+    text-align: center;
+  }
+  .konfirmMedical_menus {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+    padding-left: 10px;
+    grid-gap: 20px;
+  }
+  .konfirmMedical_menu h3 {
+    color: var(--brown-color);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .konfirmMedical_menu p {
+    color: var(--cream-color);
+    font-size: 10px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+  }
+  .catatan-tambahan-menu {
+    padding-left: 10px;
+    width: 90%;
+    /* background-color: aqua; */
+  }
+  .catatan-tambahan-menu h3 {
+    color: var(--brown-color);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    font-family: var(--questrial-font);
+  }
+  .catatan-tambahan-menu p {
+    color: var(--cream-color);
+    font-size: 10px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    line-height: 1.5;
+    text-align: justify;
+  }
+  .terms_agreement {
+    padding-left: 10px;
+    width: 90%;
+    margin-top: 30px;
+    text-align: justify;
+  }
+  .terms_agreement .terms_agreement_title h2 {
+    color: var(--brown-color);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: var(--questrial-font);
+  }
+  .terms_agreement_menu h3 {
+    color: var(--cream-color);
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: var(--questrial-font);
+  }
+  .terms_agreement_menu p {
+    color: var(--cream-color);
+    font-size: 8px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    line-height: 1.5;
+    text-align: justify;
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+  .terms_agreement_check {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .terms_agreement_check input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+  .terms_agreement_check label {
+    color: var(--cream-color);
+    font-size: 8px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    margin-left: 10px;
+  }
+  .konfirmMedical_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px;
+  }
+  .konfirmMedical_button button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 10px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--questrial-font);
+    width: 40%;
+  }
+  .konfirmMedical_button button:hover {
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+  }
+  .konfirmMedical_button a {
+    width: 40%;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 10px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--questrial-font);
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+  }
+  .konfirmMedical_button a:hover {
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    transition: 0.3s ease-in-out;
+  }
+  .konfirmMedical_button #back {
+    background-color: var(--red-color);
+    color: var(--cream-color);
+  }
+}

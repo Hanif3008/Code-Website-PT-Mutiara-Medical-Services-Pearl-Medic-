@@ -1,0 +1,214 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Data<span> Rekam Medis</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="detail-pesanan">
+          <div class="detail-pesanan-info">
+            <h3>Nama Perusahaan</h3>
+            <p>: <%= results.nama_perusahaan %></p>
+          </div>
+          <div class="detail-pesanan-info">
+            <h3>Nama Proyek</h3>
+            <p>: <%= results.nama_proyek %></p>
+          </div>
+          <div class="detail-pesanan-info">
+            <h3>Nomor Pesanan</h3>
+            <p>: <%= results.nomorpesanan %></p>
+          </div>
+          <div class="detail-pesanan-info">
+            <h3>Jenis Pelayanan</h3>
+            <p>: <%= results.jenis_pelayanan %></p>
+          </div>
+          <div class="detail-pesanan-info">
+            <h3>Tanggal Pemesanan</h3>
+            <p>: <%= results.tglpemesanan_darurat %></p>
+          </div>
+          <div class="detail-pesanan-info">
+            <h3>Total Rekam Medis</h3>
+            <p>: <%= totaldaruratRecords %>/<%= results.jumlahpasien_darurat %></p>
+          </div>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nomor Rekam Medis</th>
+                <th>Nama Pasien</th>
+                <th>Jenis Kelamin</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if(daruratResults.length > 0) {%> <% daruratResults.forEach((daruratResult, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= daruratResult.nomor_rmDarurat %></td>
+                <td><%= daruratResult.nama_lengkap %></td>
+                <td><%= daruratResult.jenis_kelamin %></td>
+                <td><a href="/detailrmDarurat_client/<%= daruratResult.nomor_rmDarurat %>" class="btn btn-primary">Lihat Detail</a></td>
+              </tr>
+              <% }) %> <% } else { %>
+              <tr>
+                <td colspan="5" style="text-align: center">Data tidak ditemukan</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function confirmDelete() {
+    return confirm("Apakah Anda yakin ingin menghapus data rekam medis ini?");
+  }
+</script>
+
+<style>
+  .fa-trash-can:hover {
+    color: var(--red-color);
+    cursor: pointer;
+  }
+  .detail-pesanan {
+    background-color: var(--white-color);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: max-content;
+    margin-top: 20px;
+    border: 3px solid var(--secondary-color);
+    margin-bottom: 30px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  .detail-pesanan .detail-pesanan-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    text-align: left !important;
+    padding: 5px 15px;
+    font-family: var(--questrial-font);
+  }
+  .detail-pesanan-info h3 {
+    /* background-color: aqua; */
+    width: 250px;
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+  }
+  .detail-pesanan-info p {
+    width: 100%;
+    /* background-color: red; */
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+  }
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Padmin_pelayananmasuk {
+    padding: 10px;
+  }
+</style>
+
+<style>
+  .Padmin_pelayananmasuk_option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .Padmin_pelayananmasuk_showsum h3 {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+  }
+  .Padmin_pelayananmasuk_showsum h3 select {
+    padding: 5px 5px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: var(--white-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    outline: none;
+    width: 50px;
+  }
+  .Padmin_pelayananmasuk_tambahdata a {
+    padding: 5px 10px;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .Padmin_pelayananmasuk_tambahdata a:hover {
+    background-color: var(--primary-color);
+    transition: all ease-in-out 0.3s;
+    color: var(--secondary-color);
+  }
+  .PAdmin_left {
+    padding: 30px;
+    /* width: 100%; */
+  }
+  .Padmin_title {
+    margin-left: 10px;
+  }
+  .Padmin_title h1 {
+    font-family: var(--questrial-font);
+    color: var(--primary-color);
+  }
+  .Padmin_pelayananmasuk_search {
+    /* width: 100%; */
+    /* background-color: aqua; */
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .Padmin_pelayananmasuk_search input {
+    width: 100%;
+    padding: 10px;
+    /* border-radius: 10px; */
+  }
+  .Padmin_pelayananmasuk_search button {
+    width: 5%;
+    padding: 10px;
+    /* border-radius: 10px; */
+  }
+  .Padmin_pelayananmasuk_table {
+    background-color: var(--table-color);
+    /* padding: 10px; */
+    text-align: center;
+  }
+  .Padmin_pelayananmasuk_table table {
+    /* background-color: var(--secondary-color); */
+    width: 100%;
+  }
+  .Padmin_pelayananmasuk_table table thead {
+    background-color: var(--gray-color);
+    border: none;
+    padding: 15px;
+    /* width: 100%; */
+  }
+  .Padmin_pelayananmasuk_table table thead tr th {
+    padding: 10px;
+  }
+  .Padmin_pelayananmasuk_table table tbody td a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  .Padmin_pelayananmasuk_table table tbody td a:hover {
+    color: var(--red-color);
+  }
+  .Padmin_pelayananmasuk_table table tbody tr td {
+    padding: 10px;
+  }
+</style>

@@ -1,0 +1,121 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Data<span> Staf Kesehatan</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <br />
+        <div class="Padmin_pelayananmasuk_sort">
+          <div class="Padmin_pelayananmasuk_tambahperusahaan">
+            <a href="/TambahDokter_admin">Tambah Staf Dokter</a>
+          </div>
+          <!-- <select name="sort" id="sort">
+              <option value="aktif">Aktif</option>
+              <option value="non-aktif">Non-Aktif</option>
+            </select> -->
+        </div>
+        <div class="Padmin_pelayananmasuk_search">
+          <input type="text" id="searchInput" placeholder="Masukan nama dokter . . ." />
+          <button id="searchButton"><i class="fa-solid fa-search"></i></button>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Staf Kesehatan</th>
+                <th>Spesialisasi</th>
+                <th>status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="rsTableBody">
+              <% DokterData.forEach((dokteritems, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= dokteritems.namalengkap_stafkesehatan %></td>
+                <td><%= dokteritems.spesialisasi_stafkesehatan %></td>
+                <td class="<%= dokteritems.status === 1 ? 'status-aktif' :'status-tidak-aktif' %>"><%= dokteritems.status === 1 ? 'Bertugas' : 'Tidak Bertugas' %></td>
+                <td><a href="/DetailPDokter_admin/<%= dokteritems.id_stafkesehatan %>">Detail</a></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .status-aktif {
+    color: var(--green-color);
+  }
+
+  .status-tidak-aktif {
+    color: var(--red-color);
+  }
+</style>
+<script>
+  document.getElementById("searchButton").addEventListener("click", function () {
+    const searchQuery = document.getElementById("searchInput").value;
+    fetch(`/searchDokter?q=${encodeURIComponent(searchQuery)}`)
+      .then((response) => response.json())
+      .then((data) => {
+        const tableBody = document.getElementById("rsTableBody");
+        tableBody.innerHTML = ""; // Clear the table body
+        data.forEach((dokteritems, index) => {
+          const row = `<tr>
+            <td>${index + 1}</td>
+            <td>${dokteritems.namalengkap_stafkesehatan}</td>
+            <td>${dokteritems.username_stafkesehatan}</td>
+            <td class="${dokteritems.status === 1 ? "status-aktif" : "status-tidak-aktif"}">${dokteritems.status === 1 ? "Bertugas" : "Tidak Bertugas"}</td>
+            <td><a href="/DetailPDokter_admin/${dokteritems.id_stafkesehatan}">Detail</a></td>
+          </tr>`;
+          tableBody.insertAdjacentHTML("beforeend", row);
+        });
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  });
+</script>

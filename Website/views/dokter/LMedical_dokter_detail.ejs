@@ -1,0 +1,96 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Detail <span>Pelayanan Medical</span></h1>
+      </div>
+      <br />
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <div class="Padmin_pelayananmasuk_pic">
+            <img src="/img/<%= PelayananMedical.photo_perusahaan %>" alt="" />
+          </div>
+          <div class="Padmin_pelayananmasuk_data">
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nama Perusahaan</h3>
+              <p><i class="fa-solid-fa-building"></i><%= PelayananMedical.nama_perusahaan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jenis Pelayanan</h3>
+              <p><i class="fa-solid fa-notes-medical"></i><%= PelayananMedical.jenis_pelayanan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nomor Pesanan</h3>
+              <p><i class="fa-solid fa-notes-medical"></i><%= PelayananMedical.nomorpesanan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Nama Proyek</h3>
+              <p><i class="fa-solid fa-user-shield"></i><%= PelayananMedical.nama_proyek %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Kontak Proyek</h3>
+              <p><i class="fa-solid fa-square-phone"></i><%= PelayananMedical.nomortelepon_proyek %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Lokasi Pelayanan</h3>
+              <p><i class="fa-solid fa-location-dot"></i><%= PelayananMedical.lokasi_pelayanan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jumlah Pasien</h3>
+              <p><i class="fa-solid fa-bed"></i><%= PelayananMedical.jumlah_pasien %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Tanggal Pemesanan</h3>
+              <p class="date"><i class="fa-solid fa-calendar-days"></i><%= PelayananMedical.tanggal_pemesanan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Tanggal Pelayanan</h3>
+              <p class="date"><i class="fa-solid fa-calendar-days"></i><%= PelayananMedical.tanggal_pelayanan %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Jam Pelayanan</h3>
+              <p class="clock"><i class="fa-solid fa-clock"></i><%= PelayananMedical.jampelayanan_medical %></p>
+            </div>
+            <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Status Pelayanan</h3>
+                <p 
+                    <% if (PelayananMedical.status == 2) { %> 
+                        id="yellow"
+                    <% } else if (PelayananMedical.status == 1) { %> 
+                        id="green"
+                    <% } %>
+                >
+                    <% if (PelayananMedical.status == 2) { %>
+                        Dalam proses
+                    <% } else if (PelayananMedical.status == 1) { %>
+                        Sudah dilayani
+                    <% } else { %>
+                        Status tidak diketahui
+                    <% } %>
+                </p>
+            </div>            
+            <div class="Padmin_pelayananmasuk_datamenu">
+              <h3>Data Rekam Medis</h3>
+              <a href="/DataRekamMedis_medical_dokter/<%= PelayananMedical.id %>">Lihat Selengkapnya</a>
+            </div>
+          </div>
+          <div class="Padmin_pelayananmasuk_catatan">
+            <h2>Catatan Tambahan</h2>
+            <p><%= PelayananMedical.catatan %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<style>
+  .Padmin_pelayananmasuk_datamenu button {
+    padding: 10px;
+    transition: all ease-in-out 0.3s;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>

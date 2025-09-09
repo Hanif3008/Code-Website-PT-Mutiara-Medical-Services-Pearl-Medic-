@@ -1,0 +1,89 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Detail <span>Pelayanan Darurat</span></h1>
+      </div>
+      <br />
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+            <div class="Padmin_pelayananmasuk_pic">
+                <img src="/img/<%= darurat.photo_perusahaan %>" alt="" />
+            </div>
+            <div class="Padmin_pelayananmasuk_data">
+                <div class="Padmin_pelayananmasuk_datamenu">
+                    <h3>Nama Perusahaan</h3>
+                    <p><i class="fa-solid-fa-building"></i><%= darurat.nama_perusahaan %></p>
+                </div>
+                <div class="Padmin_pelayananmasuk_datamenu">
+                    <h3>Jenis Pelayanan</h3>
+                    <p><i class="fa-solid fa-notes-medical"></i><%= darurat.jenis_pelayanan %></p>
+                </div>
+                <div class="Padmin_pelayananmasuk_datamenu">
+                    <h3>Nomor Pesanan</h3>
+                    <p><i class="fa-solid fa-notes-medical"></i><%= darurat.nomorpesanan %></p>
+                </div>
+                <div class="Padmin_pelayananmasuk_datamenu">
+                    <h3>Nama Proyek</h3>
+                    <p><i class="fa-solid fa-user-shield"></i><%= darurat.nama_proyek %></p>
+                </div>
+                <div class="Padmin_pelayananmasuk_datamenu">
+                    <h3>Kontak Proyek</h3>
+                    <p><i class="fa-solid fa-square-phone"></i><%= darurat.nomortelepon_proyek %></p>
+                </div>
+                <div class="Padmin_pelayananmasuk_datamenu">
+                    <h3>Tanggal Pemesanan</h3>
+                    <p class="date"><i class="fa-solid fa-calendar-days"></i><%= darurat.tglpemesanan_darurat %></p>
+                </div>
+                <div class="Padmin_pelayananmasuk_datamenu">
+                    <h3>Jumlah Pasien</h3>
+                    <p><i class="fa-solid fa-bed"></i><%= darurat.jumlahpasien_darurat %></p>
+                </div>
+                <div class="Padmin_pelayananmasuk_datamenu">
+                    <h3>RS Rujukan</h3>
+                    <p><i class="fa-solid fa-location-dot"></i><%= darurat.rsrujukan_darurat %></p>
+                </div>
+                <div class="Padmin_pelayananmasuk_datamenu">
+                    <h3>Status Pelayanan</h3>
+                    <p 
+                        <% if (darurat.status == 2) { %> 
+                            id="yellow"
+                        <% } else if (darurat.status == 1) { %> 
+                            id="green"
+                        <% } %>
+                    >
+                        <% if (darurat.status == 2) { %>
+                            Dalam proses
+                        <% } else if (darurat.status == 1) { %>
+                            Sudah dilayani
+                        <% } else { %>
+                            Status tidak diketahui
+                        <% } %>
+                    </p>
+                </div>
+                <div class="Padmin_pelayananmasuk_datamenu">
+                    <h3>Data Rekam Medis</h3>
+                    <a href="/DataRekamMedis_darurat_dokter/<%= darurat.id %>">Lihat Selengkapnya</a>
+                </div>
+            </div>
+            <div class="Padmin_pelayananmasuk_catatan">
+                <h2>Catatan Tambahan</h2>
+                <p><%= darurat.catatan_darurat || 'Tidak ada catatan tambahan' %></p>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<style>
+  .Padmin_pelayananmasuk_datamenu button {
+    padding: 10px;
+    transition: all ease-in-out 0.3s;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>

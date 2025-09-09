@@ -1,0 +1,143 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Edit Data<span> Rekam Medis</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <form class="Padmin_formulir_rekammedis">
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Informasi Pribadi Pasien</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="nama_lengkap">Nama Lengkap</label>
+                <input type="text" id="nama_lengkap" placeholder="Masukan Nama Lengkap . . ." value="John Doe" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nik">Nomor Identitas (NIK)</label>
+                <input type="text" id="nik" placeholder="Masukan Nomor Identitas (NIK/KTP) . . ." value="1234567890123456" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="tanggal_lahir">Tanggal Lahir</label>
+                <input type="date" id="tanggal_lahir" value="1975-04-23" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="jenis_kelamin">Jenis Kelamin</label>
+                <select name="jenis_kelamin" id="jenis_kelamin">
+                  <option value="Laki-laki" selected>Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nomor_telepon">Nomor Telepon</label>
+                <input type="text" id="nomor_telepon" placeholder="Masukan Nomor Telepon . . ." value="081234567890" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="alamat">Alamat</label>
+                <textarea id="alamat" cols="30" rows="4" placeholder="Masukan Alamat . . .">Jl. Sudirman No. 45, Jakarta</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Info Kedatangan</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="tanggal_kedatangan">Tanggal Kedatangan</label>
+                <input type="date" id="tanggal_kedatangan" value="2024-09-01" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="waktu_kedatangan">Waktu Kedatangan</label>
+                <input type="time" id="waktu_kedatangan" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="keluhan_utama">Keluhan Utama</label>
+                <textarea id="keluhan_utama" cols="30" rows="4" placeholder="Masukan Keluhan Utama . . ."></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Riwayat Pasien</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="riwayat_penyakit">Riwayat Penyakit</label>
+                <textarea id="riwayat_penyakit" cols="30" rows="4" placeholder="Masukan Riwayat Penyakit . . ."></textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="obat_yang_dikonsumsi">Obat yang Sedang Dikonsumsi</label>
+                <textarea id="obat_yang_dikonsumsi" cols="30" rows="4" placeholder="Masukan Obat yang Sedang Dikonsumsi . . ."></textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="alergi">Alergi</label>
+                <input type="text" id="alergi" placeholder="Masukan Alergi . . ." />
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Pemeriksaan Tanda Vital</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="tekanan_darah">Tekanan Darah (mmHg)</label>
+                <input type="text" id="tekanan_darah" placeholder="Masukan Tekanan Darah . . ." />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="denyut_jantung">Denyut Jantung (bpm)</label>
+                <input type="text" id="denyut_jantung" placeholder="Masukan Denyut Jantung . . ." />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="suhu_tubuh">Suhu Tubuh (°C)</label>
+                <input type="text" id="suhu_tubuh" placeholder="Masukan Suhu Tubuh . . ." />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="laju_pernapasan">Laju Pernapasan (rpm)</label>
+                <input type="text" id="laju_pernapasan" placeholder="Masukan Laju Pernapasan . . ." />
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Hasil dan Keputusan Lanjut</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="diagnosa_awal">Diagnosa Awal</label>
+                <textarea id="diagnosa_awal" cols="30" rows="4" placeholder="Masukan Diagnosa Awal . . ."></textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="tindakan_awal">Tindakan Awal</label>
+                <textarea id="tindakan_awal" cols="30" rows="4" placeholder="Masukan Tindakan Awal . . ."></textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="rencana_perawatan">Rencana Perawatan Lanjutan</label>
+                <textarea id="rencana_perawatan" cols="30" rows="4" placeholder="Masukan Rencana Perawatan Lanjutan . . ."></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="confirm-button">
+            <button type="submit" class="btn btn-primary">Tambah Data</button>
+            <a href="/DataRekamMedis_darurat_dokter">Batalkan</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Padmin_pelayananmasuk {
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 0px;
+  }
+</style>

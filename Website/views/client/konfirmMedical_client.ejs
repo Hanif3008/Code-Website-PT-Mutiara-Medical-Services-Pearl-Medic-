@@ -1,0 +1,132 @@
+<div class="konfirmMedical_section">
+  <div class="konfirmMedical_wrapper">
+    <div class="konfirmMedical_menu-up">
+      <div class="konfirmMedical_title">
+        <h2>Konfirmasi pelayanan</h2>
+      </div>
+      <div class="konfirmMedical_subtitle">
+        <p>Informasi Pemesanan Pelayanan Medical Check Up</p>
+      </div>
+      <div class="konfirmMedical_menus">
+        <div class="konfirmMedical_menu">
+          <h3>Nama Proyek</h3>
+          <p><%= medicalRequest.nama_proyek %></p>
+        </div>
+        <div class="konfirmMedical_menu">
+          <h3>Jenis Pelayanan</h3>
+          <p>Medical Check Up</p>
+        </div>
+        <div class="konfirmMedical_menu">
+          <h3>Jumlah Pasien</h3>
+          <p><%= medicalRequest.jumlah_pasien_medical %> Orang</p>
+        </div>
+        <div class="konfirmMedical_menu">
+          <h3>Lokasi Pelayanan</h3>
+          <p><%= medicalRequest.lokasipelayanan_medical %></p>
+        </div>
+        <div class="konfirmMedical_menu">
+          <h3>Tanggal Pemesanan</h3>
+          <p id="tanggalpemesanan"></p>
+        </div>
+        <div class="konfirmMedical_menu">
+          <h3>Tanggal Permintaan</h3>
+          <p><%= medicalRequest.tanggalpermintaan_medical %></p>
+        </div>
+        <div class="konfirmMedical_menu">
+          <h3>Jam Permintaan</h3>
+          <p><%= medicalRequest.jampermintaan_medical %></p>
+        </div>
+      </div>
+    </div>
+    <div class="catatan-tambahan-menu">
+      <h3>Catatan Tambahan</h3>
+      <p><%= medicalRequest.catatan_medical %></p>
+    </div>
+    <form action="/finalkonfirm_client" method="post" id="medicalForm">
+      <div class="terms_agreement">
+        <div class="terms_agreement_title">
+          <h2>Syarat dan Ketentuan</h2>
+        </div>
+        <div class="terms_agreement_menu">
+          <h3>1. Terdapat 3 Kondisi pesanan setelah dikonfirmasi</h3>
+          <p>a. <span id="reds"> Belum dilayani</span> : Pesanan belum dibaca dan dilayani admin</p>
+          <p>b. <span id="yellow"> Dalam Proses</span> : Pesanan sudah dibaca dan disetujui admin</p>
+          <p>c. <span id="green"> Sudah dilayani</span> : Pesanan sudah selesai dilayani</p>
+        </div>
+        <div class="terms_agreement_menu">
+          <h3>2. Pesanan dengan status <span id="reds"> "Belum Dilayani" </span>dapat dibatalkan</h3>
+        </div>
+        <div class="terms_agreement_menu">
+          <h3>3. Pesanan dengan status selain <span id="reds"> "Belum Dilayani" </span> tak dapat dibatalkan</h3>
+        </div>
+        <div class="terms_agreement_menu">
+          <h3>4. Jika ada perubahan data terkait pesanan yang sedang <span id="yellow"> "Dalam Proses"</span>,silahkan menghubungi langsung kontak pearl medic</h3>
+        </div>
+        <div class="terms_agreement_menu">
+          <h3>5. Admin Pearl Medic akan merespon pesanan dalam rentang waktu 1 jam hingga 24 jam setelah pemesanan diterima</h3>
+        </div>
+        <div class="terms_agreement_check">
+          <input type="checkbox" name="terms_agreement" id="terms_agreement" />
+          <span class="terms_agreement_checkbox"></span>
+          <label for="terms_agreement">Dengan menyetujui syarat dan ketentuan ini, dianggap bahwa Anda telah memahami dan menyetujui seluruh ketentuan yang telah ditetapkan.</label>
+        </div>
+        <input type="hidden" name="selectedProject" id="selectedProject" value="<%= medicalRequest.id_proyek %>" />
+        <input type="hidden" name="tanggalpermintaan_medical" id="tanggalpermintaan_medical" value="<%= medicalRequest.tanggalpermintaan_medical %>" />
+        <input type="hidden" name="jumlahpasien_medical" id="jumlahpasien_medical" value="<%= medicalRequest.jumlah_pasien_medical %>" />
+        <input type="hidden" name="lokasipelayanan_medical" id="lokasipelayanan_medical" value="<%= medicalRequest.lokasipelayanan_medical %>" />
+        <input type="hidden" name="jampermintaan_medical" id="jampermintaan_medical" value="<%= medicalRequest.jampermintaan_medical %>" />
+        <input type="hidden" name="catatan_medical" id="catatan_medical" value="<%= medicalRequest.catatan_medical %>" />
+      </div>
+      <div class="konfirmMedical_button">
+        <button type="submit">Konfirmasi</button>
+        <a href="/LayananMedical_client" id="back">Kembali</a>
+      </div>
+      <div class="validasi" id="validasi" style="display: none">
+        <p id="validasi_text"></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  #validasi_text {
+    margin-top: 15px;
+    border: 1px dashed red;
+    padding: 10px;
+    color: var(--red-color);
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+</style>
+<script>
+  // Mendapatkan elemen dengan id "tanggalPemesanan"
+  const tanggalPemesanan = document.getElementById("tanggalpemesanan");
+
+  // Mendapatkan tanggal hari ini
+  const today = new Date();
+
+  // Format tanggal hari ini menjadi string dengan format "yyyy-mm-dd"
+  const formattedDate = `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, "0")}-${today.getDate().toString().padStart(2, "0")}`;
+
+  // Mengatur nilai teks pada elemen "tanggalPemesanan" menjadi tanggal hari ini
+  tanggalPemesanan.textContent = formattedDate;
+</script>
+
+<script>
+  document.getElementById("medicalForm").addEventListener("submit", function (event) {
+    const termsAgreement = document.getElementById("terms_agreement");
+    const validasiDiv = document.getElementById("validasi");
+    const validasiText = document.getElementById("validasi_text");
+
+    if (!termsAgreement.checked) {
+      event.preventDefault(); // Mencegah form untuk submit
+      validasiText.innerText = "Anda harus menyetujui syarat dan ketentuan";
+      validasiDiv.style.display = "flex";
+    } else {
+      validasiDiv.style.display = "none";
+    }
+  });
+</script>

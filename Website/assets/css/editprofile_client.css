@@ -1,0 +1,192 @@
+.profil-akun-perusahaan-menu .profil-akun-perusahaan-option .edit-profil input {
+  padding: 5px 5px;
+  width: 100%;
+  margin-left: 10px;
+  font-size: 14px;
+  color: grey;
+  font-weight: 400;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.profil-akun-perusahaan-menu .profil-akun-perusahaan-option .edit-profil input::placeholder {
+  color: grey;
+  font-weight: 400;
+}
+.profil-akun-perusahaan-option .edit-profil {
+  display: flex;
+  align-items: center;
+  background-color: var(--cream-color);
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: 75%;
+}
+.profil-akun-perusahaan-menu .profil-akun-perusahaan-option .edit-profil i {
+  font-size: 18px;
+  color: var(--primary-color);
+}
+.profil-akun-perusahaan-alamat input {
+  padding: 10px 10px;
+  width: 90%;
+  margin-left: 20px;
+  font-size: 14px;
+  color: grey;
+  font-weight: 400;
+  background-color: var(--cream-color);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+.profil-akun-perusahaan-deskripsi textarea {
+  padding: 10px 10px;
+  width: 90%;
+  margin-left: 20px;
+  font-size: 14px;
+  color: grey;
+  font-weight: 400;
+  background-color: var(--cream-color);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  /* cannot shrink horizontal */
+  resize: none;
+}
+
+#button-edit {
+  padding-right: 55px;
+}
+#konfirmasi button {
+  /* padding: 10px 20px; */
+  background-color: transparent;
+  color: var(--cream-color);
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 860px) {
+  #konfirmasi button {
+    font-size: 12px;
+  }
+  .profil-akun-perusahaan-option .edit-profil {
+    display: flex;
+    align-items: center;
+    background-color: var(--cream-color);
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 90%;
+  }
+  .profil-akun-perusahaan-alamat input {
+    padding: 5px 10px;
+    width: 95%;
+    margin-left: 10px;
+    font-size: 14px;
+    color: grey;
+    font-weight: 400;
+    background-color: var(--cream-color);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+  }
+  .profil-akun-perusahaan-deskripsi textarea {
+    padding: 10px 10px;
+    width: 95%;
+    margin-left: 10px;
+    font-size: 14px;
+    color: grey;
+    font-weight: 400;
+    background-color: var(--cream-color);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    /* cannot shrink horizontal */
+    resize: none;
+  }
+  #button-edit {
+    width: 95% !important;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .profil-akun-perusahaan-option .edit-profil {
+    display: flex;
+    align-items: center;
+    background-color: var(--cream-color);
+    padding: 5px 5px;
+    border-radius: 10px;
+    width: 90%;
+  }
+  .profil-akun-perusahaan-alamat input {
+    padding: 5px 5px;
+    width: 95%;
+    /* margin-left: 10px; */
+    font-size: 10px;
+    color: grey;
+    font-weight: 400;
+    background-color: var(--cream-color);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+  }
+  .profil-akun-perusahaan-deskripsi textarea {
+    padding: 10px 5px;
+    width: 95%;
+    /* margin-left: 10px; */
+    font-size: 10px;
+    color: grey;
+    font-weight: 400;
+    background-color: var(--cream-color);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    /* cannot shrink horizontal */
+    resize: none;
+  }
+  .profil-akun-perusahaan-menu .profil-akun-perusahaan-option .edit-profil input {
+    padding: 5px 5px;
+    width: 100%;
+    margin-left: 10px;
+    font-size: 10px;
+    color: grey;
+    font-weight: 400;
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .profil-akun-perusahaan-alamat input {
+    padding: 5px 5px;
+    width: 85%;
+    /* margin-left: 10px; */
+    font-size: 10px;
+    color: grey;
+    font-weight: 400;
+    background-color: var(--cream-color);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+  }
+  .profil-akun-perusahaan-deskripsi textarea {
+    padding: 10px 5px;
+    width: 85%;
+    /* margin-left: 10px; */
+    font-size: 10px;
+    color: grey;
+    font-weight: 400;
+    background-color: var(--cream-color);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    /* cannot shrink horizontal */
+    resize: none;
+  }
+  #button-edit {
+    width: 85% !important;
+    text-align: center;
+  }
+}

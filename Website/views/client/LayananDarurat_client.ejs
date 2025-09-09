@@ -1,0 +1,110 @@
+<div class="LayananMedical_section" id="LayananDarurat">
+    <div class="LayananMedical_wrapper">
+      <div class="LayananMedical_title">
+        <h2>Layanan Darurat<i class="fa-solid fa-stethoscope"></i></h2>
+        <div class="LayananMedical_desc">
+          <p>Pelayanan Darurat adalah pelayanan yang melayani kejadian - kejadian darurat yang terjadi di suatu tempat, seperti kecelakan karyawan, pembelian obat darurat, dan lain-lain.</p>
+        </div>
+      </div>
+      <div class="LayananMedical_form">
+        <div class="LayananMedical_form_logo">
+          <i class="fa-solid fa-user-doctor"></i>
+        </div>
+        <div class="LayananMedical_form_title">
+          <h2>Silahkan isi form di bawah ini</h2>
+        </div>
+        <form action="/tempkonfirmDarurat_client" method="post" id="medicalForm">
+          <div class="LayananMedical_form_menu" id="proyek_medical">
+            <select name="selectedProject" id="selectedProject" style="background-color: transparent;">
+              <option value="0" disabled selected>--- Pilih Proyek ---</option>
+              <% projects.forEach(project => { %>
+              <option value="<%= project.id_proyek %>" data-nama = "<%= project.nama_proyek %>"><%= project.nama_proyek %></option>
+              <% }) %>
+          </select>
+          <i class="fa-solid fa-sort-down"></i>
+          </div>
+          <input type="hidden" name="nama_proyek" id="nama_proyek">
+          <br>
+          <div class="LayananMedical_form_menu_wraps">
+              <i class="fa-solid fa-users"></i>
+              <input type="number" placeholder="Jumlah Pasien Darurat. . ." value="" id="jumlah_pasien" name="jumlah_pasien">
+          </div>
+          <div class="LayananMedical_form_menu" id="proyek_medical">
+            <select class="proyek_medical" name="rs_proyek" id="rs_proyek" style="background-color: transparent;">
+              <option value="0" disabled selected>--- Pilih Rumah Sakit Rujukan ---</option>
+              <% hospitals.forEach(hospital => { %>
+              <option value="<%= hospital.id_rs %>" data-nama = "<%= hospital.nama_rs %>"><%= hospital.nama_rs %></option>
+              <% }) %>
+            </select>
+            <i class="fa-solid fa-sort-down"></i>
+          </div>
+          <input type="hidden" name="nama_rs" id="nama_rs">
+          <br>
+          <h3 class="layanan-title">Deskripsi Kejadian </h3>
+          <div class="LayananMedical_form_menu_wrap">
+              <textarea name="catatan" id="catatan" cols="30" rows="10" placeholder="Berikan deksripsi kejadian darurat yang terjadi . . ."></textarea>
+          </div>
+          <div class="LayananMedical_button">
+            <button type="submit" id="darurat">Pesan Layanan</button>
+          </div>
+          <div class="validasi">
+            <p id="validasi-text">Silahkan masukan data sesuai format yang ditentukan</p>
+          </div>
+      </div>
+      </form>
+  </div>
+  </div>
+  </div>
+  
+  <style>
+     #validasi-text {
+      border: 1px dashed var(--red-color);
+      padding: 10px;
+      display: none;
+      justify-content: center;
+      text-align: center;
+      color: var(--red-color);
+      font-size: 12px;
+    }
+  </style>
+
+  <script>
+    // event listener untuk mengisi nama proyek
+    const selectedproyek = document.getElementById('selectedProject');
+    selectedproyek.addEventListener('change', (e) => {
+      if (proyek.value !== '0') {
+        const nama_proyek = proyek.options[proyek.selectedIndex].getAttribute('data-nama');
+        document.getElementById('nama_proyek').value = nama_proyek;
+      } else {
+        document.getElementById('nama_proyek').value = '';
+      }
+    });
+
+
+    // event listener untuk mengisi nama rumah sakit
+    const selectedrs = document.getElementById('rs_proyek');
+    selectedrs.addEventListener('change', (e) => {
+      if (rs.value !== '0') {
+        const nama_rs = rs.options[rs.selectedIndex].getAttribute('data-nama');
+        document.getElementById('nama_rs').value = nama_rs;
+      } else {
+        document.getElementById('nama_rs').value = '';
+      }
+    });
+    // validasi form
+    const form = document.getElementById('medicalForm');
+    const validasi = document.getElementById('validasi-text');
+    const proyek = document.getElementById('selectedProject');
+    const rs = document.getElementById('rs_proyek');
+    const catatan = document.getElementById('catatan');
+
+    // buat fungsi validasi form, proyek,rs dan catatan harus diisi
+    form.addEventListener('submit', (e) => {
+      if(proyek.value === '0' || rs.value === '0' || catatan.value === '') {
+        e.preventDefault();
+        validasi.style.display = 'flex';
+      } else {
+        validasi.style.display = 'none';
+      }
+    });
+  </script>

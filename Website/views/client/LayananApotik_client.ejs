@@ -1,0 +1,266 @@
+<div class="layananapotik_section">
+  <div class="popup_container">
+  <div class="popup_confirm">
+    <div class="popup_confirm_logo">
+      <i class="fa-solid fa-cart-plus"></i>
+    </div>
+    <div class="popup_confirm_title">
+      <h3>Tambahkan Ke Keranjang?</h3>
+    </div>
+    <div class="popup_confirm_subtitle">
+      <p>Silahkan konfirmasi dan isi jumlah obat yang ingin dipesan</p>
+    </div>
+    <form action="/tambah-ke-keranjang" method="POST" class="popup_form_input">
+      <div class="popup_confirm_namaobat">
+        <input type="hidden" name="id_perusahaan" value="<%= user.id_perusahaan %>">
+        <input type="hidden" name="id_obat" value="<%= obat.id_obat %>">
+        <h4>Nama Obat : Caviplex Tablet</h4>
+      </div>
+      <div class="popup_confirm_jenis_obat">
+        <h4>Jenis Obat : tablet</h4>
+      </div>
+      <div class="popup_confirm_jenis_kemasan">
+        <h4>Jenis Kemasan : Strip</h4>
+      </div>
+      <div class="popup_confirm_stok_obat">
+        <h4>Stok Tersedia : 100</h4>
+      </div>
+      <div class="popup_confirm_isipesanan">
+        <i class="fa-solid fa-square-plus"></i><input type="number" placeholder="Isi jumlah obat yang ingin dipesan . . ." name="jumlah_obat">
+      </div>
+      <div class="popup_confirm_validation">
+        <p>*Jumlah harus diisi dan sesuaikan dengan stok yang tersedia</p>
+      </div>
+      <div class="popup_confirm_button">
+        <button type="submit" class="add_cart">Tambahkan</button>
+        <button>Batalkan</button>
+      </div>
+    </form>
+  </div>
+</div>
+  <div class="layananapotik-top">
+    <div class="layananapotik-searchbar">
+      <form action="/LayananApotik_client" method="get">
+        <input type="text" name="search" placeholder="Masukan Nama Obat Yang Dicari . . ." />
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+    <div class="layananapotik-cart">
+      <i class="fa-solid fa-shopping-cart" id="cart-button"></i>
+    </div>
+    <div class="layananapotik-cart-isi" id="none">
+      <div class="layananapotik-cart-isi-cross">
+          <i class="fa-solid fa-times" id="cart-close"></i>
+      </div>
+      <div class="layananapotik-cart-isi-title">
+          <h3>Keranjang Belanja</h3>
+      </div>
+      <% if (keranjangData.length === 0) { %>
+          <div class="layananapotik-cart-isi-kosong">
+              <img src="/img/empty-medicine.jpg" alt="" />
+              <p>Belum Ada Produk</p>
+          </div>
+      <% } else { %>
+          <div class="layananapotik-cart-exist">
+              <table>
+                  <thead>
+                      <tr>
+                          <th>No</th>
+                          <th>Nama Obat</th>
+                          <th>Jumlah</th>
+                          <th></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <% keranjangData.forEach(function(item, index) { %>
+                          <tr>
+                              <td><%= index + 1 %></td>
+                              <td><%= item.nama_obat %></td>
+                              <td><%= item.jumlah_obat %></td>
+                              <td>
+                                  <form action="/hapus-dari-keranjang" method="POST">
+                                      <input type="hidden" name="id_keranjangsementara" value="<%= item.id_keranjangsementara %>">
+                                      <button type="submit" class="hapus-item" data-id="<%= item.id_keranjangsementara %>">
+                                          <i class="fa-solid fa-trash-can"></i>
+                                      </button>
+                                  </form>
+                              </td>
+                          </tr>
+                      <% }) %>
+                  </tbody>
+              </table>
+          </div>
+          <!-- Tampilkan tombol checkout hanya jika keranjang belanja tidak kosong -->
+          <div class="layananapotik-cart-button">
+              <button>
+                  <a href="/checkoutApotik_client">Checkout</a>
+              </button>
+          </div>
+      <% } %>
+  </div>
+  </div>
+  <div class="layanan-apotik-bottom">
+    <div class="layananapotik-obat-all">
+      <% obat.forEach(function(obat) { %>
+        <div class="layanan-apotik-obat-menu">
+          <div class="layanan-apotik-obat-pic">
+            <img src="/img/<%= obat.obat_photo %>" alt="<%= obat.nama_obat %>" />
+          </div>
+          <div class="layanan-apotik-obat-title">
+            <h3><%= obat.nama_obat %></h3>
+          </div>
+          <div class="layanan-apotik-obat-jenis-obat">
+            <p>Jenis Obat : <%= obat.jenis_obat %></p>
+          </div>
+          <div class="layanan-apotik-obat-jenis-kemasan">
+            <p>Jenis Kemasan : <%= obat.jenis_kemasan %></p>
+          </div>
+          <div class="layanan-apotik-obat-stok-tersedia">
+            <p>Stok Tersedia : <span> <%= obat.stock_obat %></span></p>
+          </div>
+          <div class="layanan-apotik-obat-desc">
+            <p id="paragraf"><%= obat.deskripsi_obat %></p>
+          </div>
+          <div class="layanan-apotik-obat-add-to-cart-button">
+            <button class="tambah-obat-btn" data-id="<%= obat.id_obat %>">Tambah Obat <i class="fa-solid fa-cart-plus"></i></button>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+    <div class="layanan-apotik-obat-pagination">
+      <div class="layanan-apotik-obat-pagination-button">
+        <button <% if (currentPage == 1) { %> disabled <% } %>>
+          <a href="<% if (currentPage > 1) { %>/LayananApotik_client?page=<%= currentPage - 1 %>&search=<%= searchTerm %><% } %>">
+            <i class="fa-solid fa-caret-left"></i>
+          </a>
+        </button>
+      </div>
+      <% for (let i = 1; i <= totalPages; i++) { %>
+        <div class="layanan-apotik-obat-pagination-button">
+          <button class="<%= i == currentPage ? 'active' : '' %>">
+            <a href="/LayananApotik_client?page=<%= i %>&search=<%= searchTerm %>"><%= i %></a>
+          </button>
+        </div>
+      <% } %>
+      <div class="layanan-apotik-obat-pagination-button">
+        <button <% if (currentPage == totalPages) { %> disabled <% } %>>
+          <a href="<% if (currentPage < totalPages) { %>/LayananApotik_client?page=<%= currentPage + 1 %>&search=<%= searchTerm %><% } %>">
+            <i class="fa-solid fa-caret-right"></i>
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+<script>
+  // Ambil semua tombol "Tambah Obat"
+const tambahObatBtns = document.querySelectorAll('.tambah-obat-btn');
+
+// Loop melalui setiap tombol dan tambahkan event listener untuk klik
+tambahObatBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Dapatkan id_obat dari atribut data
+    const idObat = btn.getAttribute('data-id');
+
+    // Setel nilai input tersembunyi di dalam popup dengan id_obat yang dipilih
+    document.querySelector('input[name="id_obat"]').value = idObat;
+
+    // Tampilkan popup
+    // (Tambahkan kode untuk menampilkan popup di sini)
+  });
+});
+
+</script>
+
+<script>
+  // Ambil tombol "Tambah Obat" dan semua elemen pop-up
+  const tambahObatButtons = document.querySelectorAll('.layanan-apotik-obat-add-to-cart-button button');
+  const popupContainer = document.querySelector('.popup_container');
+  const popupConfirm = document.querySelector('.popup_confirm');
+  const formInput = document.querySelector('.popup_form_input');
+  const validationPopup = document.querySelector('.popup_confirm_validation');
+
+  // Tambahkan event listener untuk setiap tombol "Tambah Obat"
+  tambahObatButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Ambil informasi obat dari elemen terkait
+      const obatMenu = this.closest('.layanan-apotik-obat-menu');
+      const namaObat = obatMenu.querySelector('.layanan-apotik-obat-title h3').textContent;
+      const jenisObat = obatMenu.querySelector('.layanan-apotik-obat-jenis-obat p').textContent;
+      const jenisKemasan = obatMenu.querySelector('.layanan-apotik-obat-jenis-kemasan p').textContent;
+      const stokObat = obatMenu.querySelector('.layanan-apotik-obat-stok-tersedia span').textContent;
+
+      // Isi informasi obat ke dalam pop-up
+      const namaObatElement = popupConfirm.querySelector('.popup_confirm_namaobat h4');
+      const jenisObatElement = popupConfirm.querySelector('.popup_confirm_jenis_obat h4');
+      const jenisKemasanElement = popupConfirm.querySelector('.popup_confirm_jenis_kemasan h4');
+      const stokObatElement = popupConfirm.querySelector('.popup_confirm_stok_obat h4');
+
+      namaObatElement.textContent = `Nama Obat : ${namaObat}`;
+      jenisObatElement.textContent = `Jenis Obat : ${jenisObat}`;
+      jenisKemasanElement.textContent = `Jenis Kemasan : ${jenisKemasan}`;
+      stokObatElement.textContent = `Stok Tersedia : ${stokObat}`;
+
+      // Tampilkan pop-up
+      popupContainer.classList.add('active');
+    });
+  });
+
+  // Tambahkan event listener untuk saat formulir disubmit
+  formInput.addEventListener('submit', function(event) {
+    // Ambil elemen input jumlah obat
+    const jumlahObatInput = this.querySelector('.popup_confirm_isipesanan input');
+    // Ambil stok obat yang tersedia dari konten pop-up
+    const stokTersedia = parseInt(this.querySelector('.popup_confirm_stok_obat h4').textContent.split(':')[1].trim());
+    
+    // Periksa apakah jumlah obat yang diisi valid
+    if (jumlahObatInput.value === '' || parseInt(jumlahObatInput.value) <= 0 || parseInt(jumlahObatInput.value) > stokTersedia) {
+      // Jika tidak valid, tampilkan popup validasi
+      validationPopup.style.display = 'block';
+      // Mencegah formulir untuk disubmit
+      event.preventDefault();
+    } else {
+      // Jika valid, sembunyikan popup validasi
+      validationPopup.style.display = 'none';
+    }
+  });
+
+  // Tambahkan event listener untuk tombol "Batalkan"
+  const cancelButton = document.querySelector('.popup_confirm_button button:last-child');
+  cancelButton.addEventListener('click', function() {
+    // Sembunyikan pop-up
+    popupContainer.classList.remove('active');
+  });
+
+  // Pengaturan keranjang belanja
+  const cart_button = document.getElementById("cart-button");
+  const layanapotik_cart_isi = document.querySelector(".layananapotik-cart-isi");
+  const cart_close = document.getElementById("cart-close");
+
+  // if cart button is clicked then remove id none from layananapotik-cart-isi, if cart close is clicked then add id none to layananapotik-cart-isi
+  cart_button.addEventListener("click", () => {
+    layanapotik_cart_isi.removeAttribute("id");
+  });
+
+  cart_close.addEventListener("click", () => {
+    layanapotik_cart_isi.setAttribute("id", "none");
+  });
+
+  // Penyuntingan paragraf
+  document.addEventListener("DOMContentLoaded", function () {
+    // Ambil semua elemen paragraf dengan id "paragraf"
+    var paragraphs = document.querySelectorAll("#paragraf");
+    // Batasi kata-kata menjadi 20 kata
+    paragraphs.forEach(function (paragraph) {
+      var text = paragraph.textContent;
+      var newText = text.split(" ").splice(0, 20).join(" ");
+      paragraph.textContent = newText + "...";
+    });
+  });
+</script>
+ 

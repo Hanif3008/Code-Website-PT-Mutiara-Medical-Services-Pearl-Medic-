@@ -1,0 +1,255 @@
+<div class="LayananMedical_section" id="LayananVaksin">
+    <div class="LayananMedical_wrapper">
+      <div class="LayananMedical_title">
+        <h2>Pelayanan Vaksinasi<i class="fa-solid fa-syringe"></i></h2>
+        <div class="LayananMedical_desc">
+          <p>Pelayanan Medical Check Up adalah pelayanan pemeriksaan kesehatan karyawan yang bisa dilakukan secara rutin. Pemeriksaan ini mencakup pemeriksaan tekanan darah, gula darah, kolesterol, dan lain - lain.</p>
+        </div>
+      </div>
+      <div class="LayananMedical_form">
+        <div class="LayananMedical_form_logo">
+          <i class="fa-solid fa-user-doctor"></i>
+        </div>
+        <div class="LayananMedical_form_title">
+          <h2>Silahkan isi form di bawah ini</h2>
+        </div>
+        <form action="/tempkonfirmVaksin_client" method="post" id="medicalForm">
+          <div class="LayananMedical_form_menu" id="proyek_medical">
+            <select name="selectedProject" id="selectedProject" style="background-color: transparent; cursor: pointer;">
+              <option value="0" disabled selected>--- Pilih Proyek ---</option>
+              <% projects.forEach(project => { %>
+                <option value="<%= project.id_proyek %>" data-nama="<%= project.nama_proyek %>" data-jumlah="<%= project.jumlah_proyek %>" data-lokasi="<%= project.lokasi_proyek %>" style ="cursor: pointer;"><%= project.nama_proyek %></option>
+              <% }); %>
+          </select>
+          <i class="fa-solid fa-sort-down"></i>
+          </div>
+          <input type="hidden" name="nama_proyek" id="nama_proyek">
+          <div class="LayananMedical_form_menu">
+            <div class="LayananMedical_submenu_check">
+              <label for="checkbox">
+                  <input type="checkbox" id="checkboxjumlahlokasi">
+                  <p class="check-desc">Tampilkan jumlah pasien dan lokasi yang sesuai dengan proyek yang dipilih</p>
+            </div>
+          </div>
+          <br>
+          <div class="LayananMedical_form_menu_wraps">
+              <i class="fa-solid fa-users"></i>
+              <input type="number" placeholder="Jumlah Pasien . . ." value="" id="jumlah_proyek" name="jumlah_proyek">
+          </div>
+          <div class="LayananMedical_form_menu_wrapss" id="LayananMedical_wrapss">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <input type="text" id="lokasi_pelaksanaan" name="lokasi_pelaksanaan" placeholder="Lokasi Pelaksanaan . . ." value="">
+          </div> 
+          <div class="LayananMedical_form_menu">
+            <div class="LayananMedical_submenu_check">
+              <label for="checkbox">
+                  <input type="checkbox" id="rs-option" name="rs-option">
+                  <p class="check-desc">Rekomendasi rumah sakit mitra sebagai lokasi pelayanan</p>
+            </div>
+          </div>
+          <div class="LayananMedical_form_menu" id="rs-all-option" style="display: none;">
+            <select class="proyek_medical" name="rumah-sakit-mitra" id="rumah-sakit-mitra">
+              <option value="" disabled selected>--- Pilih Rumah Sakit ---</option>
+              <% hospitals.forEach(hospital => { %>
+                <option value="<%= hospital.id_rs %>" data-alamat="<%= hospital.nama_rs %> " data-name="<%= hospital.nama_rs %>"><%= hospital.nama_rs %></option>
+              <% }); %>
+            </select>
+            <i class="fa-solid fa-sort-down"></i>
+          </div>
+          <h3 class="layanan-title">Permintaan Jenis Vaksin</h3>
+          <div class="LayananMedical_form_menu" id="proyek_medical">
+            <select name="jenis_vaksin" id="jenis_vaksin" style="background-color: transparent">
+              <option value="0" disabled selected>--- Pilih Jenis Vaksin ---</option>
+                <% services.forEach(service => { %>
+                  <option value="<%= service.id_vaksin %>" data-nama="<%= service.nama_vaksin %>"><%= service.nama_vaksin %></option>
+                <% }); %>
+          </select>
+          <i class="fa-solid fa-sort-down"></i>
+          </div>  
+          <input type="hidden" name="nama_vaksin" id="nama_vaksin">
+          <br>
+          <h3 class="layanan-title">Permintaan Tanggal Pemeriksaan</h3>
+          <div class="LayananMedical_form_menu_wrap">
+              <div class="calendar-days">
+                  <i class="fa-regular fa-calendar-days"></i>
+                  <input class="date-layanan" type="date" placeholder="Tanggal Pelaksanaan" value="" id="tanggal_pemeriksaan" name="tanggal_pemeriksaan">
+              </div>
+          </div>
+           <h3 class="layanan-title" id="tanggal_pemeriksaan">Permintaan Jam Pemeriksaan</h3>
+           <div class="LayananMedical_form_menu" id="proyek_medical">
+            <select class="proyek_medical" name="jam_pemeriksaan" id="jam_pemeriksaan" style="background-color: transparent;">
+             <option value="0" disabled selected>--- Pilih Jam Pemeriksaan ---</option>
+             <option value="07:00 - Selesai">07:00 - Selesai</option>
+             <option value="10:00 - Selesai">10:00 - Selesai</option>
+             <option value="13:00 - Selesai">13:00 - Selesai</option>
+            </select>
+              <i class="fa-solid fa-sort-down"></i>
+            </div>
+            <br>
+          <h3 class="layanan-title">Catatan Tambahan</h3>
+          <div class="LayananMedical_form_menu_wrap">
+              <textarea name="catatan" id="catatan" cols="30" rows="10" placeholder="Catatan atau Deskripsi Tambahan . . . (Opsional)"></textarea>
+          </div>
+          <div class="LayananMedical_button">
+            <button type="submit" id="darurat">Pesan Layanan</button>
+        </div>
+        <div class="validasi">
+          <p id="validasi-text"></p>
+        </div>
+      </div>
+      </form>
+  </div>
+  </div>
+  </div>
+  <style>
+    #validasi-text {
+      border: 1px dashed var(--red-color);
+      padding: 10px;
+      display: none;
+      justify-content: center;
+      text-align: center;
+      color: var(--red-color);
+      font-size: 12px;
+    }
+    #rs-all-option {
+      background-color: var(--cream-color);
+      padding: 8px;
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    #rs-all-option select {
+      background-color: transparent;
+    }
+  </style>
+
+  <script>
+    // rekomendasi jumlah pasien dan lokasi sesuai dengan proyek yang dipilih
+    const checkboxjumlahlokasi = document.getElementById('checkboxjumlahlokasi');
+    const jumlah_proyek = document.getElementById('jumlah_proyek');
+    const lokasi_pelaksanaan = document.getElementById('lokasi_pelaksanaan');
+    const selectedProject = document.getElementById('selectedProject');
+    const jenisVaksin = document.getElementById('jenis_vaksin');
+
+    checkboxjumlahlokasi.addEventListener('change', () => {
+      const selectedOption = selectedProject.options[selectedProject.selectedIndex];
+      if (checkboxjumlahlokasi.checked && selectedOption.value !== '0') {
+        jumlah_proyek.value = selectedOption.dataset.jumlah;
+        lokasi_pelaksanaan.value = selectedOption.dataset.lokasi;
+      } else {
+        jumlah_proyek.value = '';
+        lokasi_pelaksanaan.value = '';
+      }
+    })
+    // rekomendasi rumah sakit mitra sebagai lokasi pelayanan (centang)
+    const rsOption = document.getElementById('rs-option');
+    const rsAllOption = document.getElementById('rs-all-option');
+    const rumahSakitMitra = document.getElementById('rumah-sakit-mitra');
+
+    rsOption.addEventListener('change', () => {
+      if (rsOption.checked) {
+        rsAllOption.style.display = 'flex';
+      } else {
+        rsAllOption.style.display = 'none';
+        rumahSakitMitra.value = '';
+      }
+    })
+    // rekomendasi rumah sakit mitra sebagai lokasi pelayanan (pilih rumah sakit)
+    rumahSakitMitra.addEventListener('change', () => {
+      const selectedOption = rumahSakitMitra.options[rumahSakitMitra.selectedIndex];
+      if (selectedOption.value !== '') {
+        lokasi_pelaksanaan.value = selectedOption.getAttribute('data-alamat');
+      } else {
+        lokasi_pelaksanaan.value = '';
+      }
+    })
+    
+
+    // event listener untuk select option untuk mengisi nama proyek
+    selectedProject.addEventListener('change', () => {
+      const selectedOption = selectedProject.options[selectedProject.selectedIndex];
+      if (selectedOption.value !== "0") {
+        document.getElementById('nama_proyek').value = selectedOption.getAttribute('data-nama');
+    } else {
+        document.getElementById('nama_proyek').value = '';
+    }
+    })
+    // event listener untuk select option untuk mengisi nama vaksin
+    jenisVaksin.addEventListener('change', () => {
+      const selectedOption = jenisVaksin.options[jenisVaksin.selectedIndex];
+      if (selectedOption.value !== "0") {
+        document.getElementById('nama_vaksin').value = selectedOption.getAttribute('data-nama');
+    } else {
+        document.getElementById('nama_vaksin').value = '';
+    }
+    })
+
+    // validasi form
+
+    function validateForm(event) {
+  const selectedProject = document.getElementById('selectedProject').value;
+  const jumlahProyek = document.getElementById('jumlah_proyek').value;
+  const lokasiPelaksanaan = document.getElementById('lokasi_pelaksanaan').value;
+  const jenisVaksin = document.getElementById('jenis_vaksin').value;
+  const tanggalPemeriksaan = document.getElementById('tanggal_pemeriksaan').value;
+  const jamPemeriksaan = document.getElementById('jam_pemeriksaan').value;
+  const catatanTambahan = document.getElementById('catatan').value;
+
+  const validationText = document.getElementById('validasi-text');
+  validationText.innerHTML = ""; // Clear previous validation messages
+
+  let isValid = true;
+
+  if (selectedProject === "0") {
+      validationText.innerHTML += "Proyek wajib diisi.<br>";
+      isValid = false;
+  }
+  if (jumlahProyek === "") {
+      validationText.innerHTML += "Jumlah pasien wajib diisi.<br>";
+      isValid = false;
+  }
+  if (lokasiPelaksanaan === "") {
+      validationText.innerHTML += "Lokasi pelaksanaan wajib diisi.<br>";
+      isValid = false;
+  }
+  if (jenisVaksin === "0") {
+      validationText.innerHTML += "Jenis vaksin wajib diisi.<br>";
+      isValid = false;
+  }
+  if (tanggalPemeriksaan === "") {
+      validationText.innerHTML += "Tanggal pemeriksaan wajib diisi.<br>";
+      isValid = false;
+  } else {
+      // Memeriksa apakah tanggal pemeriksaan di atas 3 hari dari sekarang
+      const today = new Date();
+      const selectedDate = new Date(tanggalPemeriksaan);
+      const timeDifference = selectedDate.getTime() - today.getTime();
+      const daysDifference = timeDifference / (1000 * 3600 * 24);
+      if (daysDifference <= 3) {
+          validationText.innerHTML += "Tanggal pemeriksaan harus lebih dari 3 hari dari hari pemesanan.<br>";
+          isValid = false;
+      }
+  }
+  if (jamPemeriksaan === "0") {
+      validationText.innerHTML += "Jam pemeriksaan wajib diisi.<br>";
+      isValid = false;
+  }
+  if (catatanTambahan.trim() === "") {
+      document.getElementById('catatan').value = "Tidak ada catatan tambahan";
+  }
+
+  if (!isValid) {
+      validationText.style.display = "block";
+      validationText.style.marginBottom = "10px";
+      event.preventDefault(); // Menahan submit formulir jika validasi tidak terpenuhi
+  } else {
+      validationText.style.display = "none";
+  }
+}
+
+// Event listener untuk validasi sebelum submit
+document.getElementById('medicalForm').addEventListener('submit', validateForm);
+
+
+</script>

@@ -1,0 +1,516 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Detail Data<span> Rekam Medis</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <form class="Padmin_formulir_rekammedis">
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Informasi Pribadi Pasien</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="nama_lengkap">Nama Lengkap</label>
+                <h4>: <%= results.nama_lengkap %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nik">Nomor Identitas (NIK)</label>
+                <h4>: <%= results.nomor_identitas %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="tanggal_lahir">Tanggal Lahir</label>
+                <h4>: <%= results.tanggal_lahir %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="jenis_kelamin">Jenis Kelamin</label>
+                <h4>: <%= results.jenis_kelamin %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nomor_telepon">Nomor Telepon</label>
+                <h4>: <%= results.nomor_telepon %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="alamat">Alamat</label>
+                <h4>: <%= results.alamat %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Info Kedatangan</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="waktu_kedatangan">Waktu Kedatangan</label>
+                <h4>: <%= results.waktu_kedatangan %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="keluhan_utama">Keluhan Utama</label>
+                <h4>: <%= results.keluhan_utama %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Riwayat Pasien</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="riwayat_penyakit">Riwayat Penyakit</label>
+                <h4>: <%= results.riwayat_penyakit %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="obat_yang_dikonsumsi">Obat yang Sedang Dikonsumsi</label>
+                <h4>: <%= results.konsumsi_obat %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="alergi">Alergi</label>
+                <h4>: <%= results.alergi %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Pemeriksaan Tanda Vital</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="tekanan_darah">Tekanan Darah (mmHg)</label>
+                <h4>: <%= results.tekanan_darah %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="denyut_jantung">Denyut Jantung (bpm)</label>
+                <h4>: <%= results.denyut_jantung %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="suhu_tubuh">Suhu Tubuh (°C)</label>
+                <h4>: <%= results.suhu_tubuh %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="laju_pernapasan">Laju Pernapasan (rpm)</label>
+                <h4>: <%= results.laju_pernapasan %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Hasil dan Keputusan Lanjut</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="diagnosa_awal">Diagnosa Awal</label>
+                <h4>: <%= results.diagnosa_awal %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="tindakan_awal">Tindakan Awal</label>
+                <h4>: <%= results.tindakan_awal %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="rencana_perawatan">Rencana Perawatan Lanjutan</label>
+                <h4>: <%= results.perawatan_lanjutan %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Dokter Bertugas</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="nama_pemberi_vaksin">Nama Dokter</label>
+                <h4>: <%= results.namalengkap_stafkesehatan %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="spesialisasi_dokter">Spesialisasi Dokter</label>
+                <h4>: <%= results.spesialisasi_stafkesehatan %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nomor_telepon_pemberi">Nomor Telepon Dokter</label>
+                <h4>: <%= results.nomortelepon_stafkesehatan %></h4>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .confirm-button a {
+    background-color: var(--secondary-color);
+  }
+  .confirm-button button {
+    background-color: var(--red-color);
+  }
+  .confirm-button a:hover,
+  .confirm-button button:hover {
+    background-color: var(--primary-color);
+    transition: 0.3s ease-in-out all;
+  }
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Padmin_pelayananmasuk {
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 0px;
+  }
+  .Padmin_title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .Padmin_title h1 {
+    color: var(--primary-color);
+  }
+  .pelayanan_dashboard_wrapper {
+    padding: 40px;
+  }
+</style>
+
+<style>
+  .Padmin_formulir_rekammedis {
+    background-color: var(--white-color);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px 25px;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .Padmin_formulir_title h3 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    color: var(--secondary-color);
+    width: 100%;
+    text-align: center;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option label {
+    /* background-color: aqua; */
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--secondary-color);
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option input {
+    /* background-color: red; */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    font-size: 12px;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option select {
+    /* background-color: yellow; */
+    /* width: 50%; */
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option textarea {
+    /* background-color: green; */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    font-size: 12px;
+    resize: none;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+    /* background-color: aqua; */
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option label {
+    /* background-color: aqua; */
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--secondary-color);
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option input[type="text"] {
+    /* background-color: red; */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    font-size: 12px;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option textarea {
+    /* background-color: green; */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    font-size: 12px;
+    resize: none;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option .select-option {
+    /* background-color: yellow; */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option .select-option .option-input {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option .select-option .option-input label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-left: 10px;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option .select-option .option-input input {
+    cursor: pointer;
+  }
+
+  .Padmin_formulir_rekammedis .Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+    /* background-color: aqua; */
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option label {
+    /* background-color: aqua; */
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--secondary-color);
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option input {
+    /* background-color: red; */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    font-size: 12px;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option textarea {
+    /* background-color: green; */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    font-size: 12px;
+    resize: none;
+  }
+
+  .Padmin_formulir_laboratorium .Padmin_formulir_input table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .Padmin_formulir_laboratorium .Padmin_formulir_input table thead {
+    background-color: var(--secondary-color);
+    color: var(--cream-color);
+  }
+  .Padmin_formulir_laboratorium .Padmin_formulir_input table thead tr th {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .Padmin_formulir_laboratorium .Padmin_formulir_input table tbody tr td {
+    padding: 10px;
+    font-size: 10px;
+    font-weight: 400;
+    border-bottom: 1px solid var(--secondary-color);
+  }
+  .Padmin_formulir_laboratorium .Padmin_formulir_input table tbody tr td input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    font-size: 10px;
+  }
+  .Padmin_formulir_laboratorium .Padmin_formulir_input table tbody tr td input::placeholder {
+    /* color: var(--secondary-color); */
+    font-size: 10px;
+  }
+
+  .Padmin_formulir_rekammedis .Padmin_formulir_hasil .Padmin_formulir_input .Padmin_formulir_input_option {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_hasil .Padmin_formulir_input .Padmin_formulir_input_option label {
+    /* background-color: aqua; */
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--secondary-color);
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_hasil .Padmin_formulir_input .Padmin_formulir_input_option textarea {
+    /* background-color: green; */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--cream-color);
+    color: var(--secondary-color);
+    font-size: 12px;
+    resize: none;
+  }
+  .confirm-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  .confirm-button button {
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--cream-color);
+    font-size: 12px;
+    cursor: pointer;
+    width: 100%;
+  }
+  .confirm-button button:hover {
+    background-color: var(--primary-color);
+    transition: all ease-in-out 0.3s;
+  }
+  .confirm-button a {
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--red-color);
+    color: var(--cream-color);
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+  }
+  .confirm-button a:hover {
+    background-color: var(--primary-color);
+    transition: all ease-in-out 0.3s;
+  }
+
+  /* Detail Rekam Medis Medical */
+  .Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    /* margin-bottom: 20px; */
+    /* background-color: aqua; */
+    width: 100%;
+  }
+  .Padmin_formulir_rekammedis #Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option {
+    border-top: 1px solid var(--gray-color);
+    border-bottom: 1px solid var(--gray-color);
+    padding: 10px;
+    /* background-color: var(--gray-color); */
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    /* margin-bottom: 20px; */
+    /* background-color: aqua; */
+    width: 100%;
+  }
+  .Padmin_formulir_rekammedis #Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option {
+    border-top: 1px solid var(--gray-color);
+    border-bottom: 1px solid var(--gray-color);
+    padding: 10px;
+    /* background-color: var(--gray-color); */
+    width: 98%;
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    /* margin-bottom: 20px; */
+    /* background-color: aqua; */
+    width: 100%;
+  }
+  .Padmin_formulir_rekammedis #Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option {
+    border-top: 1px solid var(--gray-color);
+    border-bottom: 1px solid var(--gray-color);
+    padding: 10px;
+    /* background-color: var(--cream-color); */
+    width: 98%;
+  }
+  .Padmin_formulir_laboratorium .Padmin_formulir_input table tbody tr td h4 {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    /* margin-bottom: 10px; */
+  }
+  .Padmin_formulir_rekammedis .Padmin_formulir_hasil .Padmin_formulir_input .Padmin_formulir_input_option h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--secondary-color);
+    /* margin-bottom: 20px; */
+    /* background-color: aqua; */
+    width: 100%;
+  }
+  .Padmin_formulir_rekammedis #Padmin_formulir_hasil .Padmin_formulir_input .Padmin_formulir_input_option {
+    border-top: 1px solid var(--gray-color);
+    border-bottom: 1px solid var(--gray-color);
+    padding: 10px;
+    /* background-color: var(--cream-color); */
+    width: 98%;
+  }
+
+  /* vaksinasi */
+</style>

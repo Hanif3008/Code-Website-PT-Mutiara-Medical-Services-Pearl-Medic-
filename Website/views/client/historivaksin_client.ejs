@@ -1,0 +1,141 @@
+<div class="profile-company-section">
+    <div class="profile-pic">
+      <img src="/img/<%= perusahaan.photo_perusahaan %>" alt="profile" />
+    </div>
+    <div class="profile-wrapper">
+      <div class="profile-company-name">
+        <h1>Detail Pemesanan Pelayanan</h1>
+      </div>
+      <div class="histori-detail-menu">
+        <div class="histori-detail-menu-option">
+          <h2>Nama Proyek</h2>
+          <p><%= proyek.nama_proyek %></p>
+        </div>
+        <div class="histori-detail-menu-option">
+          <h2>Jenis Pelayanan</h2>
+          <p><%= vaksin.jenis_pelayanan %></p>
+        </div>
+        <div class="histori-detail-menu-option">
+          <h2>Nomor Pesanan</h2>
+          <p><%= vaksin.nomorpesanan %></p>
+        </div>
+        <div class="histori-detail-menu-option">
+          <h2>Lokasi Pelayanan</h2>
+          <p><%= vaksin.lokasipelayanan_vaksin %></p>
+        </div>
+        <div class="histori-detail-menu-option">
+          <h2>Jumlah Pasien</h2>
+          <p><%= vaksin.jumlahpasien_vaksin %></p>
+        </div>
+        <div class="histori-detail-menu-option">
+          <h2>Tanggal Permintaan</h2>
+          <p><%= vaksin.tanggalpermintaan_vaksin %></p>
+        </div>
+        <div class="histori-detail-menu-option">
+          <h2>Tanggal Pelayanan</h2>
+          <% if(vaksin.tanggalpelayanan_vaksin=== "") {%>
+            <p>Belum Dikonfirmasi</p>
+          <% } else { %>
+            <p><%= vaksin.tanggalpelayanan_vaksin%></p>
+          <% } %>
+        </div>
+        <div class="histori-detail-menu-option">
+          <h2>Jam Permintaan</h2>
+          <p><%= vaksin.jampermintaan_vaksin %></p>
+        </div>
+        <div class="histori-detail-menu-option">
+          <h2>Tanggal Pelayanan</h2>
+          <% if(vaksin.jampelayanan_vaksin === "") {%>
+            <p>Belum Dikonfirmasi</p>
+          <% } else { %>
+            <p><%= vaksin.jampelayanan_vaksin %></p>
+          <% } %>
+        </div>
+        <div class="histori-detail-menu-option">
+          <h2>Status Pelayanan</h2>
+          <% if (vaksin.status_text === "Belum Dilayani") { %>
+              <p class="belum-dilayani">Belum Dilayani</p>
+          <% } else if (vaksin.status_text === "Dalam Proses") { %>
+              <p class="dalam-proses">Dalam Proses</p>
+          <% } else if (vaksin.status_text === "Sudah Dilayani") { %>
+              <p class="sudah-dilayani">Sudah Dilayani</p>
+          <% } else { %>
+              <p class="status-unknown">Status tidak diketahui</p>
+          <% } %>
+      </div>
+        <div class="histori-detail-menu-option">
+          <h2>Data Rekam Medis</h2>
+          <a href="/rmvaksin_client/<%= vaksin.id_vaksinasi %>">Lihat Selengkapnya</a>
+        </div>
+      </div>
+      <div class="catatan-darurat">
+      <h2>Catatan Tambahan</h2>
+      <p><%= vaksin.catatan_vaksinasi %></p>
+    </div>
+      <div class="dokter-bertugas">
+        <div class="dokter-bertugas-title">
+          <h3>Jenis <span>Vaksin</span> </h2>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama Vaksin</th>
+              <th>Deskripsi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><%= vaccine.nama_vaksin %></td>
+              <td><%= vaccine.deskripsi_vaksin %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="dokter-bertugas">
+        <div class="dokter-bertugas-title">
+            <h3>Dokter <span>Penanggung Jawab</span></h3>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Dokter</th>
+                    <th>No Telepon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><%= staf.namalengkap_stafkesehatan %></td>
+                    <td><%= staf.nomortelepon_stafkesehatan %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+      
+      <div class="histori-button">
+          <a href="/profile_client" class="btn btn-back">Kembali</a>
+      </div>
+    </div>
+  </div>
+  <style>
+    .catatan-darurat {
+      margin-top: 20px;
+      padding: 50px;
+    }
+    .catatan-darurat h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+      font-family: var(--questrial-font);
+    }
+    .catatan-darurat p {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--secondary-color);
+      font-family: var(--questrial-font);
+    }
+  </style>

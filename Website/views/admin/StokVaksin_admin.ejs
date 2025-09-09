@@ -1,0 +1,141 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Stok<span> Vaksin</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_search">
+          <input type="text" placeholder="Masukan nama obat - obatan . . ." />
+          <button><i class="fa-solid fa-search"></i></button>
+        </div>
+        <div class="Padmin_pelayananmasuk_table">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Vaksin</th>
+                <th>Jumlah Tersedia</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let indexVaksin = 1; %> <% if(DataVaksin && DataVaksin.length > 0) { %> <% let hasData = false; %> <% DataVaksin.forEach(vaksin => { %>
+              <tr>
+                <td><%= indexVaksin++ %></td>
+                <td><%= vaksin.nama_vaksin %></td>
+                <td><%= vaksin.stock_vaksin %> Vial</td>
+                <% if(vaksin.stock_vaksin < 50) { %>
+                <td><span id="yellow">Stok Sedikit</span></td>
+                <% } else { %>
+                <td><span id="green">Stok Banyak</span></td>
+                <% } %>
+                <td><a href="/DetailStokVaksin_admin/<%= vaksin.id_vaksin %>">Detail</a></td>
+              </tr>
+              <% hasData = true; %> <% }); %> <% if(!hasData) { %>
+              <tr>
+                <td colspan="6">No data available</td>
+              </tr>
+              <% } %> <% } else { %>
+              <tr>
+                <td colspan="6">No data available</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+        <!-- <div class="Padmin_pelayananmasuk_pagination">
+          <ul>
+            <li>
+              <a href="#"><i class="fa-solid fa-caret-left"></i></a>
+            </li>
+            <li><a href="#" id="black">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#"><i class="fa-solid fa-caret-right"></i></a>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_title">
+          <h2>Tambahkan Jenis Vaksin Baru</h2>
+        </div>
+        <div class="Padmin_jenisobat_form">
+          <form action="/tambahStokVaksin_admin" method="post">
+            <div class="form_tambah_obat_title">
+              <h3>Silahkan Isi Data Dibawah</h3>
+            </div>
+            <div class="form_tambah_obat_nama">
+              <i class="fa-solid fa-file-prescription"></i>
+              <input type="text" name="nama_vaksin" id="nama_vaksin" placeholder="Masukan Nama Vaksin . . ." required />
+            </div>
+            <div class="form_tambah_obat_jumlah">
+              <i class="fa-solid fa-prescription-bottle-medical"></i>
+              <input type="number" name="stock_vaksin" id="stock_vaksin" placeholder="Masukan Jumlah Vaksin . . . " required />
+            </div>
+            <div class="form_tambah_obat_nama">
+              <textarea placeholder="Masukan Deskripsi Vaksin . . ." name="deskripsi_vaksin" id="deksripsi_Vaksin" cols="30" rows="10" required></textarea>
+            </div>
+            <div class="form_tambah_obat_confirm">
+              <button type="submit">Tambahkan</button>
+            </div>
+          </form>
+          <style>
+            .form_tambah_obat_nama textarea {
+              width: 100%;
+              outline: none;
+              background-color: transparent;
+              border: none;
+              height: 100px;
+              resize: none;
+            }
+          </style>
+        </div>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

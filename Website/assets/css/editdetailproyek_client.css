@@ -1,0 +1,202 @@
+.profil-akun-perusahaan-option #nama_proyek {
+  width: 70%;
+  margin-left: 20px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--cream-color);
+  border-radius: 10px;
+  color: gray;
+}
+.profil-akun-perusahaan-option #jumlah_karyawan {
+  width: 70%;
+  margin-left: 20px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--cream-color);
+  border-radius: 10px;
+  color: gray;
+}
+.profil-akun-perusahaan-option #status-proyek {
+  width: 70%;
+  margin-left: 20px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--cream-color);
+  border-radius: 10px;
+  color: gray;
+}
+.profil-akun-perusahaan-option #no_telp {
+  width: 70%;
+  margin-left: 20px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--cream-color);
+  border-radius: 10px;
+  color: gray;
+}
+.profil-akun-perusahaan-option #provinsi,
+#kota {
+  width: 40%;
+  margin-left: 20px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--cream-color);
+  border-radius: 10px;
+  color: gray;
+}
+.profil-akun-perusahaan-option #status-proyek option {
+  outline: none;
+  font-family: var(--questrial-font);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+@media only screen and (max-width: 860px) {
+  .profil-akun-perusahaan-option #nama_proyek {
+    width: 80%;
+    margin-left: 0px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    color: gray;
+  }
+  .profil-akun-perusahaan-option #jumlah_karyawan {
+    width: 80%;
+    margin-left: 0px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    color: gray;
+  }
+  .profil-akun-perusahaan-option #status-proyek {
+    width: 80%;
+    margin-left: 0px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    color: gray;
+  }
+  .profil-akun-perusahaan-option #status-proyek option {
+    outline: none;
+    font-family: var(--questrial-font);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--secondary-color);
+  }
+  .profil-akun-perusahaan-option #no_telp {
+    width: 80%;
+    margin-left: 0px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    color: gray;
+  }
+  .profil-akun-perusahaan-option #provinsi,
+  #kota {
+    width: 40%;
+    margin-left: 0px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    color: gray;
+  }
+  .profil-akun-perusahaan-option #status-proyek option {
+    outline: none;
+    font-family: var(--questrial-font);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--secondary-color);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .profil-akun-perusahaan-option #nama_proyek {
+    width: 80%;
+    margin-left: 0px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    color: gray;
+    font-size: 10px;
+  }
+  .profil-akun-perusahaan-option #jumlah_karyawan {
+    font-size: 10px;
+    width: 80%;
+    margin-left: 0px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    color: gray;
+  }
+  .profil-akun-perusahaan-option #status-proyek {
+    font-size: 10px;
+    width: 80%;
+    margin-left: 0px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    color: gray;
+  }
+  .profil-akun-perusahaan-option #status-proyek option {
+    outline: none;
+    font-family: var(--questrial-font);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--secondary-color);
+  }
+  .profil-akun-perusahaan-option #no_telp {
+    width: 80%;
+    margin-left: 0px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    color: gray;
+  }
+  .profil-akun-perusahaan-option #provinsi,
+  #kota {
+    width: 40%;
+    margin-left: 0px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--cream-color);
+    border-radius: 10px;
+    color: gray;
+  }
+  .profil-akun-perusahaan-option #status-proyek option {
+    outline: none;
+    font-family: var(--questrial-font);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--secondary-color);
+  }
+}

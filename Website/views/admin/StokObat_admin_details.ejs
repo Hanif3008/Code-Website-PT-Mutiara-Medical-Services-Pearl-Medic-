@@ -1,0 +1,231 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Detail <span>Data Obat</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <div class="Padmin_pelayananmasuk_wrapper">
+          <form action="/EditDataObat_admin/<%= StockObat.id_obat %>" enctype="multipart/form-data" method="post" class="stokobatForm" id="stokobatForm">
+            <div class="Padmin_pelayananmasuk_pic">
+              <img src="/img/<%= StockObat.obat_photo %>" alt="Gambar Obat" id="profilePic" />
+              <span class="change-text">Ubah Gambar</span>
+              <input type="file" name="obat_photo" id="fileInput" accept="image/*" style="display: none" />
+            </div>
+            <div class="Padmin_pelayananmasuk_data">
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Nama Obat</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-pills"></i>
+                  <input type="text" name="nama_obat" id="nama_obat" value="<%= StockObat.nama_obat %>" placeholder="Masukan Nama Obat . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Jenis Obat</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-pills"></i>
+                  <input type="text" name="jenis_obat" id="jenis_obat" value="<%= StockObat.jenis_obat %>" placeholder="Masukan Jenis Obat . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Jenis Kemasan</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-pills"></i>
+                  <input type="text" name="jenis_kemasan" id="jenis_kemasan" value="<%= StockObat.jenis_kemasan %>" placeholder="Masukan Jenis Kemasan . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Stock Obat</h3>
+                <div class="Padmin_pelayananmasuk_datamenu_input">
+                  <i class="fa-solid fa-pills"></i>
+                  <input type="number" name="stock_obat" id="stock_obat" value="<%= StockObat.stock_obat %>" placeholder="Masukan Stock Obat . . ." />
+                </div>
+              </div>
+              <div class="Padmin_pelayananmasuk_datamenu">
+                <h3>Hapus Obat</h3>
+                <button type="button" id="red" onclick="confirmDelete('<%= StockObat.id_obat %>')">Hapus</button>
+              </div>
+            </div>
+            <div class="Padmin_pelayananmasuk_catatan">
+              <h2>Deskripsi Obat</h2>
+              <div class="Padmin_pelayananmasuk_datamenu_input" id="deskripsi_obat">
+                <textarea name="deskripsi_obat" id="deskripsi_obat" placeholder="Masukan Deskripsi Obat"><%= StockObat.deskripsi_obat %></textarea>
+              </div>
+            </div>
+            <div class="edit-all-button">
+              <div class="edit-menu-button">
+                <button type="submit">Edit Obat</button>
+              </div>
+              <div class="back-menu-button">
+                <a href="/StokObat_admin">Kembali</a>
+              </div>
+            </div>
+            <div class="validasi" id="validasi">
+              <p id="validasi_text">Pastikan data yang anda masukkan benar dan valid</p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="Padmin_notifikasi_obatvaksin_responsive" id="none">
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Obat</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokObat_admin">Lihat Stok Obat</a>
+          </div>
+        </div>
+        <div class="Padmin_notifikasi_obatvaksin">
+          <div class="Padmin_notifikasi_title">
+            <h2>Stok<span>Vaksin</span></h2>
+          </div>
+          <div class="Padmin_stok_obatvaksin">
+            <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="PAdmin_right">
+      <div class="Padmin_notifikasi_wrapper">
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Obat</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokObat_admin">Lihat Stok Obat</a>
+            </div>
+          </div>
+          <div class="Padmin_notifikasi_obatvaksin">
+            <div class="Padmin_notifikasi_title">
+              <h2>Stok<span>Vaksin</span></h2>
+            </div>
+            <div class="Padmin_stok_obatvaksin">
+              <a href="/StokVaksin_admin">Lihat Stok Vaksin</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .Padmin_pelayananmasuk_datamenu button {
+    padding: 10px;
+    transition: all ease-in-out 0.3s;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #deskripsi_obat {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: var(--cream-color);
+    border: none;
+    padding: 10px;
+    height: 150px;
+    resize: none;
+    outline: none;
+  }
+  .validasi {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px dashed var(--red-color);
+    padding: 5px;
+    text-align: center;
+  }
+  .validasi p {
+    color: var(--red-color);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
+<script>
+  document.querySelector(".Padmin_pelayananmasuk_pic").addEventListener("click", function () {
+    document.getElementById("fileInput").click();
+  });
+
+  document.getElementById("fileInput").addEventListener("change", function (event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      document.getElementById("profilePic").src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  });
+</script>
+<script>
+  document.getElementById("stokobatForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let nama_obat = document.getElementById("nama_obat").value;
+    let jenis_obat = document.getElementById("jenis_obat").value;
+    let jenis_kemasan = document.getElementById("jenis_kemasan").value;
+    let stock_obat = document.getElementById("stock_obat").value;
+    let deskripsi_obat = document.getElementById("deskripsi_obat").value;
+
+    let valid = true;
+    let errorMessages = "";
+
+    // nama obat wajib diisi
+    if (nama_obat === "") {
+      valid = false;
+      errorMessages += "Nama obat wajib diisi\n";
+    }
+    // jenis obat wajib diisi
+    if (jenis_obat === "") {
+      valid = false;
+      errorMessages += "Jenis obat wajib diisi\n";
+    }
+    // jenis kemasan wajib diisi
+    if (jenis_kemasan === "") {
+      valid = false;
+      errorMessages += "Jenis kemasan wajib diisi\n";
+    }
+    // stock obat wajib diisi
+    if (stock_obat === "") {
+      valid = false;
+      errorMessages += "Stock obat wajib diisi\n";
+    }
+    // deskripsi obat wajib diisi
+    if (deskripsi_obat === "") {
+      valid = false;
+      errorMessages += "Deskripsi obat wajib diisi\n";
+    }
+
+    const validasi = document.getElementById("validasi");
+    const validasiText = document.getElementById("validasi_text");
+
+    if (valid) {
+      validasi.style.display = "none";
+      this.submit();
+    } else {
+      validasi.style.display = "flex";
+      validasiText.innerText = errorMessages;
+    }
+  });
+</script>
+<script>
+  function confirmDelete(id) {
+    if (confirm("Apakah yakin ingin menghapus data?")) {
+      fetch(`/deleteStokObatById/${id}`, {
+        method: "POST", // Ensure this matches your router method
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.message === "data obat berhasil dihapus") {
+            window.location.href = "/StokObat_admin";
+          } else {
+            throw new Error(data.message || "Gagal menghapus obat");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert(error.message);
+        });
+    }
+  }
+</script>

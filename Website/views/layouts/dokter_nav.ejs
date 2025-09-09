@@ -1,0 +1,325 @@
+<div class="navigation_admin">
+  <div class="navigation_admin_top">
+    <div class="navigation-logo">
+      <a href="/admin">
+        <img src="/img/pearlmedic.png" alt="PearlMedic" />
+      </a>
+    </div>
+    <a href="/profile_dokter" class="navigation-profile">
+      <div class="navigation-img">
+        <img src="/img/<%= staff.photo_stafkesehatan %>" alt="Profile" />
+      </div>
+      <div class="navigation-prof-name">
+        <h4>Hallo, <%= staff.firstName %></h4>
+        <p><%= staff.role_user %></p>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="navigation-admin-bottom">
+  <div class="navigation-admin-left" id="navigation-admin-left">
+    <div class="navigation-admin-menu">
+      <a href="/index_dokter" class="nav-Hdokter-link">
+        <i class="fas fa-home"></i>
+        <span>Dashboard</span>
+      </a>
+    </div>
+    <div class="navigation-admin-menu">
+      <a href="/LMedical_dokter" class="nav-DMedical-link">
+        <i class="fa-solid fa-house-medical"></i>
+        <span>Medical Check Up</span>
+      </a>
+    </div>
+    <div class="navigation-admin-menu">
+      <a href="/LDarurat_dokter" class="nav-DDarurat-link">
+        <i class="fa-solid fa-truck-medical"></i>
+        <span>Layanan Darurat</span>
+      </a>
+    </div>
+    <div class="navigation-admin-menu">
+      <a href="/LVaksin_dokter" class="nav-DVaksin-link">
+        <i class="fa-solid fa-syringe"></i>
+        <span>Layanan Vaksin</span>
+      </a>
+    </div>
+    <div class="navigation-admin-menu">
+      <a href="/logout_dokter" class="nav-logout-link">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Log-out</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="navigation-admin-left-responsive" id="navigation-admin-left-responsive">
+  <div class="navigation-admin-exit" id="navigation-admin-exit">
+    <i class="fa-solid fa-square-caret-left"></i>
+  </div>
+  <br />
+  <br />
+  <div class="navigation-admin-menus" id="nav-responsive-admin">
+    <a href="/index_dokter" class="nav-Hdokter-link">
+      <i class="fas fa-home"></i>
+      <span>Dashboard</span>
+    </a>
+  </div>
+  <div class="navigation-admin-menu">
+    <a href="/LMedical_dokter" class="nav-DMedical-link">
+      <i class="fa-solid fa-house-medical"></i>
+      <span>Medical Check Up</span>
+    </a>
+  </div>
+  <div class="navigation-admin-menu">
+    <a href="/LDarurat_dokter" class="nav-DDarurat-link">
+      <i class="fa-solid fa-truck-medical"></i>
+      <span>Layanan Darurat</span>
+    </a>
+  </div>
+  <div class="navigation-admin-menu">
+    <a href="/LVaksin_dokter" class="nav-DVaksin-link">
+      <i class="fa-solid fa-syringe"></i>
+      <span>Layanan Vaksin</span>
+    </a>
+  </div>
+  <div class="navigation-admin-menu">
+    <a href="/logout_dokter" class="nav-logout-link">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <span>Log-out</span>
+    </a>
+  </div>
+</div>
+<div class="navigation-admin-left-minimize" id="navigation-admin-left-minimize">
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="navigation-admin-right">
+    <i class="fa-solid fa-square-caret-right"></i>
+  </div>
+  <div class="navigation-admin-left-minimize-menu">
+    <a href="/index_Kadmin" class="nav-Kadmin-links" id="exist-minimize">
+      <i class="fas fa-home"></i>
+    </a>
+  </div>
+  <div class="navigation-admin-left-minimize-menu">
+    <a href="/LMedical_dokter" class="nav-DMedical-link">
+      <i class="fa-solid fa-house-medical"></i>
+    </a>
+  </div>
+  <div class="navigation-admin-left-minimize-menu">
+    <a href="/LDarurat_dokter" class="nav-DDarurat-link">
+      <i class="fa-solid fa-truck-medical"></i>
+    </a>
+  </div>
+  <div class="navigation-admin-left-minimize-menu">
+    <a href="/LVaksin_dokter" class="nav-DVaksin-link">
+      <i class="fa-solid fa-syringe"></i>
+    </a>
+  </div>
+  <div class="navigation-admin-left-minimize-menu">
+    <a href="/logout_dokter"><i class="fa-solid fa-right-from-bracket"></i></a>
+  </div>
+</div>
+
+<!-- SCRIPT NAVIGATION -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Mengambil path URL saat ini
+    var currentPath = window.location.pathname;
+
+    // Menghapus id exist-minimize dari semua halaman
+    var existMinimizeLink = document.getElementById("exist-minimize");
+    if (existMinimizeLink) {
+      existMinimizeLink.removeAttribute("id");
+    }
+
+    // Mencari elemen dengan ID exist-minimize dan mengubah href-nya sesuai dengan path URL saat ini
+    var existMinimizeLink = document.querySelector('.navigation-admin-left-minimize-menu a[href="' + currentPath + '"]');
+    if (existMinimizeLink) {
+      existMinimizeLink.id = "exist-minimize";
+    }
+
+    // Mengubah warna teks sesuai dengan path URL saat ini
+    var navigationLinks = document.querySelectorAll(".navigation-admin-left-minimize-menu a");
+    navigationLinks.forEach(function (link) {
+      if (link.getAttribute("href") === currentPath) {
+        link.style.color = "var(--secondary-color)";
+      } else {
+        link.style.color = ""; // Menghapus warna yang sebelumnya di-set
+      }
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const exitButton = document.querySelector(".navigation-admin-exit");
+    const navMenu = document.querySelector(".navigation-admin-left-responsive");
+    const minimizeMenu = document.querySelector(".navigation-admin-left-minimize");
+
+    exitButton.addEventListener("click", function () {
+      navMenu.style.transform = "translateX(-100%)";
+      minimizeMenu.style.display = "block";
+    });
+
+    document.querySelector(".navigation-admin-right").addEventListener("click", function () {
+      navMenu.style.transform = "translateX(0)";
+      minimizeMenu.style.display = "none";
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Menentukan halaman yang sedang dimuat berdasarkan URL
+    const currentPage = window.location.pathname;
+
+    // Menentukan elemen menu yang sesuai dengan halaman yang sedang dimuat
+    let currentMenuItem;
+    switch (currentPage) {
+      case "/index_dokter":
+        currentMenuItem = document.querySelector(".nav-Hdokter-link");
+        break;
+      case "/LMedical_dokter":
+        currentMenuItem = document.querySelector(".nav-DMedical-link");
+        break;
+      case "/LDarurat_dokter":
+        currentMenuItem = document.querySelector(".nav-DDarurat-link");
+        break;
+      case "/LVaksin_dokter":
+        currentMenuItem = document.querySelector(".nav-DVaksin-link");
+        break;
+      default:
+        currentMenuItem = null;
+    }
+
+    // Menambahkan id exist pada elemen menu yang sesuai
+    if (currentMenuItem) {
+      currentMenuItem.parentElement.setAttribute("id", "exist");
+    }
+  });
+</script>
+
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Menentukan halaman yang sedang dimuat berdasarkan URL
+      const currentPage = window.location.pathname;
+  
+      // Menentukan elemen menu yang sesuai dengan halaman yang sedang dimuat
+      let currentMenuItem;
+      switch (currentPage) {
+        case "/index_admin":
+          currentMenuItem = document.querySelector(".nav-admin-links");
+          break;
+        case "/LMedical_admin":
+          currentMenuItem = document.querySelector(".nav-medic-links");
+          break;
+        case "/LDarurat_admin":
+          currentMenuItem = document.querySelector(".nav-darurat-links");
+          break;
+        case "/LVaksin_admin":
+          currentMenuItem = document.querySelector(".nav-vaksin-links");
+          break;
+        case "/LPerusahaan_admin":
+          currentMenuItem = document.querySelector(".nav-perusahaan-links");
+          break;
+        case "/LDokter_admin":
+          currentMenuItem = document.querySelector(".nav-dokter-links");
+          break;
+        case "/LRs_admin":
+          currentMenuItem = document.querySelector(".nav-rs-links");
+          break;
+        default:
+          currentMenuItem = null;
+      }
+  
+      // Menambahkan id exist pada elemen menu yang sesuai
+      if (currentMenuItem) {
+        currentMenuItem.parentElement.setAttribute("id", "exist");
+      }
+    });
+  </script> -->
+<!-- SCRIPT NAVIGATION -->
+
+<!-- SCRIPT NAVIGATION -->
+<style>
+  .navigation-admin-left {
+    padding-top: 120px;
+    position: fixed;
+    overflow-y: auto;
+    height: 100%;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
+    transition: 0.3s;
+    top: 0;
+    border-right: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+  }
+  .navigation-admin-left-minimize {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .navigation-admin-left-responsive {
+      padding-top: 100px;
+      display: block;
+      width: 250px;
+      height: 100%;
+      border-right: 1px solid var(--primary-color) !important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      scrollbar-width: none; /* For Firefox */
+      -ms-overflow-style: none; /* For IE and Edge */
+      transition: 0.3s;
+      background-color: var(--secondary-color);
+      z-index: 1;
+    }
+    .navigation-admin-exit {
+      padding-top: 110px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-top: 10px;
+      margin-right: 10px;
+      display: block;
+      z-index: 1;
+    }
+    .navigation-admin-left-minimize {
+      display: none;
+      flex-direction: column;
+      margin-left: 0px;
+      width: 40px;
+      height: 100%;
+      /* padding-top: 100px; */
+      border-right: 1px solid var(--primary-color) !important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      scrollbar-width: none; /* For Firefox */
+      -ms-overflow-style: none; /* For IE and Edge */
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      background-color: var(--secondary-color);
+    }
+  }
+</style>
+<script>
+  window.addEventListener("scroll", function () {
+    var navigation = document.getElementById("navigation-admin-left");
+    navigation.style.paddingTop = window.scrollY > 0 ? "0" : "120px";
+  });
+  window.addEventListener("scroll", function () {
+    var navigation = document.getElementById("navigation-admin-left-responsive");
+    navigation.style.paddingTop = window.scrollY > 0 ? "0" : "100px";
+  });
+  window.addEventListener("scroll", function () {
+    var navigation = document.getElementById("navigation-admin-exit");
+    navigation.style.paddingTop = window.scrollY > 0 ? "0" : "110px";
+  });
+  window.addEventListener("scroll", function () {
+    var navigation = document.getElementById("navigation-admin-left-minimize");
+    navigation.style.paddingTop = window.scrollY > 0 ? "0" : "50px";
+  });
+</script>
+<!-- SCRIPT NAVIGATION -->

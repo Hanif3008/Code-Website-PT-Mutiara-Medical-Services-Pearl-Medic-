@@ -1,0 +1,202 @@
+<div class="profile-company-section">
+  <div class="profile-pic">
+    <img src="/img/<%= perusahaan.photo_perusahaan  %>" alt="profile" />
+  </div>
+  <div class="profile-wrapper">
+    <div class="profile-company-name">
+      <div class="subjudul" id="subjudul">
+        <h2>Membuat Permintaan <span>Menambah Proyek Perusahaan</span></h2>
+      </div>
+      <h1>Tambah Proyek Perusahaan</h1>
+    </div>
+    <br />
+    <br />
+    <div class="profil-akun-perusahaan" id="profil-akun-perusahaan">
+      <form id="tambahProyekForm" action="/tambahproyek_client" method="POST">
+        <div class="profil-akun-perusahaan-menu">
+          <div class="profil-akun-perusahaan-option">
+            <h3>Nama Proyek</h3>
+            <input type="text" name="nama_proyek" id="nama_proyek" value="" placeholder="Masukan Nama Proyek Perusahaan Anda ..." />
+          </div>
+          <div class="profil-akun-perusahaan-option">
+            <h3>Nomor Telepon</h3>
+            <input type="text" name="no_telp" id="no_telp" value="" placeholder="Masukan Nomor Telepon" />
+          </div>
+          <div class="profil-akun-perusahaan-option">
+            <h3>Jumlah Karyawan</h3>
+            <input type="number" name="jumlah_karyawan" id="jumlah_karyawan" value="" placeholder="Masukan Jumlah Karyawan" />
+          </div>
+        </div>
+        <div class="profil-akun-perusahaan-alamat">
+          <h3>Lokasi Proyek</h3>
+          <input type="text" name="lokasi_proyek" id="lokasi_proyek" value="" placeholder="Masukan Lokasi Proyek Perusahaan Anda ..." />
+        </div>
+        <div class="profil-akun-perusahaan-deskripsi">
+          <h3>Deskripsi Proyek</h3>
+          <textarea name="deskripsi_proyek" id="deskripsi_proyek" cols="30" rows="10" placeholder="Masukan Deskripsi Proyek Perusahaan Anda ..."></textarea>
+        </div>
+        <div class="validasi" id="validasi" style="display: none">
+          <p id="validasi-message">Silahkan Isi Data Sesuai Dengan Format Yang Ada</p>
+        </div>
+        <div class="button-detailproyek" id="button-detail-proyek">
+          <div class="button-edit-detail" id="button-edit-detail">
+            <button type="submit" class="btn btn-edit">Buat Permintaan</button>
+          </div>
+          <div class="button-kembali-detail" id="button-kembali-detail">
+            <button><a href="/detailproyek_client" class="btn btn-kembali">Kembali</a></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<style>
+  #button-kembali-detail,
+  #button-edit-detail {
+    /* background-color: aqua !important; */
+    width: 100% !important;
+  }
+  .button-kembali-detail button {
+    background-color: var(--secondary-color);
+    border: none;
+    color: var(--secondary-color);
+    padding: 15px;
+    font-weight: 800;
+    font-family: var(--questrial-font);
+    width: 100%;
+    border-radius: 10px !important;
+  }
+  .button-kembali-detail button a {
+    background-color: transparent !important;
+    color: var(--cream-color);
+    padding: 0px !important;
+    border: none !important;
+    font-weight: 500 !important;
+  }
+  .btn-edit {
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--cream-color);
+    padding: 15px;
+    font-weight: 500;
+    font-family: var(--questrial-font);
+    width: 100%;
+    font-size: 16px;
+    border-radius: 10px !important;
+    cursor: pointer;
+  }
+  .btn-edit:hover {
+    background-color: var(--secondary-color);
+    color: var(--cream-color);
+    transition: 0.3s all ease;
+  }
+  .button-kembali-detail button:hover {
+    background-color: var(--red-color);
+    color: var(--secondary-color);
+    transition: 0.3s all ease;
+  }
+  #currentImage {
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .validasi {
+    padding: 20px;
+    display: flex;
+    text-align: center;
+  }
+
+  .validasi p {
+    font-size: 12px;
+    color: var(--red-color);
+    border: 1px dashed var(--red-color);
+    padding: 5px;
+    width: 95%;
+  }
+  @media only screen and (max-width: 500px) {
+    #button-detail-proyek {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .btn-edit {
+      background-color: var(--primary-color);
+      border: none;
+      color: var(--cream-color);
+      padding: 15px;
+      font-weight: 500;
+      font-family: var(--questrial-font);
+      width: 100%;
+      font-size: 12px;
+      border-radius: 10px !important;
+      cursor: pointer;
+    }
+  }
+
+  @media only screen and (max-width: 695px) {
+    .validasi {
+      padding: 15px;
+      display: flex;
+      text-align: center;
+    }
+
+    .validasi p {
+      font-size: 10px;
+      width: 95%;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .validasi {
+      padding: 15px;
+      display: flex;
+      text-align: center;
+    }
+
+    .validasi p {
+      font-size: 8px;
+      width: 90%;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById("tambahProyekForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const nama_proyek = document.getElementById("nama_proyek").value.trim();
+    const no_telp = document.getElementById("no_telp").value.trim();
+    const jumlah_karyawan = document.getElementById("jumlah_karyawan").value.trim();
+    const lokasi_proyek = document.getElementById("lokasi_proyek").value.trim();
+    const deskripsi_proyek = document.getElementById("deskripsi_proyek").value.trim();
+
+    // Validasi
+    if (!nama_proyek || !no_telp || !jumlah_karyawan || !lokasi_proyek || !deskripsi_proyek) {
+      document.getElementById("validasi-message").innerText = "Semua form wajib diisi";
+      document.getElementById("validasi").style.display = "block";
+      return;
+    }
+
+    if (isNaN(parseInt(no_telp)) || no_telp.length < 8) {
+      document.getElementById("validasi-message").innerText = "Nomor telepon wajib berupa angka dan minimal 8 digit";
+      document.getElementById("validasi").style.display = "block";
+      return;
+    }
+
+    if (isNaN(parseInt(jumlah_karyawan))) {
+      document.getElementById("validasi-message").innerText = "Jumlah karyawan wajib berupa angka";
+      document.getElementById("validasi").style.display = "block";
+      return;
+    }
+
+    if (deskripsi_proyek.length < 30) {
+      document.getElementById("validasi-message").innerText = "Deskripsi proyek wajib memiliki minimal 30 karakter";
+      document.getElementById("validasi").style.display = "block";
+      return;
+    }
+
+    // Submit form jika lolos validasi
+    this.submit();
+  });
+</script>

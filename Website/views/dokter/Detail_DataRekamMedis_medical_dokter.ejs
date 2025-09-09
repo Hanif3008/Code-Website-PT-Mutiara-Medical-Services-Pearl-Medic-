@@ -1,0 +1,252 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Detail Data<span> Rekam Medis</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <form class="Padmin_formulir_rekammedis">
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Data Pribadi Pasien</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="">Nama Lengkap</label>
+                <h4>: <%= RekamMedisDetail.nama_lengkap %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Nomor Identitas (NIK)</label>
+                <h4>: <%= RekamMedisDetail.nomor_identitas %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Tanggal Lahir</label>
+                <h4>: <%= RekamMedisDetail.tanggal_lahir %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Jenis Kelamin</label>
+                <h4>: <%= RekamMedisDetail.jenis_kelamin %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Nomor Telepon</label>
+                <h4>: <%= RekamMedisDetail.nomor_telepon %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Email</label>
+                <h4>: <%= RekamMedisDetail.email %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Jabatan</label>
+                <h4>: <%= RekamMedisDetail.jabatan %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Nomor Asuransi Kesehatan (Jika Ada)</label>
+                <h4>: <%= RekamMedisDetail.nomor_asuransi %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Alamat</label>
+                <h4>: <%= RekamMedisDetail.alamat %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_riwayat" id="Padmin_formulir_riwayat">
+            <div class="Padmin_formulir_title">
+              <h3>Riwayat / Keluhan / Gaya Hidup</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="">Riwayat Penyakit Keluarga</label>
+                <h4>: <%= RekamMedisDetail.rp_keluarga %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Riwayat Penyakit Pribadi</label>
+                <h4>: <%= RekamMedisDetail.rp_pribadi %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Kebiasaan Merokok</label>
+                <h4>: <%= RekamMedisDetail.kebiasaan_merokok %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Kebiasaan Konsumsi Alkohol</label>
+                <h4>: <%= RekamMedisDetail.kebiasaan_alkohol %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Kebiasaan Olahraga</label>
+                <h4>: <%= RekamMedisDetail.kebiasaan_olahraga %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Alergi (Jika Ada)</label>
+                <h4>: <%= RekamMedisDetail.alergi %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Diet / Pola Makan</label>
+                <h4>: <%= RekamMedisDetail.pola_makan %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Keluhan Pasien</label>
+                <h4>: <%= RekamMedisDetail.keluhan_pasien %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_pemeriksaan" id="Padmin_formulir_pemeriksaan">
+            <div class="Padmin_formulir_title">
+              <h3>Pemeriksaan Fisik</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="">Tinggi Badan</label>
+                <h4>: <%= RekamMedisDetail.tinggi_badan %> cm</h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Berat Badan</label>
+                <h4>: <%= RekamMedisDetail.berat_badan %> kg</h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Indeks Massa Tubuh</label>
+                <h4>: <%= RekamMedisDetail.indeks_massatubuh %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Tekanan Darah</label>
+                <h4>: <%= RekamMedisDetail.tekanan_darah %> mmHg</h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Denyut Nadi</label>
+                <h4>: <%= RekamMedisDetail.denyut_nadi %> bpm</h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Mata</label>
+                <h4>: <%= RekamMedisDetail.pemeriksaan_mata %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Telinga</label>
+                <h4>: <%= RekamMedisDetail.pemeriksaan_telinga %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Tenggorokan</label>
+                <h4>: <%= RekamMedisDetail.pemeriksaan_tenggorokan %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Jantung</label>
+                <h4>: <%= RekamMedisDetail.pemeriksaan_jantung %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Paru - Paru</label>
+                <h4>: <%= RekamMedisDetail.pemeriksaan_paru %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Abdomen</label>
+                <h4>: <%= RekamMedisDetail.pemeriksaan_abdomen %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_laboratorium">
+            <div class="Padmin_formulir_title">
+              <h3>Laboratorium</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <table>
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Jenis Tes</th>
+                    <th>Hasil</th>
+                    <th>Nilai Rujukan</th>
+                    <th>Komentar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Hemoglobin (Hb)</td>
+                    <td><h4><%= RekamMedisDetail.hemoglobin %> g/dL</h4></td>
+                    <td>Pria: 13.8-17.2 g/dL, Wanita: 12.1-15.1 g/dL</td>
+                    <td><h4><%= RekamMedisDetail.komentar_hemoglobin %></h4></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Kolesterol Total</td>
+                    <td><h4><%= RekamMedisDetail.kolesterol %> mg/dL</h4></td>
+                    <td>&lt; 200 mg/dL</td>
+                    <td><h4><%= RekamMedisDetail.komentar_kolesterol %></h4></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Asam Urat</td>
+                    <td><h4><%= RekamMedisDetail.asamurat %> mg/dL</h4></td>
+                    <td>Pria: 3.4-7.0 mg/dL, Wanita: 2.4-6.0 mg/dL</td>
+                    <td><h4><%= RekamMedisDetail.komentar_asamurat %></h4></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="Padmin_formulir_hasil" id="Padmin_formulir_hasil">
+            <div class="Padmin_formulir_title">
+              <h3>Hasil dan Catatan</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="">Diagnosa</label>
+                <h4>: <%= RekamMedisDetail.diagnosa %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Rekomendasi Medis</label>
+                <h4>: <%= RekamMedisDetail.rekomendasi_medis %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Catatan Tambahan</label>
+                <h4>: <%= RekamMedisDetail.catatan_tambahan %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="Padmin_formulir_datadiri" id="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Dokter Bertugas</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="nama_pemberi_vaksin">Nama Dokter</label>
+                <h4><%= RekamMedisDetail.namalengkap_stafkesehatan %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="spesialisasi_dokter">Spesialisasi Dokter</label>
+                <h4>: <%= RekamMedisDetail.spesialisasi_stafkesehatan %></h4>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="nomor_telepon_pemberi">Nomor Telepon Dokter</label>
+                <h4>: <%= RekamMedisDetail.nomortelepon_stafkesehatan %></h4>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="confirm-button">
+            <a href="/Edit_Detail_DataRekamMedis_medical_dokter">Edit Data</a>
+            <button type="submit" class="btn btn-primary">Hapus Data</button>
+          </div> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .confirm-button a {
+    background-color: var(--secondary-color);
+  }
+  .confirm-button button {
+    background-color: var(--red-color);
+  }
+  .confirm-button a:hover,
+  .confirm-button button:hover {
+    background-color: var(--primary-color);
+    transition: 0.3s ease-in-out all;
+  }
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Padmin_pelayananmasuk {
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 0px;
+  }
+</style>

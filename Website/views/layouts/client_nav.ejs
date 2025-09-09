@@ -1,0 +1,161 @@
+<section class="navigation-bar">
+  <div class="navbar-wrapper">
+    <div class="navbar-wrapper-upper">
+      <div class="navbar-logo">
+        <a href="/"><img src="/img/pearlmedic.png" alt="logo" /></a>
+      </div>
+      <div class="navbar-contact">
+        <div class="navbar-contact-item">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <h3>Signature Park Tower B, GF No. K03 Jakarta</h3>
+        </div>
+        <div class="navbar-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <h3>medicalservice@gmail.com</h3>
+        </div>
+        <div class="navbar-contact-item">
+          <i class="fa-solid fa-phone-volume"></i>
+          <h3>+62-854249-1824</h3>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-wrapper-bottom">
+      <div class="navbar-hamburger-menu">
+        <div class="navbar-hamburger-logo">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="overlay"></div>
+        <div class="navbar-hamburger-allmenu">
+          <div class="navbar-hamburger-allmenu-top">
+            <div class="navbar-hamburger-allmenu-pic">
+              <div class="cross-icon">
+                <i class="fa-solid fa-times"></i>
+              </div>
+              <img src="/img/pearlmedic.png" alt="profile" />
+            </div>
+            <!-- <div class="navbar-hamburger-allmenu-tagline">
+              <h4>Where wellness meet our care</h4>
+            </div> -->
+          </div>
+          <div class="navbar-hamburger-allmenu-bot">
+            <div class="navbar-hamburger-allmenu-item">
+              <a href="/">Home</a>
+            </div>
+            <div class="navbar-hamburger-allmenu-item">
+              <span class="layanan-hamburger-submenu" id="layanan-hamburger-submenu">Layanan<i class="fa-solid fa-caret-right"></i></span>
+            </div>
+            <div class="navbar-hamburger-submenu">
+              <ul>
+                <li>
+                  <a href="/LayananMedical_client">Medical Check Up <i class="fa-solid fa-house-medical" id="none"></i></a>
+                </li>
+                <li>
+                  <a href="/LayananVaksin_client">Vaksinasi<i class="fa-solid fa-syringe" id="none"></i></a>
+                </li>
+                <li>
+                  <a href="/LayananDarurat_client">Pelayanan Darurat<i class="fa-solid fa-truck-medical" id="none"></i></a>
+                </li>
+              </ul>
+            </div>
+            <script>
+              const layanan_hamburger_submenu = document.querySelector(".layanan-hamburger-submenu");
+              const navbar_hamburger_submenu = document.querySelector(".navbar-hamburger-submenu");
+              const overlay = document.querySelector(".overlay");
+              const cross_icon = document.querySelector(".cross-icon");
+              const navbar_hamburger_logo = document.querySelector(".navbar-hamburger-logo");
+              const navbar_hamburger_allmenu = document.querySelector(".navbar-hamburger-allmenu");
+
+              // when hamburger logo is clicked add active class to navbar-hamburger-allmenu and overlay
+              navbar_hamburger_logo.addEventListener("click", (event) => {
+                event.preventDefault();
+                navbar_hamburger_allmenu.classList.add("active");
+                overlay.classList.add("active");
+              });
+              // when cross icon is clicked remove active class from navbar-hamburger-allmenu and overlay
+              cross_icon.addEventListener("click", () => {
+                navbar_hamburger_allmenu.classList.remove("active");
+                overlay.classList.remove("active");
+              });
+              layanan_hamburger_submenu.addEventListener("click", () => {
+                navbar_hamburger_submenu.classList.toggle("active");
+              });
+            </script>
+            <div class="navbar-hamburger-allmenu-item">
+              <a href="#">Tentang Kami</a>
+            </div>
+            <!-- <div class="navbar-hamburger-allmenu-item">
+              <a href="#">Staff Dokter</a>
+            </div> -->
+            <div class="navbar-hamburger-allmenu-item">
+              <a href="/LayananApotik_client">Apotek</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li id="layanan-button" class="layanan-sub-menu">
+            <span class="layanan-button">Layanan<i class="fa-solid fa-caret-down"></i></span>
+            <div class="navbar-submenu">
+              <ul>
+                <li>
+                  <a href="/LayananMedical_client">Medical Check Up <i class="fa-solid fa-house-medical" id="none"></i></a>
+                </li>
+                <li>
+                  <a href="/LayananVaksin_client">Vaksinasi<i class="fa-solid fa-syringe" id="none"></i></a>
+                </li>
+                <li>
+                  <a href="/LayananDarurat_client">Pelayanan Darurat<i class="fa-solid fa-truck-medical" id="none"></i></a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="/tentangkami_client">Tentang Kami</a></li>
+          <!-- <li><a href="#">Staff Dokter</a></li> -->
+          <li><a href="/LayananApotik_client">Apotek</a></li>
+        </ul>
+      </div>
+      <div class="navbar-profileacc">
+        <div class="profilepic profilepic-submenu">
+          <img src="/img/<%= perusahaan.photo_perusahaan  %>" alt="profile" />
+          <i class="fa-solid fa-caret-down"></i>
+          <div class="navbar-submenu-profile">
+            <ul>
+              <li>
+                <a href="/profile_client">Profil Akun<i class="fa-solid fa-user-tie"></i></a>
+              </li>
+              <li>
+                <a href="/logout_client">Log-out<i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  // navbar sub menu layanan
+  const layananButton = document.querySelector("#layanan-button");
+  const navbar_submenu = document.querySelector(".navbar-submenu");
+  // when layanan button is hover add class active to layanan-sub-menu
+  layananButton.addEventListener("mouseover", () => {
+    layananButton.classList.add("active");
+  });
+  // when cursor is not on navbar-submenu remove class active from layanan-sub-menu
+  navbar_submenu.addEventListener("mouseleave", () => {
+    layananButton.classList.remove("active");
+  });
+  // navbar sub menu profile
+  const profilepic = document.querySelector(".profilepic");
+  const navbar_submenu_profile = document.querySelector(".navbar-submenu-profile");
+  // when profilepic is hover add class active to profilepic-sub-menu
+  profilepic.addEventListener("mouseover", () => {
+    profilepic.classList.add("active");
+  });
+  // when cursor is not on navbar-submenu remove class active from profilepic-sub-menu
+  navbar_submenu_profile.addEventListener("mouseleave", () => {
+    profilepic.classList.remove("active");
+  });
+</script>

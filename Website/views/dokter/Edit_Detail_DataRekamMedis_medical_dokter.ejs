@@ -1,0 +1,284 @@
+<div class="pelayanan_admin_section">
+  <div class="pelayanan_dashboard_wrapper">
+    <div class="PAdmin_left">
+      <div class="Padmin_title">
+        <h1>Edit Data<span> Rekam Medis</span></h1>
+      </div>
+      <div class="Padmin_pelayananmasuk">
+        <form class="Padmin_formulir_rekammedis">
+          <div class="Padmin_formulir_datadiri">
+            <div class="Padmin_formulir_title">
+              <h3>Data Pribadi Pasien</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="">Nama Lengkap</label>
+                <input type="text" placeholder="Masukan Nama Lengkap . . ." value="John Doe" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Nomor Identitas (NIK)</label>
+                <input type="text" placeholder="Masukan Nomor Identitas(NIK/KTP) . . ." value="1234567890123456" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Tanggal Lahir</label>
+                <input type="date" value="1980-05-15" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Jenis Kelamin</label>
+                <select name="" id="">
+                  <option value="Laki-laki" selected>Laki-laki</option>
+                  <option value="Perempuan">Perempuan</option>
+                </select>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Nomor Telepon</label>
+                <input type="text" placeholder="Masukan Nomor Telepon . . ." value="08123456789" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Email</label>
+                <input type="email" placeholder="Masukan Email . . ." value="john.doe@example.com" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Jabatan</label>
+                <input type="text" placeholder="Masukan Jabatan . . ." value="Manager" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Nomor Asuransi Kesehatan (Jika Ada)</label>
+                <input type="text" placeholder="Masukan Nomor Asuransi Kesehatan . . ." value="AH1234567890" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Alamat</label>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Masukan Alamat . . .">Jl. Merdeka No. 1, Jakarta</textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="Padmin_formulir_riwayat">
+            <div class="Padmin_formulir_title">
+              <h3>Riwayat / Keluhan / Gaya Hidup</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="">Riwayat Penyakit Keluarga</label>
+                <input type="text" placeholder="Masukan Riwayat Penyakit Keluarga . . ." value="Hipertensi" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Riwayat Penyakit Pribadi</label>
+                <input type="text" placeholder="Masukan Riwayat Penyakit Pribadi . . ." value="Diabetes" />
+              </div>
+              <div class="Padmin_formulir_input_option" id="select-option">
+                <label for="">Kebiasaan Merokok</label>
+                <div class="select-option">
+                  <div class="option-input">
+                    <input type="radio" id="tidak_pernah" name="kebiasaan_merokok" value="tidak_pernah" />
+                    <label for="tidak_pernah">Tidak Pernah</label>
+                  </div>
+                  <div class="option-input">
+                    <input type="radio" id="kadang" name="kebiasaan_merokok" value="kadang" checked />
+                    <label for="kadang">Kadang - Kadang</label>
+                  </div>
+                  <div class="option-input">
+                    <input type="radio" id="sering" name="kebiasaan_merokok" value="sering" />
+                    <label for="sering">Sering</label>
+                  </div>
+                  <div class="option-input">
+                    <input type="radio" id="berhenti" name="kebiasaan_merokok" value="berhenti" />
+                    <label for="berhenti">Berhenti</label>
+                  </div>
+                </div>
+              </div>
+              <div class="Padmin_formulir_input_option" id="select-option">
+                <label for="">Kebiasaan Konsumsi Alkohol</label>
+                <div class="select-option">
+                  <div class="option-input">
+                    <input type="radio" id="tidak_pernah_alkohol" name="kebiasaan_alkohol" value="tidak_pernah" checked />
+                    <label for="tidak_pernah_alkohol">Tidak Pernah</label>
+                  </div>
+                  <div class="option-input">
+                    <input type="radio" id="kadang_alkohol" name="kebiasaan_alkohol" value="kadang" />
+                    <label for="kadang_alkohol">Kadang</label>
+                  </div>
+                  <div class="option-input">
+                    <input type="radio" id="sering_alkohol" name="kebiasaan_alkohol" value="sering" />
+                    <label for="sering_alkohol">Sering</label>
+                  </div>
+                  <div class="option-input">
+                    <input type="radio" id="berhenti_alkohol" name="kebiasaan_alkohol" value="berhenti" />
+                    <label for="berhenti_alkohol">Berhenti</label>
+                  </div>
+                </div>
+              </div>
+              <div class="Padmin_formulir_input_option" id="select-option">
+                <label for="">Kebiasaan Olahraga</label>
+                <div class="select-option">
+                  <div class="option-input">
+                    <input type="radio" id="tidak_pernah_olahraga" name="kebiasaan_olahraga" value="tidak_pernah" />
+                    <label for="tidak_pernah_olahraga">Tidak Pernah</label>
+                  </div>
+                  <div class="option-input">
+                    <input type="radio" id="seminggu1_olahraga" name="kebiasaan_olahraga" value="seminggu1" checked />
+                    <label for="seminggu1_olahraga">1-2 Kali Seminggu</label>
+                  </div>
+                  <div class="option-input">
+                    <input type="radio" id="seminggu3_olahraga" name="kebiasaan_olahraga" value="seminggu3" />
+                    <label for="seminggu3_olahraga">3-5 Kali Seminggu</label>
+                  </div>
+                  <div class="option-input">
+                    <input type="radio" id="setiaphari_olahraga" name="kebiasaan_olahraga" value="setiaphari" />
+                    <label for="setiaphari_olahraga">Setiap Hari</label>
+                  </div>
+                </div>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Alergi (Jika Ada)</label>
+                <input type="text" placeholder="Masukan Alergi . . ." value="Penisilin" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Diet / Pola Makan</label>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Masukan Diet / Pola Makan . . .">Seimbang, rendah karbohidrat</textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Keluhan Pasien</label>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Masukan Keluhan Pasien . . .">Nyeri dada saat beraktivitas</textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pemeriksaan Fisik Section -->
+          <div class="Padmin_formulir_pemeriksaan">
+            <div class="Padmin_formulir_title">
+              <h3>Pemeriksaan Fisik</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="">Tinggi Badan</label>
+                <input type="text" placeholder="Masukan Tinggi Badan . . ." value="170 cm" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Berat Badan</label>
+                <input type="text" placeholder="Masukan Berat Badan . . ." value="70 kg" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Indeks Massa Tubuh</label>
+                <input type="text" placeholder="Masukan Indeks Massa Tubuh . . ." value="24.2" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Tekanan Darah</label>
+                <input type="text" placeholder="Masukan Tekanan Darah . . ." value="120/80 mmHg" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Denyut Nadi</label>
+                <input type="text" placeholder="Masukan Denyut Nadi . . ." value="72 bpm" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Mata</label>
+                <input type="text" placeholder="Masukan Pemeriksaan Mata . . ." value="Normal, tidak ada kelainan" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Telinga</label>
+                <input type="text" placeholder="Masukan Pemeriksaan Telinga . . ." value="Normal, tidak ada kelainan" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Tenggorokan</label>
+                <input type="text" placeholder="Masukan Pemeriksaan Tenggorokan . . ." value="Normal, tidak ada kelainan" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Jantung</label>
+                <input type="text" placeholder="Masukan Pemeriksaan Jantung . . ." value="Normal, tidak ada murmur" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Paru - Paru</label>
+                <input type="text" placeholder="Masukan Pemeriksaan Paru - Paru . . ." value="Normal, tidak ada wheezing" />
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Pemeriksaan Abdomen</label>
+                <input type="text" placeholder="Masukan Pemeriksaan Abdomen . . ." value="Normal, tidak ada pembesaran" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Laboratorium Section -->
+          <div class="Padmin_formulir_laboratorium">
+            <div class="Padmin_formulir_title">
+              <h3>Laboratorium</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <table>
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Jenis Tes</th>
+                    <th>Hasil</th>
+                    <th>Nilai Rujukan</th>
+                    <th>Komentar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Hemoglobin (Hb)</td>
+                    <td><input type="text" value="14.5 g/dL" /></td>
+                    <td>Pria: 13.8-17.2 g/dL, Wanita: 12.1-15.1 g/dL</td>
+                    <td><input type="text" value="Normal" /></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Kolesterol Total</td>
+                    <td><input type="text" value="180 mg/dL" /></td>
+                    <td>&lt; 200 mg/dL</td>
+                    <td><input type="text" value="Optimal" /></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Asam Urat</td>
+                    <td><input type="text" value="5.5 mg/dL" /></td>
+                    <td>Pria: 3.4-7.0 mg/dL, Wanita: 2.4-6.0 mg/dL</td>
+                    <td><input type="text" value="Normal" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Hasil dan Catatan Section -->
+          <div class="Padmin_formulir_hasil">
+            <div class="Padmin_formulir_title">
+              <h3>Hasil dan Catatan</h3>
+            </div>
+            <div class="Padmin_formulir_input">
+              <div class="Padmin_formulir_input_option">
+                <label for="">Diagnosa</label>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Masukan Diagnosa . . .">Hipertensi Esensial</textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Rekomendasi Medis</label>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Masukan Rekomendasi Medis . . .">Kontrol tekanan darah setiap bulan, kurangi asupan garam, olahraga rutin</textarea>
+              </div>
+              <div class="Padmin_formulir_input_option">
+                <label for="">Catatan Tambahan</label>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Masukan Catatan Tambahan . . .">Perlu pemeriksaan lanjutan untuk fungsi ginjal</textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="confirm-button">
+            <button type="submit" class="btn btn-primary">Simpan Data</button>
+            <a href="/DataRekamMedis_medical_dokter">Batalkan</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pelayanan_dashboard_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .Padmin_pelayananmasuk {
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 0px;
+  }
+</style>

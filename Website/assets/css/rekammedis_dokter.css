@@ -1,0 +1,338 @@
+.Padmin_formulir_rekammedis {
+  background-color: var(--white-color);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px 25px;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.Padmin_formulir_title h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  color: var(--secondary-color);
+  width: 100%;
+  text-align: center;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option label {
+  /* background-color: aqua; */
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option input {
+  /* background-color: red; */
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--cream-color);
+  color: var(--secondary-color);
+  font-size: 12px;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option select {
+  /* background-color: yellow; */
+  /* width: 50%; */
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--cream-color);
+  color: var(--secondary-color);
+  font-size: 12px;
+  cursor: pointer;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option textarea {
+  /* background-color: green; */
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--cream-color);
+  color: var(--secondary-color);
+  font-size: 12px;
+  resize: none;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+  /* background-color: aqua; */
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option label {
+  /* background-color: aqua; */
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option input[type="text"] {
+  /* background-color: red; */
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--cream-color);
+  color: var(--secondary-color);
+  font-size: 12px;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option textarea {
+  /* background-color: green; */
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--cream-color);
+  color: var(--secondary-color);
+  font-size: 12px;
+  resize: none;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option .select-option {
+  /* background-color: yellow; */
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--secondary-color);
+  font-size: 12px;
+  cursor: pointer;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option .select-option .option-input {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option .select-option .option-input label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-left: 10px;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option .select-option .option-input input {
+  cursor: pointer;
+}
+
+.Padmin_formulir_rekammedis .Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+  /* background-color: aqua; */
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option label {
+  /* background-color: aqua; */
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option input {
+  /* background-color: red; */
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--cream-color);
+  color: var(--secondary-color);
+  font-size: 12px;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option textarea {
+  /* background-color: green; */
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--cream-color);
+  color: var(--secondary-color);
+  font-size: 12px;
+  resize: none;
+}
+
+.Padmin_formulir_laboratorium .Padmin_formulir_input table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.Padmin_formulir_laboratorium .Padmin_formulir_input table thead {
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+}
+.Padmin_formulir_laboratorium .Padmin_formulir_input table thead tr th {
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.Padmin_formulir_laboratorium .Padmin_formulir_input table tbody tr td {
+  padding: 10px;
+  font-size: 10px;
+  font-weight: 400;
+  border-bottom: 1px solid var(--secondary-color);
+}
+.Padmin_formulir_laboratorium .Padmin_formulir_input table tbody tr td input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--cream-color);
+  color: var(--secondary-color);
+  font-size: 10px;
+}
+.Padmin_formulir_laboratorium .Padmin_formulir_input table tbody tr td input::placeholder {
+  /* color: var(--secondary-color); */
+  font-size: 10px;
+}
+
+.Padmin_formulir_rekammedis .Padmin_formulir_hasil .Padmin_formulir_input .Padmin_formulir_input_option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_hasil .Padmin_formulir_input .Padmin_formulir_input_option label {
+  /* background-color: aqua; */
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_hasil .Padmin_formulir_input .Padmin_formulir_input_option textarea {
+  /* background-color: green; */
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--cream-color);
+  color: var(--secondary-color);
+  font-size: 12px;
+  resize: none;
+}
+.confirm-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+.confirm-button button {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  color: var(--cream-color);
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+}
+.confirm-button button:hover {
+  background-color: var(--primary-color);
+  transition: all ease-in-out 0.3s;
+}
+.confirm-button a {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--red-color);
+  color: var(--cream-color);
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+}
+.confirm-button a:hover {
+  background-color: var(--primary-color);
+  transition: all ease-in-out 0.3s;
+}
+
+/* Detail Rekam Medis Medical */
+.Padmin_formulir_rekammedis .Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option h4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  /* margin-bottom: 20px; */
+  /* background-color: aqua; */
+  width: 100%;
+}
+.Padmin_formulir_rekammedis #Padmin_formulir_datadiri .Padmin_formulir_input .Padmin_formulir_input_option {
+  border-top: 1px solid var(--gray-color);
+  border-bottom: 1px solid var(--gray-color);
+  padding: 10px;
+  /* background-color: var(--gray-color); */
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option h4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  /* margin-bottom: 20px; */
+  /* background-color: aqua; */
+  width: 100%;
+}
+.Padmin_formulir_rekammedis #Padmin_formulir_riwayat .Padmin_formulir_input .Padmin_formulir_input_option {
+  border-top: 1px solid var(--gray-color);
+  border-bottom: 1px solid var(--gray-color);
+  padding: 10px;
+  /* background-color: var(--gray-color); */
+  width: 98%;
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option h4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  /* margin-bottom: 20px; */
+  /* background-color: aqua; */
+  width: 100%;
+}
+.Padmin_formulir_rekammedis #Padmin_formulir_pemeriksaan .Padmin_formulir_input .Padmin_formulir_input_option {
+  border-top: 1px solid var(--gray-color);
+  border-bottom: 1px solid var(--gray-color);
+  padding: 10px;
+  /* background-color: var(--cream-color); */
+  width: 98%;
+}
+.Padmin_formulir_laboratorium .Padmin_formulir_input table tbody tr td h4 {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  /* margin-bottom: 10px; */
+}
+.Padmin_formulir_rekammedis .Padmin_formulir_hasil .Padmin_formulir_input .Padmin_formulir_input_option h4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  /* margin-bottom: 20px; */
+  /* background-color: aqua; */
+  width: 100%;
+}
+.Padmin_formulir_rekammedis #Padmin_formulir_hasil .Padmin_formulir_input .Padmin_formulir_input_option {
+  border-top: 1px solid var(--gray-color);
+  border-bottom: 1px solid var(--gray-color);
+  padding: 10px;
+  /* background-color: var(--cream-color); */
+  width: 98%;
+}
+
+/* vaksinasi */

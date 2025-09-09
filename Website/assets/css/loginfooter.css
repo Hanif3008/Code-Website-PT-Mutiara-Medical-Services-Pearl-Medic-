@@ -1,0 +1,118 @@
+.footer_wrapper {
+  background-color: var(--footer-color);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px 100px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.footer_wrapper .footer1_motto h3 {
+  font-size: 18px;
+  font-weight: 200;
+  color: var(--secondary-color);
+  margin-left: 10px;
+  margin-top: -10px;
+}
+.footer1_logo img {
+  width: 150px;
+}
+.footer2 .footer2_title h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.footer2 .footer2_menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer2 .footer2_menu li {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+.footer2 .footer2_menu li i {
+  color: var(--cream-color);
+  margin-right: 10px;
+  background-color: var(--secondary-color);
+  padding: 5px;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 1010px) {
+  .footer_wrapper {
+    padding: 10px 50px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  /* decrease font and padding */
+  .footer_wrapper {
+    padding: 10px 20px;
+  }
+  .footer_wrapper .footer1_motto h3 {
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: -10px;
+  }
+  .footer2 .footer2_title h3 {
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .footer2 .footer2_menu li {
+    margin-bottom: 10px;
+    font-size: 10px;
+  }
+  .footer2 .footer2_menu li i {
+    margin-right: 5px;
+    padding: 3px;
+  }
+  .footer1_logo img {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .footer_wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .footer1_logo img {
+    width: 120px;
+  }
+  .footer1 {
+    margin-bottom: 40px;
+  }
+  .footer2 .footer2_title h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  .footer2 .footer2_menu li {
+    margin-bottom: 15px;
+    font-size: 12px;
+  }
+  .footer2 .footer2_menu li i {
+    margin-right: 5px;
+    padding: 3px;
+  }
+}
+@media only screen and (max-width: 310px) {
+  /* decrease font */
+  .footer2 .footer2_title h3 {
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  .footer2 .footer2_menu li {
+    margin-bottom: 15px;
+    font-size: 10px;
+  }
+  .footer2 .footer2_menu li i {
+    margin-right: 5px;
+    padding: 3px;
+  }
+}
